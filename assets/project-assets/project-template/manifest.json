@@ -1,0 +1,50 @@
+{
+  "projectSlug": "project-template",
+  "publicTitle": "Public-safe project title",
+  "assetPolicy": {
+    "clientNameVisible": false,
+    "exactAddressVisible": false,
+    "engineerStampVisible": false,
+    "fullDrawingSetPublic": false
+  },
+  "assets": {
+    "hero": {
+      "path": "hero.webp",
+      "type": "image",
+      "caption": "Primary project visual"
+    },
+    "model": [
+      {
+        "path": "model.glb",
+        "type": "interactive-model",
+        "caption": "Browser-native model viewer asset"
+      },
+      {
+        "path": "model-reference.pdf",
+        "type": "u3d-pdf-reference",
+        "caption": "U3D PDF reference for Bluebeam workflow"
+      }
+    ],
+    "drawings": [
+      {
+        "path": "plan-crop.webp",
+        "type": "image",
+        "caption": "Plan excerpt with identifying information removed"
+      }
+    ],
+    "analysis": [
+      {
+        "path": "fea-contour.webp",
+        "type": "image",
+        "caption": "FEA contour or demand visualization"
+      }
+    ],
+    "calculations": [
+      {
+        "path": "calc-excerpt.webp",
+        "type": "image",
+        "caption": "Selected calculation excerpt"
+      }
+    ]
+  }
+}
