@@ -21,14 +21,19 @@
     },
     "model": [
       {
+        "path": "models/trellis-gltf-colors.glb",
+        "type": "glb",
+        "caption": "Preferred single-file model used by the native interactive viewer"
+      },
+      {
         "path": "models/Trellis gltf colors.gltf",
         "type": "gltf",
-        "caption": "Native interactive GLTF model displayed on the L Ranch project page"
+        "caption": "Alternate split GLTF source/reference export"
       },
       {
         "path": "models/Trellis gltf colors.bin",
         "type": "gltf-buffer",
-        "caption": "Required external buffer for Trellis gltf colors.gltf"
+        "caption": "External buffer required by the alternate split GLTF export"
       },
       {
         "path": "swiftxr-embed-url-in-js-projects",

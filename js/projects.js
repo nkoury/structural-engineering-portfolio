@@ -12,11 +12,11 @@ window.PORTFOLIO_PROJECTS = [
     assetFolder: "assets/project-assets/l-ranch/",
     sourceAssets: ["Native GLTF viewer", "SwiftXR viewer", "PDF drawings", "Hand calculations"],
     modelViewer: {
-      src: "assets/project-assets/l-ranch/models/Trellis gltf colors.gltf",
+      src: "assets/project-assets/l-ranch/models/trellis-gltf-colors.glb",
       alt: "Interactive 3D structural trellis model for the L Ranch project",
       poster: "",
-      requiredFiles: ["assets/project-assets/l-ranch/models/Trellis gltf colors.bin"],
-      note: "This GLTF uses an external .bin buffer. Keep the .gltf and .bin files together in the models folder."
+      requiredFiles: [],
+      note: "Using the single-file GLB export for the live viewer; the GLTF/BIN pair is retained as a source/reference export."
     },
     swiftxr: {
       embedUrl: "",
