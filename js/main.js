@@ -6,6 +6,7 @@
   const modalTitle = document.querySelector("[data-modal-title]");
   const modalType = document.querySelector("[data-modal-type]");
   const modalSummary = document.querySelector("[data-modal-summary]");
+  const modalMedia = document.querySelector("[data-modal-media]");
   const tabList = document.querySelector("[data-tab-list]");
   const tabPanel = document.querySelector("[data-tab-panel]");
   const closeModal = document.querySelector("[data-close-modal]");
@@ -84,7 +85,6 @@
 
   function openProject(project) {
     activeProject = project;
-    modalAnimationProject = project;
     modalTitle.textContent = project.title;
     modalType.textContent = `${project.type} / ${project.year}`;
     modalSummary.textContent = project.summary;
@@ -95,12 +95,15 @@
     } else {
       modal.setAttribute("open", "");
     }
-    drawModel("modalCanvas", 0, project);
+    renderModalMedia(project);
   }
 
   function closeProject() {
     document.body.classList.remove("modal-open");
     modalAnimationProject = null;
+    if (modalMedia) {
+      modalMedia.innerHTML = '<canvas id="modalCanvas" width="720" height="520"></canvas>';
+    }
     if (typeof modal.close === "function") {
       modal.close();
     } else {
@@ -125,8 +128,68 @@
       <h3>${activeTab}</h3>
       <p>${activeProject.tabs[activeTab]}</p>
       <p><strong>Asset folder:</strong> ${activeProject.assetFolder}</p>
+      ${renderSwiftXRStatus(activeProject)}
       <ul>${activeProject.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}</ul>
     `;
+  }
+
+  function renderSwiftXRStatus(project) {
+    if (!project.swiftxr) return "";
+    const status = getSafeEmbedUrl(project.swiftxr.embedUrl) ? "configured" : "waiting for embed URL";
+    return `
+      <div class="asset-note">
+        <strong>SwiftXR:</strong> ${status}.
+        <span>${project.swiftxr.note}</span>
+      </div>
+    `;
+  }
+
+  function getSafeEmbedUrl(url) {
+    if (!url) return "";
+    try {
+      const parsed = new URL(url, window.location.href);
+      return parsed.protocol === "https:" ? parsed.href : "";
+    } catch (error) {
+      return "";
+    }
+  }
+
+  function renderModalMedia(project) {
+    if (!modalMedia) return;
+    const embedUrl = getSafeEmbedUrl(project.swiftxr?.embedUrl || "");
+
+    if (embedUrl) {
+      modalAnimationProject = null;
+      modalMedia.innerHTML = `
+        <div class="swiftxr-frame-wrap">
+          <iframe
+            src="${embedUrl}"
+            title="${project.title} SwiftXR interactive 3D model"
+            loading="lazy"
+            allow="accelerometer; autoplay; camera; fullscreen; gyroscope; magnetometer; xr-spatial-tracking"
+            allowfullscreen
+          ></iframe>
+        </div>
+      `;
+      return;
+    }
+
+    if (project.swiftxr) {
+      modalAnimationProject = null;
+      modalMedia.innerHTML = `
+        <div class="swiftxr-empty">
+          <p class="eyebrow">SwiftXR Viewer Slot</p>
+          <h3>${project.title}</h3>
+          <p>Publish the model in SwiftXR, copy the embed code, then paste the iframe <code>src</code> URL into <code>js/projects.js</code>.</p>
+          <p class="file-path">${project.assetFolder}</p>
+        </div>
+      `;
+      return;
+    }
+
+    modalAnimationProject = project;
+    modalMedia.innerHTML = '<canvas id="modalCanvas" width="720" height="520"></canvas>';
+    drawModel("modalCanvas", 0, project);
   }
 
   if (closeModal) {

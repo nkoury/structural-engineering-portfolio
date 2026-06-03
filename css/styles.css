@@ -794,6 +794,49 @@ a.button {
   min-height: 560px;
 }
 
+.swiftxr-frame-wrap,
+.swiftxr-frame-wrap iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  min-height: 560px;
+  width: 100%;
+}
+
+.swiftxr-empty {
+  align-content: center;
+  color: var(--white);
+  display: grid;
+  min-height: 560px;
+  padding: clamp(28px, 5vw, 48px);
+}
+
+.swiftxr-empty h3 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.02;
+  margin: 0 0 14px;
+}
+
+.swiftxr-empty p {
+  color: rgba(255, 253, 248, 0.72);
+  margin: 0 0 12px;
+  max-width: 560px;
+}
+
+.swiftxr-empty code,
+.file-path,
+.asset-note {
+  font-family: "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+}
+
+.file-path {
+  background: rgba(255, 253, 248, 0.1);
+  border: 1px solid rgba(255, 253, 248, 0.18);
+  color: rgba(255, 253, 248, 0.78);
+  padding: 10px 12px;
+  word-break: break-word;
+}
+
 .modal-copy {
   padding: clamp(28px, 5vw, 52px);
 }
@@ -847,6 +890,24 @@ a.button {
   color: var(--muted);
   margin: 0;
   padding-left: 20px;
+}
+
+.asset-note {
+  background: rgba(27, 123, 119, 0.08);
+  border-left: 3px solid var(--teal);
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 14px;
+  padding: 12px 14px;
+}
+
+.asset-note strong {
+  color: var(--ink);
+}
+
+.asset-note span {
+  display: block;
+  margin-top: 6px;
 }
 
 @media (max-width: 960px) {

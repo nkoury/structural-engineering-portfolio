@@ -1,5 +1,40 @@
 window.PORTFOLIO_PROJECTS = [
   {
+    id: "l-ranch",
+    title: "L Ranch",
+    type: "Residential / Ranch",
+    year: "TBD",
+    initials: "LR",
+    summary:
+      "A project case-study slot for the L Ranch structural model, drawing excerpts, analysis captures, and calculation story.",
+    tags: ["SwiftXR", "U3D", "Model Viewer", "Drawings"],
+    color: "#6d7961",
+    assetFolder: "assets/project-assets/l-ranch/",
+    sourceAssets: ["SwiftXR viewer", "U3D source", "PDF drawings", "Hand calculations"],
+    swiftxr: {
+      embedUrl: "",
+      projectUrl: "",
+      note: "After publishing the model in SwiftXR, paste the iframe src URL into embedUrl."
+    },
+    tabs: {
+      Overview:
+        "Use this section to describe the L Ranch scope, structural system, your role, key constraints, and the design decisions worth showing publicly.",
+      Model:
+        "This project is configured for a SwiftXR interactive viewer. Upload the model to SwiftXR, publish the project, copy the embed code, and paste the iframe src URL into js/projects.js.",
+      Drawings:
+        "Add redacted plan/detail crops, sheet thumbnails, or markup excerpts under assets/project-assets/l-ranch/drawings/.",
+      Analysis:
+        "Add model screenshots, load path diagrams, FEA captures, or design check visuals under assets/project-assets/l-ranch/analysis/.",
+      Calculations:
+        "Add selected calculation excerpts under assets/project-assets/l-ranch/calculations/ after removing project-sensitive information."
+    },
+    bullets: [
+      "Interactive model presentation through SwiftXR",
+      "Public-safe project asset folder and manifest",
+      "Room for drawings, analysis visuals, and calculation excerpts"
+    ]
+  },
+  {
     id: "steel-frame-adaptive-reuse",
     title: "Steel Frame Adaptive Reuse",
     type: "Building Structure",

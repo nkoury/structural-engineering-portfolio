@@ -18,6 +18,12 @@ project-assets/
     model-turntable.mp4
     detail-crop.webp
     load-case.webp
+  l-ranch/
+    manifest.json
+    preview/
+    drawings/
+    analysis/
+    calculations/
 ```
 
 Before publishing, remove or obscure:

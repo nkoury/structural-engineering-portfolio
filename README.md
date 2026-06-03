@@ -13,6 +13,7 @@ model views, plan crops, PDF references, FEA captures, and calculation excerpts 
 - `js/projects.js` contains editable project data.
 - `js/main.js` renders filters, project cards, modal tabs, and the animated model placeholder.
 - `assets/project-assets/` is reserved for your real project visuals.
+- `docs/swiftxr-workflow.md` explains the SwiftXR embed workflow for interactive models.
 
 ## What To Send For The First Real Project
 
@@ -34,6 +35,12 @@ Browsers do not natively display U3D-in-PDF content like Bluebeam. This architec
 - Short model rotations: `.mp4` or `.webm`
 - Plan/calculation previews: cropped `.webp` or `.png`
 - Reference/download files: redacted `.pdf` or U3D-containing PDFs only when you intentionally want them public
+
+## SwiftXR Model Embeds
+
+Projects can include a `swiftxr` object in `js/projects.js`. After publishing the model in SwiftXR, copy the iframe embed code and paste the iframe `src` URL into the project's `swiftxr.embedUrl` value.
+
+Keep original U3D files private unless they are intentionally public. Use `work/private-assets/l-ranch/u3d-source/` as a local staging folder, then publish only the SwiftXR embed URL and redacted web assets.
 
 ## Updating Projects
 

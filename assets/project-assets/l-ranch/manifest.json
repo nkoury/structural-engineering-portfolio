@@ -1,0 +1,61 @@
+{
+  "projectSlug": "l-ranch",
+  "publicTitle": "L Ranch",
+  "assetPolicy": {
+    "clientNameVisible": false,
+    "exactAddressVisible": false,
+    "engineerStampVisible": false,
+    "fullDrawingSetPublic": false,
+    "originalU3DFilesPublic": false
+  },
+  "swiftxr": {
+    "embedUrl": "",
+    "projectUrl": "",
+    "notes": "Paste the published SwiftXR iframe src URL into js/projects.js under the L Ranch swiftxr.embedUrl field."
+  },
+  "assets": {
+    "hero": {
+      "path": "preview/hero.webp",
+      "type": "image",
+      "caption": "Primary public-safe L Ranch visual"
+    },
+    "model": [
+      {
+        "path": "swiftxr-embed-url-in-js-projects",
+        "type": "swiftxr-embed",
+        "caption": "Interactive model viewer hosted by SwiftXR"
+      },
+      {
+        "path": "models/source-u3d/",
+        "type": "u3d-source-public-only",
+        "caption": "Optional public-safe U3D source files; leave empty unless intentionally publishing"
+      },
+      {
+        "path": "preview/model-still.webp",
+        "type": "image",
+        "caption": "Fallback model still for fast preview"
+      }
+    ],
+    "drawings": [
+      {
+        "path": "drawings/plan-crop.webp",
+        "type": "image",
+        "caption": "Redacted plan excerpt"
+      }
+    ],
+    "analysis": [
+      {
+        "path": "analysis/load-path.webp",
+        "type": "image",
+        "caption": "Load path or analysis visual"
+      }
+    ],
+    "calculations": [
+      {
+        "path": "calculations/calc-excerpt.webp",
+        "type": "image",
+        "caption": "Selected public-safe calculation excerpt"
+      }
+    ]
+  }
+}
