@@ -9,7 +9,8 @@ SwiftXR embeds are handled as hosted interactive viewers.
 3. Publish or update the SwiftXR project.
 4. Copy the SwiftXR embed code.
 5. Paste the iframe `src` URL into `js/projects.js` under the project `swiftxr.embedUrl` field.
-6. Keep only public-safe preview assets in `assets/project-assets/<project-slug>/`.
+6. The project page will automatically reveal its hosted model section when the URL is present.
+7. Keep only public-safe preview assets in `assets/project-assets/<project-slug>/`.
 
 ## L Ranch Paths
 

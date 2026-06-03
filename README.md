@@ -1,68 +1,91 @@
-# Structural Engineering Portfolio Starter
+# Noah Koury Structural Engineering Portfolio
 
-This is a static, GitHub Pages-ready website starter for a structural engineering portfolio.
-Open `index.html` locally or push the folder to a GitHub repository and publish it with GitHub Pages.
+This is a static, GitHub Pages-ready portfolio site for structural engineering case studies.
+It is designed around your own assets: model views, GLB/GLTF files, redacted drawing excerpts,
+FEA captures, calculation excerpts, site photos, and personal photos.
 
-The site is intentionally asset-first. It does not rely on AI-generated project imagery; add your own
-model views, plan crops, PDF references, FEA captures, and calculation excerpts under `assets/project-assets/`.
+## Current Site Structure
 
-## Site Architecture
+- `index.html` is the landing page and selected-work collage.
+- `projects/l-ranch.html` is the L Ranch case study page with an active GLB model viewer.
+- `projects/high-mountain.html` is a ready-to-populate High Mountain case study page.
+- `about.html` is the About Me page with LinkedIn and personal-photo slots.
+- `css/styles.css` contains the full visual system and responsive layout.
+- `js/projects.js` controls the project names, gallery tiles, page links, and model metadata.
+- `js/main.js` renders the landing-page project ribbon and collage from project data.
+- `js/project-page.js` renders optional SwiftXR embeds when a project has an embed URL.
+- `docs/asset-intake.md` explains how to prepare public-safe project assets.
+- `docs/swiftxr-workflow.md` explains the SwiftXR/U3D workflow.
 
-- `index.html` contains the page structure and project modal.
-- `css/styles.css` contains the visual system and responsive layout.
-- `js/projects.js` contains editable project data.
-- `js/main.js` renders filters, project cards, modal tabs, and the animated model placeholder.
-- `assets/project-assets/` is reserved for your real project visuals.
-- `docs/swiftxr-workflow.md` explains the SwiftXR embed workflow for interactive models.
+## Asset Folders
 
-## What To Send For The First Real Project
+Use `assets/project-assets/<project-slug>/` for files that are safe to publish on GitHub Pages.
 
-Start with one project and collect:
+```text
+assets/
+  about/
+    noah-portrait.webp
+    noah-field.webp
+    noah-pursuit.webp
+  project-assets/
+    l-ranch/
+      models/
+      preview/
+      drawings/
+      analysis/
+      calculations/
+      manifest.json
+    high-mountain/
+      models/
+      preview/
+      drawings/
+      analysis/
+      calculations/
+      manifest.json
+```
 
-- Project name or a public-safe alias
-- Project type, year, region, and your role
-- 1 hero visual: model screenshot, rendering, site photo, or drawing collage
-- 2 to 4 process visuals: plan crop, detail crop, FEA capture, model view, calc excerpt
-- A short technical story: challenge, constraints, method, decision, outcome
-- Redaction rules: client names, locations, stamps, addresses, sheet numbers, and sensitive notes
+The active L Ranch model is:
 
-## Recommended Asset Formats
+```text
+assets/project-assets/l-ranch/models/trellis-gltf-colors.glb
+```
 
-Browsers do not natively display U3D-in-PDF content like Bluebeam. This architecture can store and link U3D/PDF resources, but for in-page viewing use:
+## Publishing Rules
 
-- Model stills: `.webp`, `.jpg`, or `.png`
-- Interactive 3D models: `.glb` or `.gltf`
-- Short model rotations: `.mp4` or `.webm`
-- Plan/calculation previews: cropped `.webp` or `.png`
-- Reference/download files: redacted `.pdf` or U3D-containing PDFs only when you intentionally want them public
+Before committing assets to GitHub, remove or obscure:
 
-## SwiftXR Model Embeds
+- Client, owner, architect, contractor, and exact site identifiers
+- Professional stamps, seals, signatures, and license numbers
+- Full drawing sets unless they are intentionally public
+- Proprietary calculation pages or software model metadata
+- Notes that reveal confidential business, budget, schedule, or claim information
 
-Projects can include a `swiftxr` object in `js/projects.js`. After publishing the model in SwiftXR, copy the iframe embed code and paste the iframe `src` URL into the project's `swiftxr.embedUrl` value.
-
-Keep original U3D files private unless they are intentionally public. Use `work/private-assets/l-ranch/u3d-source/` as a local staging folder, then publish only the SwiftXR embed URL and redacted web assets.
+Keep original U3D files and confidential source packages outside the public repo. Publish only
+redacted PDFs, cropped drawing images, preview images, or hosted viewer links when they are safe.
 
 ## Updating Projects
 
-Edit `js/projects.js`. Each project supports:
+For the landing gallery, edit `js/projects.js`.
 
-- `title`
-- `type`
-- `year`
-- `summary`
-- `tags`
-- `tabs`
-- `bullets`
+For detailed project narratives, edit:
 
-The current cards are asset slots. Replace them one at a time as real assets are prepared.
+- `projects/l-ranch.html`
+- `projects/high-mountain.html`
+
+When adding a new project, copy an existing project page, create a matching folder under
+`assets/project-assets/`, add its entry to `js/projects.js`, and add a manifest from
+`assets/project-assets/project-template/manifest.json`.
+
+## 3D Model Options
+
+- Use `.glb` for the most stable single-file in-browser model display.
+- Use `.gltf` plus `.bin` only when you intentionally want split source files.
+- Use SwiftXR for hosted U3D or richer model presentations, then add the published iframe URL
+  to the project's `swiftxr.embedUrl` value in `js/projects.js`.
 
 ## Deploying To GitHub Pages
 
-1. Create a new GitHub repository.
-2. Copy this folder into the repository root.
-3. Commit and push.
-4. In GitHub, go to Settings -> Pages.
-5. Set the source to the main branch and root folder.
-6. Add a custom domain after the page is live.
-
-For a larger second version, consider Astro or Vite with reusable components and a proper GLB model viewer.
+1. Commit and push the site to the repository.
+2. In GitHub, open Settings -> Pages.
+3. Set the source to the main branch and root folder.
+4. After the page is live, add your custom domain in the Pages settings.

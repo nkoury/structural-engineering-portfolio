@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>L Ranch | Noah Koury</title>
+    <meta
+      name="description"
+      content="L Ranch structural engineering case study with interactive model, scope, design elements, and asset slots."
+    />
+    <meta name="theme-color" content="#f7f3eb" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.0/model-viewer.min.js"></script>
+  </head>
+  <body>
+    <header class="project-ribbon" aria-label="Portfolio navigation">
+      <a class="ribbon-brand" href="../index.html#top">Noah Koury</a>
+      <nav>
+        <a href="../index.html#gallery">Gallery</a>
+        <a href="l-ranch.html" aria-current="page">L Ranch</a>
+        <a href="high-mountain.html">High Mountain</a>
+        <a href="../about.html">About Me</a>
+      </nav>
+    </header>
+
+    <main class="project-page">
+      <section class="project-hero">
+        <div class="project-title">
+          <p class="project-kicker">Residential / Ranch</p>
+          <h1>L Ranch</h1>
+          <p>
+            A structural trellis and ranch project page organized around the model, design intent,
+            project scope, and public-safe technical evidence.
+          </p>
+        </div>
+        <div class="model-stage">
+          <model-viewer
+            class="project-model"
+            src="../assets/project-assets/l-ranch/models/trellis-gltf-colors.glb"
+            alt="Interactive 3D structural trellis model for the L Ranch project"
+            camera-controls
+            touch-action="pan-y"
+            shadow-intensity="0.25"
+            exposure="0.95"
+            environment-image="neutral"
+          ></model-viewer>
+          <a class="model-download" href="../assets/project-assets/l-ranch/models/trellis-gltf-colors.glb">Open model file</a>
+        </div>
+      </section>
+
+      <div class="project-body">
+        <section class="project-section">
+          <h2>Project Type</h2>
+          <div>
+            <p>
+              Residential ranch structure with a focus on expressive exterior steel framing, trellis
+              coordination, foundations, and detailing that can be communicated clearly through model views.
+            </p>
+            <ul class="detail-list">
+              <li><strong>System</strong><span>Steel trellis framing with concrete and foundation components.</span></li>
+              <li><strong>Primary Media</strong><span>Interactive GLB model, drawing excerpts, analysis visuals, and calculation excerpts.</span></li>
+              <li><strong>Status</strong><span>Model viewer active; project text and drawing images ready for refinement.</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <h2>Design Elements</h2>
+          <div>
+            <p>
+              The case study will highlight framing hierarchy, connection locations, exposed steel rhythm,
+              support conditions, and how the structural scope integrates with the architectural expression.
+            </p>
+            <div class="asset-strip">
+              <a class="asset-slot image-slot" href="../assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 4.JPEG">
+                <img src="../assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 4.JPEG" alt="L Ranch hand sketch of connection detailing" />
+                <span>Sketch</span><strong>Connection detailing</strong>
+              </a>
+              <a class="asset-slot image-slot" href="../assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 1.JPEG">
+                <img src="../assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 1.JPEG" alt="L Ranch coordination notes and drawing markups" />
+                <span>Process</span><strong>Coordination notes</strong>
+              </a>
+              <a class="asset-slot image-slot" href="../assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 3.JPEG">
+                <img src="../assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 3.JPEG" alt="L Ranch selected hand calculation excerpt" />
+                <span>Calculations</span><strong>Selected design checks</strong>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section" data-swiftxr-section data-project-id="l-ranch" hidden>
+          <h2>Hosted Model</h2>
+          <div class="swiftxr-stage" data-swiftxr-frame></div>
+        </section>
+
+        <section class="project-section">
+          <h2>Scope Narrative</h2>
+          <div>
+            <p>
+              This section is reserved for the final written project narrative: what the owner or design
+              team needed, what constraints shaped the structure, what you modeled or calculated, and which
+              design decisions best demonstrate your judgment.
+            </p>
+            <p>
+              The next assets to add are a hero image, plan/detail crops, and a short calculation excerpt
+              with sensitive information removed.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="../js/projects.js"></script>
+    <script src="../js/project-page.js"></script>
+  </body>
+</html>

@@ -1,38 +1,47 @@
 # Project Asset Drop Zone
 
-Place public-safe project visuals and source references here. Suggested structure:
+Place public-safe project visuals and web-ready model files here.
+
+Recommended folder structure for each project:
 
 ```text
 project-assets/
-  steel-frame-adaptive-reuse/
-    hero.webp
-    model-view.webp
-    plan-crop.webp
-    fea-contour.webp
-    calc-excerpt.webp
-    model-reference.u3d.pdf
-    public-summary.pdf
-    manifest.json
-  equipment-platform/
-    hero.webp
-    model-turntable.mp4
-    detail-crop.webp
-    load-case.webp
-  l-ranch/
+  project-slug/
     manifest.json
     preview/
+      hero.webp
+      model-still.webp
+      site.webp
+    models/
+      model.glb
+      source-u3d/
     drawings/
+      plan-crop.webp
+      detail-crop.webp
+      public-summary.pdf
     analysis/
+      load-path.webp
+      fea-contour.webp
     calculations/
+      calc-excerpt.webp
 ```
+
+Use `project-template/manifest.json` as the starting point for each new project folder.
+
+## Current Projects
+
+- `l-ranch/`: active case study with a GLB model viewer.
+- `high-mountain/`: ready-to-populate case study folder.
+
+## Public-Safety Checklist
 
 Before publishing, remove or obscure:
 
-- Client and owner names
-- Addresses and exact locations when sensitive
-- Engineer stamps and signatures
-- Sheet numbers if they identify a confidential project
+- Client, owner, architect, contractor, and exact location names
+- Engineer stamps, signatures, seals, and license numbers
+- Sheet numbers or title blocks that identify a confidential project
+- Full drawing sets unless intentionally public
 - Proprietary calculation pages or software model metadata
-- Any full drawing set that should not be publicly downloadable
+- Sensitive scope, cost, schedule, claim, or business notes
 
-Use `project-template/manifest.json` as the starting point for each project folder.
+Original U3D files should stay private unless you intentionally want them in the public repository.
