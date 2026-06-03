@@ -15,6 +15,8 @@ SwiftXR embeds are handled as hosted interactive viewers.
 
 - Private local U3D staging: `work/private-assets/l-ranch/u3d-source/`
 - Public site assets: `assets/project-assets/l-ranch/`
+- Native GLTF viewer source: `assets/project-assets/l-ranch/models/Trellis gltf colors.gltf`
+- Required GLTF buffer: `assets/project-assets/l-ranch/models/Trellis gltf colors.bin`
 - SwiftXR embed configuration: `js/projects.js`, project id `l-ranch`
 
 ## Notes

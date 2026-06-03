@@ -794,6 +794,54 @@ a.button {
   min-height: 560px;
 }
 
+.model-viewer-wrap {
+  background: #24221f;
+  min-height: 560px;
+  position: relative;
+}
+
+.native-model-viewer {
+  background:
+    linear-gradient(90deg, rgba(255, 253, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 253, 248, 0.04) 1px, transparent 1px),
+    #24221f;
+  background-size: 38px 38px;
+  display: block;
+  height: 560px;
+  width: 100%;
+}
+
+.model-viewer-message {
+  align-items: start;
+  color: var(--white);
+  display: grid;
+  gap: 4px;
+  height: 100%;
+  justify-content: start;
+  padding: 28px;
+}
+
+.model-viewer-message strong,
+.model-viewer-message span {
+  display: block;
+}
+
+.model-viewer-message span {
+  color: rgba(255, 253, 248, 0.68);
+}
+
+.model-download {
+  background: rgba(255, 253, 248, 0.9);
+  bottom: 16px;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 8px 11px;
+  position: absolute;
+  right: 16px;
+  text-decoration: none;
+}
+
 .swiftxr-frame-wrap,
 .swiftxr-frame-wrap iframe {
   border: 0;
@@ -908,6 +956,12 @@ a.button {
 .asset-note span {
   display: block;
   margin-top: 6px;
+}
+
+.asset-note-model {
+  background: rgba(214, 155, 51, 0.12);
+  border-left-color: var(--amber);
+  word-break: break-word;
 }
 
 @media (max-width: 960px) {

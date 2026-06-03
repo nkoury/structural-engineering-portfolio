@@ -21,6 +21,16 @@
     },
     "model": [
       {
+        "path": "models/Trellis gltf colors.gltf",
+        "type": "gltf",
+        "caption": "Native interactive GLTF model displayed on the L Ranch project page"
+      },
+      {
+        "path": "models/Trellis gltf colors.bin",
+        "type": "gltf-buffer",
+        "caption": "Required external buffer for Trellis gltf colors.gltf"
+      },
+      {
         "path": "swiftxr-embed-url-in-js-projects",
         "type": "swiftxr-embed",
         "caption": "Interactive model viewer hosted by SwiftXR"

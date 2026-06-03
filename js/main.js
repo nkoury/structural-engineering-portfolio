@@ -128,8 +128,21 @@
       <h3>${activeTab}</h3>
       <p>${activeProject.tabs[activeTab]}</p>
       <p><strong>Asset folder:</strong> ${activeProject.assetFolder}</p>
+      ${renderModelViewerStatus(activeProject)}
       ${renderSwiftXRStatus(activeProject)}
       <ul>${activeProject.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}</ul>
+    `;
+  }
+
+  function renderModelViewerStatus(project) {
+    if (!project.modelViewer) return "";
+    const requiredFiles = project.modelViewer.requiredFiles || [];
+    return `
+      <div class="asset-note asset-note-model">
+        <strong>Native model:</strong> ${project.modelViewer.src}
+        ${requiredFiles.length ? `<span>Required companion file(s): ${requiredFiles.join(", ")}</span>` : ""}
+        ${project.modelViewer.note ? `<span>${project.modelViewer.note}</span>` : ""}
+      </div>
     `;
   }
 
@@ -154,9 +167,42 @@
     }
   }
 
+  function encodeAssetUrl(url) {
+    return encodeURI(url || "");
+  }
+
   function renderModalMedia(project) {
     if (!modalMedia) return;
+    const modelSrc = project.modelViewer?.src || "";
     const embedUrl = getSafeEmbedUrl(project.swiftxr?.embedUrl || "");
+
+    if (modelSrc) {
+      modalAnimationProject = null;
+      const poster = project.modelViewer.poster ? `poster="${encodeAssetUrl(project.modelViewer.poster)}"` : "";
+      modalMedia.innerHTML = `
+        <div class="model-viewer-wrap">
+          <model-viewer
+            class="native-model-viewer"
+            src="${encodeAssetUrl(modelSrc)}"
+            alt="${project.modelViewer.alt || `${project.title} interactive 3D model`}"
+            ${poster}
+            camera-controls
+            touch-action="pan-y"
+            interaction-prompt="auto"
+            shadow-intensity="0.25"
+            exposure="0.95"
+            environment-image="neutral"
+          >
+            <div class="model-viewer-message" slot="poster">
+              <strong>${project.title} model</strong>
+              <span>Loading interactive GLTF viewer...</span>
+            </div>
+          </model-viewer>
+          <a class="model-download" href="${encodeAssetUrl(modelSrc)}" target="_blank" rel="noreferrer">Open source model file</a>
+        </div>
+      `;
+      return;
+    }
 
     if (embedUrl) {
       modalAnimationProject = null;

@@ -10,7 +10,14 @@ window.PORTFOLIO_PROJECTS = [
     tags: ["SwiftXR", "U3D", "Model Viewer", "Drawings"],
     color: "#6d7961",
     assetFolder: "assets/project-assets/l-ranch/",
-    sourceAssets: ["SwiftXR viewer", "U3D source", "PDF drawings", "Hand calculations"],
+    sourceAssets: ["Native GLTF viewer", "SwiftXR viewer", "PDF drawings", "Hand calculations"],
+    modelViewer: {
+      src: "assets/project-assets/l-ranch/models/Trellis gltf colors.gltf",
+      alt: "Interactive 3D structural trellis model for the L Ranch project",
+      poster: "",
+      requiredFiles: ["assets/project-assets/l-ranch/models/Trellis gltf colors.bin"],
+      note: "This GLTF uses an external .bin buffer. Keep the .gltf and .bin files together in the models folder."
+    },
     swiftxr: {
       embedUrl: "",
       projectUrl: "",
@@ -20,7 +27,7 @@ window.PORTFOLIO_PROJECTS = [
       Overview:
         "Use this section to describe the L Ranch scope, structural system, your role, key constraints, and the design decisions worth showing publicly.",
       Model:
-        "This project is configured for a SwiftXR interactive viewer. Upload the model to SwiftXR, publish the project, copy the embed code, and paste the iframe src URL into js/projects.js.",
+        "This project is configured for a native GLTF model viewer first, with SwiftXR still available as an optional hosted viewer fallback.",
       Drawings:
         "Add redacted plan/detail crops, sheet thumbnails, or markup excerpts under assets/project-assets/l-ranch/drawings/.",
       Analysis:
