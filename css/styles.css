@@ -1,14 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Inter:wght@400;500;650;800;900&display=swap");
+
 :root {
   --paper: #f7f3eb;
   --ink: #1f1d1a;
   --muted: #706a61;
   --line: #d9d1c3;
   --white: #fffdf8;
-  --oxide: #a75635;
+  --orange: #ef5b24;
+  --orange-deep: #a13d1d;
+  --orange-soft: rgba(239, 91, 36, 0.14);
+  --oxide: var(--orange-deep);
   --green: #4f6049;
   --steel: #5f6769;
   --amber: #c58d34;
   --shadow: 0 22px 70px rgba(31, 29, 26, 0.14);
+  --font-display: "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif;
+  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --max: 1240px;
 }
 
@@ -23,8 +30,7 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5;
   margin: 0;
 }
@@ -41,14 +47,24 @@ img {
 .landing {
   align-items: center;
   background:
-    linear-gradient(90deg, rgba(31, 29, 26, 0.04) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(31, 29, 26, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 29, 26, 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(31, 29, 26, 0.025) 1px, transparent 1px),
     var(--paper);
   background-size: 46px 46px;
   display: grid;
   min-height: 100vh;
   padding: clamp(22px, 4vw, 48px);
   position: relative;
+}
+
+.landing::before {
+  background: var(--orange);
+  content: "";
+  height: 1px;
+  left: clamp(22px, 4vw, 48px);
+  position: absolute;
+  right: clamp(22px, 4vw, 48px);
+  top: clamp(22px, 4vw, 48px);
 }
 
 .landing-name {
@@ -58,7 +74,7 @@ img {
 .landing-name p,
 .eyebrow,
 .project-kicker {
-  color: var(--oxide);
+  color: var(--orange);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0;
@@ -67,6 +83,7 @@ img {
 }
 
 .landing-name h1 {
+  font-family: var(--font-display);
   font-size: clamp(4.3rem, 16vw, 14rem);
   font-weight: 500;
   letter-spacing: 0;
@@ -75,10 +92,15 @@ img {
   max-width: 980px;
 }
 
+.landing-name h1::first-line {
+  font-weight: 400;
+}
+
 .enter-link {
   bottom: clamp(24px, 4vw, 44px);
-  font-size: 0.95rem;
-  font-weight: 800;
+  color: var(--orange);
+  font-size: 0.88rem;
+  font-weight: 900;
   position: absolute;
   right: clamp(22px, 4vw, 48px);
   text-decoration: none;
@@ -111,6 +133,16 @@ img {
   backdrop-filter: blur(16px);
 }
 
+.project-ribbon::after {
+  background: var(--orange);
+  bottom: -1px;
+  content: "";
+  height: 1px;
+  left: clamp(18px, 4vw, 42px);
+  position: absolute;
+  width: min(148px, 24vw);
+}
+
 .ribbon-brand,
 .project-ribbon a {
   font-size: 0.86rem;
@@ -133,7 +165,7 @@ img {
 .project-ribbon a:hover,
 .project-ribbon a:focus-visible,
 .project-ribbon a[aria-current="page"] {
-  color: var(--ink);
+  color: var(--orange);
 }
 
 .gallery-page {
@@ -147,6 +179,7 @@ img {
 }
 
 .gallery-intro h2 {
+  font-family: var(--font-display);
   font-size: clamp(2.4rem, 7vw, 6.8rem);
   font-weight: 500;
   letter-spacing: 0;
@@ -155,9 +188,11 @@ img {
 }
 
 .gallery-intro p {
+  border-left: 2px solid var(--orange);
   color: var(--muted);
   font-size: clamp(1rem, 1.7vw, 1.24rem);
   max-width: 680px;
+  padding-left: 18px;
 }
 
 .collage-grid {
@@ -183,6 +218,8 @@ img {
 .collage-link:hover,
 .collage-link:focus-visible {
   box-shadow: var(--shadow);
+  outline: 1px solid var(--orange);
+  outline-offset: -1px;
   transform: translateY(-2px);
 }
 
@@ -262,13 +299,14 @@ img {
 
 .collage-caption strong {
   align-self: end;
+  font-family: var(--font-display);
   font-size: clamp(1.55rem, 3.2vw, 3.4rem);
   font-weight: 500;
   line-height: 0.98;
 }
 
 .collage-caption span {
-  color: rgba(255, 253, 248, 0.78);
+  color: #ffb182;
   font-size: 0.88rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -288,6 +326,7 @@ img {
 }
 
 .site-footer a {
+  color: var(--orange-deep);
   font-weight: 800;
   text-decoration: none;
 }
@@ -306,6 +345,7 @@ img {
 }
 
 .project-title h1 {
+  font-family: var(--font-display);
   font-size: clamp(3.4rem, 10vw, 8.8rem);
   font-weight: 500;
   letter-spacing: 0;
@@ -317,6 +357,11 @@ img {
   color: var(--muted);
   font-size: clamp(1rem, 1.7vw, 1.18rem);
   max-width: 620px;
+}
+
+.project-title p:not(.project-kicker) {
+  border-left: 2px solid var(--orange);
+  padding-left: 18px;
 }
 
 .model-stage {
@@ -340,7 +385,7 @@ img {
 .model-download {
   background: rgba(255, 253, 248, 0.9);
   bottom: 16px;
-  color: var(--ink);
+  color: var(--orange-deep);
   font-size: 0.82rem;
   font-weight: 900;
   padding: 8px 11px;
@@ -372,7 +417,7 @@ img {
   background:
     linear-gradient(90deg, rgba(255, 253, 248, 0.15) 1px, transparent 1px),
     linear-gradient(0deg, rgba(255, 253, 248, 0.15) 1px, transparent 1px),
-    linear-gradient(135deg, var(--green), #24221f);
+    linear-gradient(135deg, var(--green), #24221f 58%, var(--orange-deep));
   background-size: 34px 34px, 34px 34px, auto;
   color: var(--white);
   display: grid;
@@ -382,6 +427,7 @@ img {
 
 .project-visual-placeholder strong {
   display: block;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 500;
   line-height: 0.98;
@@ -398,6 +444,17 @@ img {
   margin: 0 auto;
   max-width: var(--max);
   padding: clamp(42px, 7vw, 82px) clamp(18px, 4vw, 42px);
+  position: relative;
+}
+
+.project-section::before {
+  background: var(--orange);
+  content: "";
+  height: 1px;
+  left: clamp(18px, 4vw, 42px);
+  position: absolute;
+  top: -1px;
+  width: min(116px, 22vw);
 }
 
 .project-section + .project-section {
@@ -405,6 +462,7 @@ img {
 }
 
 .project-section h2 {
+  font-family: var(--font-display);
   font-size: clamp(1.6rem, 3vw, 2.7rem);
   font-weight: 500;
   line-height: 1;
@@ -416,6 +474,12 @@ img {
   font-size: 1.03rem;
   margin: 0 0 16px;
   max-width: 760px;
+}
+
+.project-section p:first-child {
+  background: linear-gradient(90deg, var(--orange-soft), rgba(239, 91, 36, 0) 68%);
+  border-left: 1px solid var(--orange);
+  padding: 12px 0 12px 16px;
 }
 
 .detail-list {
@@ -435,6 +499,7 @@ img {
 }
 
 .detail-list strong {
+  color: var(--orange-deep);
   font-size: 0.82rem;
   text-transform: uppercase;
 }
@@ -480,6 +545,8 @@ img {
 .asset-slot:hover,
 .asset-slot:focus-visible {
   box-shadow: var(--shadow);
+  outline: 1px solid var(--orange);
+  outline-offset: -1px;
 }
 
 .asset-slot strong,
@@ -490,11 +557,14 @@ img {
 }
 
 .asset-slot strong {
+  font-family: var(--font-display);
   font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.05;
 }
 
 .asset-slot span {
-  color: rgba(255, 253, 248, 0.72);
+  color: #ffb182;
   font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -505,7 +575,7 @@ img {
 }
 
 .linkedin-link {
-  border-bottom: 2px solid var(--oxide);
+  border-bottom: 2px solid var(--orange);
   color: var(--ink);
   display: inline-block;
   font-size: 0.86rem;
@@ -518,7 +588,7 @@ img {
 
 .linkedin-link:hover,
 .linkedin-link:focus-visible {
-  color: var(--oxide);
+  color: var(--orange);
 }
 
 .about-photo-grid {
@@ -576,7 +646,7 @@ img {
   background:
     linear-gradient(90deg, rgba(255, 253, 248, 0.1) 1px, transparent 1px),
     linear-gradient(0deg, rgba(255, 253, 248, 0.1) 1px, transparent 1px),
-    linear-gradient(135deg, var(--green), #24221f);
+    linear-gradient(135deg, var(--green), #24221f 58%, var(--orange-deep));
   background-size: 30px 30px, 30px 30px, auto;
   grid-column: span 3;
 }
@@ -585,13 +655,13 @@ img {
   background:
     linear-gradient(90deg, rgba(255, 253, 248, 0.1) 1px, transparent 1px),
     linear-gradient(0deg, rgba(255, 253, 248, 0.1) 1px, transparent 1px),
-    linear-gradient(135deg, var(--oxide), var(--steel));
+    linear-gradient(135deg, var(--orange), var(--steel));
   background-size: 30px 30px, 30px 30px, auto;
   grid-column: span 3;
 }
 
 .public-note {
-  border-left: 3px solid var(--oxide);
+  border-left: 3px solid var(--orange);
   color: var(--muted);
   font-size: 0.95rem;
   margin-top: 16px;
