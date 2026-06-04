@@ -1,8 +1,15 @@
 .DS_Store
 Thumbs.db
 *.log
+__pycache__/
+*.pyc
 node_modules/
 dist/
 build/
 .env
 .env.*
+assets/project-assets/**/*.rvt
+assets/project-assets/**/*_backup/
+assets/project-assets/**/*.u3d
+assets/project-assets/**/source-private/
+assets/project-assets/**/drawings/source-private/

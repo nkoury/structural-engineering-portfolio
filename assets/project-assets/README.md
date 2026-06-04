@@ -16,9 +16,11 @@ project-assets/
       model.glb
       source-u3d/
     drawings/
+      details/
       plan-crop.webp
       detail-crop.webp
       public-summary.pdf
+      source-private/
     analysis/
       load-path.webp
       fea-contour.webp
@@ -45,3 +47,6 @@ Before publishing, remove or obscure:
 - Sensitive scope, cost, schedule, claim, or business notes
 
 Original U3D files should stay private unless you intentionally want them in the public repository.
+
+Full drawing PDFs with addresses belong in `drawings/source-private/`, which is ignored by Git.
+Use `drawings/details/` for redacted sheet previews and individual cropped detail icons.

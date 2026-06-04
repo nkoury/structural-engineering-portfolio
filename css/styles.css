@@ -394,6 +394,35 @@ img {
   text-decoration: none;
 }
 
+.model-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  left: 16px;
+  position: absolute;
+  right: 160px;
+  top: 16px;
+  z-index: 2;
+}
+
+.model-switcher button {
+  background: rgba(255, 253, 248, 0.9);
+  border: 1px solid transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 900;
+  min-height: 34px;
+  padding: 7px 10px;
+  text-transform: uppercase;
+}
+
+.model-switcher button[aria-pressed="true"] {
+  background: var(--orange);
+  color: var(--white);
+}
+
 .swiftxr-stage {
   background:
     linear-gradient(90deg, rgba(255, 253, 248, 0.04) 1px, transparent 1px),
@@ -506,6 +535,74 @@ img {
 
 .detail-list span {
   color: var(--muted);
+}
+
+.detail-card-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.detail-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  display: grid;
+  min-height: 250px;
+  overflow: hidden;
+}
+
+.detail-card img {
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.detail-card-placeholder {
+  align-content: center;
+  background:
+    linear-gradient(90deg, rgba(31, 29, 26, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(31, 29, 26, 0.06) 1px, transparent 1px),
+    linear-gradient(135deg, var(--paper), var(--orange-soft));
+  background-size: 28px 28px, 28px 28px, auto;
+  display: grid;
+  min-height: 180px;
+  padding: 18px;
+}
+
+.detail-card-placeholder span,
+.detail-card-copy span {
+  color: var(--orange-deep);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.detail-card-placeholder strong {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 0.9;
+}
+
+.detail-card-copy {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+}
+
+.detail-card-copy strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.detail-card-copy p {
+  background: transparent;
+  border: 0;
+  font-size: 0.92rem;
+  margin: 0;
+  padding: 0;
 }
 
 .asset-strip {
@@ -699,6 +796,7 @@ img {
   }
 
   .asset-strip,
+  .detail-card-grid,
   .detail-list li {
     grid-template-columns: 1fr;
   }
@@ -713,6 +811,12 @@ img {
   .project-model,
   .swiftxr-frame {
     height: 380px;
+  }
+
+  .model-switcher {
+    bottom: 16px;
+    right: 16px;
+    top: auto;
   }
 
   .about-photo.portrait,

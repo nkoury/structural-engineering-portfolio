@@ -10,82 +10,15 @@
     />
     <meta name="theme-color" content="#f7f3eb" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.0/model-viewer.min.js"></script>
   </head>
   <body>
     <header class="project-ribbon" aria-label="Portfolio navigation">
       <a class="ribbon-brand" href="../index.html#top">Noah Koury</a>
-      <nav>
-        <a href="../index.html#gallery">Gallery</a>
-        <a href="l-ranch.html">L Ranch</a>
-        <a href="high-mountain.html" aria-current="page">High Mountain</a>
-        <a href="../about.html">About Me</a>
-      </nav>
+      <nav data-project-ribbon data-prefix="../"></nav>
     </header>
 
-    <main class="project-page">
-      <section class="project-hero">
-        <div class="project-title">
-          <p class="project-kicker">Mountain Structure</p>
-          <h1>High Mountain</h1>
-          <p>
-            A ready-to-populate structural case study for a mountain-site project, organized around
-            environment, structure, analysis, and design coordination.
-          </p>
-        </div>
-        <div class="project-visual-placeholder">
-          <span class="project-kicker">High Mountain</span>
-          <strong>Project image sequence</strong>
-        </div>
-      </section>
-
-      <div class="project-body">
-        <section class="project-section">
-          <h2>Project Type</h2>
-          <div>
-            <p>
-              Mountain-site structural work with terrain, snow, wind, access, and constructability
-              constraints shaping the design response.
-            </p>
-            <ul class="detail-list">
-              <li><strong>System</strong><span>To be defined from your drawings, model, and calculation set.</span></li>
-              <li><strong>Site Factors</strong><span>Sloped terrain, environmental loading, and access-sensitive construction sequencing.</span></li>
-              <li><strong>Media</strong><span>Project photos, plan crops, model views, analysis captures, and calc excerpts.</span></li>
-            </ul>
-          </div>
-        </section>
-
-        <section class="project-section">
-          <h2>Design Elements</h2>
-          <div>
-            <p>
-              This page will focus on the specific structural decisions that make the project legible:
-              load path, foundation strategy, framing rhythm, lateral system, and coordination with
-              architectural geometry.
-            </p>
-            <div class="asset-strip">
-              <div class="asset-slot"><span>Site</span><strong>Topography and access</strong></div>
-              <div class="asset-slot"><span>Structure</span><strong>Framing strategy</strong></div>
-              <div class="asset-slot"><span>Analysis</span><strong>Load cases and checks</strong></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="project-section" data-swiftxr-section data-project-id="high-mountain" hidden>
-          <h2>Hosted Model</h2>
-          <div class="swiftxr-stage" data-swiftxr-frame></div>
-        </section>
-
-        <section class="project-section">
-          <h2>Scope Narrative</h2>
-          <div>
-            <p>
-              The final text can describe your role, the governing project constraints, design assumptions,
-              analysis method, coordination challenges, and the clearest engineering takeaway.
-            </p>
-          </div>
-        </section>
-      </div>
-    </main>
+    <main class="project-page" data-project-page="high-mountain"></main>
 
     <script src="../js/projects.js"></script>
     <script src="../js/project-page.js"></script>

@@ -1,0 +1,131 @@
+{
+  "defaults": {
+    "dpi": 180,
+    "redactions": [
+      {
+        "label": "title block and address zone",
+        "box": [0.58, 0.76, 0.42, 0.24]
+      },
+      {
+        "label": "bottom issue/title strip",
+        "box": [0, 0.92, 1, 0.08]
+      }
+    ]
+  },
+  "projects": [
+    {
+      "projectId": "l-ranch",
+      "sourcePdf": "assets/project-assets/l-ranch/drawings/source-private/l-ranch-cd.pdf",
+      "targets": [
+        {
+          "sheet": "S-400",
+          "sourcePage": 11,
+          "label": "Foundation and framing details",
+          "output": "assets/project-assets/l-ranch/drawings/details/s-400-page-11.webp"
+        },
+        {
+          "sheet": "S-401",
+          "sourcePage": 12,
+          "label": "Roof and truss details",
+          "output": "assets/project-assets/l-ranch/drawings/details/s-401-page-12.webp"
+        }
+      ]
+    },
+    {
+      "projectId": "coach-rd",
+      "sourcePdf": "assets/project-assets/coach-rd/drawings/source-private/coach-rd-permit.pdf",
+      "targets": [
+        {
+          "sheet": "S-4.0",
+          "sourcePage": 25,
+          "label": "Foundation details",
+          "output": "assets/project-assets/coach-rd/drawings/details/s-4-0-page-25.webp"
+        },
+        {
+          "sheet": "S-4.1",
+          "sourcePage": 26,
+          "label": "Framing details",
+          "output": "assets/project-assets/coach-rd/drawings/details/s-4-1-page-26.webp"
+        }
+      ]
+    },
+    {
+      "projectId": "hastings-mesa",
+      "sourcePdf": "assets/project-assets/hastings-mesa/drawings/source-private/hastings-mesa-barn-rev-2.pdf",
+      "targets": [
+        {
+          "sheet": "S4.00",
+          "sourcePage": 2,
+          "label": "Entry canopy details",
+          "output": "assets/project-assets/hastings-mesa/drawings/details/s4-00-page-2.webp"
+        }
+      ]
+    },
+    {
+      "projectId": "hhr-ranch",
+      "sourcePdf": "assets/project-assets/hhr-ranch/drawings/source-private/hhr-ranch-ifc.pdf",
+      "targets": [
+        {
+          "sheet": "S4.00",
+          "sourcePage": 12,
+          "label": "Foundation and framing details",
+          "output": "assets/project-assets/hhr-ranch/drawings/details/s4-00-page-12.webp"
+        },
+        {
+          "sheet": "S4.01",
+          "sourcePage": 13,
+          "label": "Trellis and truss details",
+          "output": "assets/project-assets/hhr-ranch/drawings/details/s4-01-page-13.webp"
+        }
+      ]
+    },
+    {
+      "projectId": "mountain-laurel",
+      "sourcePdf": "assets/project-assets/mountain-laurel/drawings/source-private/mountain-laurel-co2.pdf",
+      "targets": [
+        {
+          "sheet": "S-400",
+          "sourcePage": 19,
+          "label": "Foundation and framing details",
+          "output": "assets/project-assets/mountain-laurel/drawings/details/s-400-page-19.webp"
+        },
+        {
+          "sheet": "S-403",
+          "sourcePage": 22,
+          "label": "Upper-level details",
+          "output": "assets/project-assets/mountain-laurel/drawings/details/s-403-page-22.webp"
+        },
+        {
+          "sheet": "S-403",
+          "sourcePage": 25,
+          "label": "Micropile detail",
+          "output": "assets/project-assets/mountain-laurel/drawings/details/s-403-page-25.webp"
+        }
+      ]
+    },
+    {
+      "projectId": "waters",
+      "sourcePdf": "assets/project-assets/waters/drawings/source-private/waters-permit.pdf",
+      "targets": [
+        {
+          "sheet": "S-400",
+          "sourcePage": 14,
+          "label": "Foundation and framing details",
+          "output": "assets/project-assets/waters/drawings/details/s-400-page-14.webp"
+        },
+        {
+          "sheet": "S-401",
+          "sourcePage": 15,
+          "label": "Framing details",
+          "output": "assets/project-assets/waters/drawings/details/s-401-page-15.webp"
+        },
+        {
+          "sheet": "S-402",
+          "sourcePage": 16,
+          "label": "Foundation and wall details",
+          "output": "assets/project-assets/waters/drawings/details/s-402-page-16.webp"
+        }
+      ]
+    }
+  ]
+}

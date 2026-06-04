@@ -8,14 +8,15 @@ FEA captures, calculation excerpts, site photos, and personal photos.
 
 - `index.html` is the landing page and selected-work collage.
 - `projects/l-ranch.html` is the L Ranch case study page with an active GLB model viewer.
-- `projects/high-mountain.html` is a ready-to-populate High Mountain case study page.
+- `projects/*.html` are data-driven project case study pages.
 - `about.html` is the About Me page with LinkedIn and personal-photo slots.
 - `css/styles.css` contains the full visual system and responsive layout.
 - `js/projects.js` controls the project names, gallery tiles, page links, and model metadata.
 - `js/main.js` renders the landing-page project ribbon and collage from project data.
-- `js/project-page.js` renders optional SwiftXR embeds when a project has an embed URL.
+- `js/project-page.js` renders project pages, model switching, detail cards, and optional SwiftXR embeds.
 - `docs/asset-intake.md` explains how to prepare public-safe project assets.
 - `docs/swiftxr-workflow.md` explains the SwiftXR/U3D workflow.
+- `docs/detail-extraction-workflow.md` explains the redacted PDF/detail extraction workflow.
 
 ## Asset Folders
 
@@ -32,6 +33,8 @@ assets/
       models/
       preview/
       drawings/
+        details/
+        source-private/
       analysis/
       calculations/
       manifest.json
@@ -50,6 +53,9 @@ The active L Ranch model is:
 assets/project-assets/l-ranch/models/trellis-gltf-colors.glb
 ```
 
+New project folders are normalized to URL-safe slugs, such as `coach-rd/`, `hhr-ranch/`,
+`mountain-laurel/`, and `waters/`.
+
 ## Publishing Rules
 
 Before committing assets to GitHub, remove or obscure:
@@ -63,6 +69,9 @@ Before committing assets to GitHub, remove or obscure:
 Keep original U3D files and confidential source packages outside the public repo. Publish only
 redacted PDFs, cropped drawing images, preview images, or hosted viewer links when they are safe.
 
+Raw Revit files, Revit backup folders, U3D files, and full source PDFs in `source-private/` are ignored
+by Git. Use `drawings/details/` for public redacted sheet previews and detail icons.
+
 ## Updating Projects
 
 For the landing gallery, edit `js/projects.js`.
@@ -75,6 +84,10 @@ For detailed project narratives, edit:
 When adding a new project, copy an existing project page, create a matching folder under
 `assets/project-assets/`, add its entry to `js/projects.js`, and add a manifest from
 `assets/project-assets/project-template/manifest.json`.
+
+Most project pages now use the same data-driven shell. For a normal new project, copy one of the
+minimal `projects/*.html` files, change its `data-project-page` value, and add its data entry in
+`js/projects.js`.
 
 ## 3D Model Options
 
