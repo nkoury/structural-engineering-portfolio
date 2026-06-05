@@ -6,13 +6,16 @@ FEA captures, calculation excerpts, site photos, and personal photos.
 
 ## Current Site Structure
 
-- `index.html` is the landing page and selected-work collage.
+- `index.html` is the navigation-only landing page.
+- `works.html` is the compact highlighted-works index with one card per project.
+- `process.html` is the shared sketch, calculation, and detail-development gallery.
+- `contact.html` includes contact links and the embedded resume PDF.
 - `projects/l-ranch.html` is the L Ranch case study page with an active GLB model viewer.
 - `projects/*.html` are data-driven project case study pages.
 - `about.html` is the About Me page with LinkedIn and personal-photo slots.
 - `css/styles.css` contains the full visual system and responsive layout.
 - `js/projects.js` controls the project names, gallery tiles, page links, and model metadata.
-- `js/main.js` renders the landing-page project ribbon and collage from project data.
+- `js/main.js` renders the highlighted-works cards and process gallery from project data.
 - `js/project-page.js` renders project pages, model switching, detail cards, and optional SwiftXR embeds.
 - `docs/asset-intake.md` explains how to prepare public-safe project assets.
 - `docs/swiftxr-workflow.md` explains the SwiftXR/U3D workflow.

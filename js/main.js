@@ -18,55 +18,58 @@
       .replace(/>/g, "&gt;");
   }
 
-  function renderModelTile(tile, index) {
-    const size = collageSizes[index % collageSizes.length];
-    const project = tile.project;
-    const model = tile.model;
-    const visual = model
-      ? `<model-viewer
-          class="collage-model"
-          src="${escapeAttribute(model.src)}"
-          alt="${escapeAttribute(model.alt || `${project.title} ${model.label} model`)}"
-          camera-controls
-          touch-action="pan-y"
-          shadow-intensity="0.25"
-          exposure="0.95"
-          environment-image="neutral"
-          loading="lazy"
-          reveal="auto"
-        >
-          <div class="model-poster" slot="poster" style="--tile-color: ${project.color}">
-            <span>3D Model</span>
-            <strong>${escapeAttribute(model.label)}</strong>
-          </div>
-        </model-viewer>`
-      : `<div class="model-poster placeholder-only" style="--tile-color: ${project.color}">
+  function renderProjectModel(model, project) {
+    if (!model) {
+      return `
+        <div class="work-model-placeholder" style="--tile-color: ${project.color}">
           <span>Model Pending</span>
-          <strong>${project.title}</strong>
-        </div>`;
+          <strong>${escapeAttribute(project.title)}</strong>
+        </div>
+      `;
+    }
 
     return `
-      <article class="model-card ${size}">
-        ${visual}
-        <a class="work-tab" href="${escapeAttribute(project.page)}" aria-label="Open ${project.title} project page">
+      <model-viewer
+        class="work-model"
+        src="${escapeAttribute(model.src)}"
+        alt="${escapeAttribute(model.alt || `${project.title} ${model.label} model`)}"
+        camera-controls
+        touch-action="pan-y"
+        shadow-intensity="0.25"
+        exposure="0.95"
+        environment-image="neutral"
+        loading="lazy"
+        reveal="auto"
+      >
+        <div class="model-poster" slot="poster" style="--tile-color: ${project.color}">
+          <span>3D Model</span>
+          <strong>${escapeAttribute(model.label)}</strong>
+        </div>
+      </model-viewer>
+    `;
+  }
+
+  function renderProjectCard(project) {
+    const models = project.modelOptions && project.modelOptions.length ? project.modelOptions : [null];
+    const modelTiles = models.map((model) => `<div class="work-model-tile">${renderProjectModel(model, project)}</div>`);
+    const modelLabel = models.length > 1 ? `${models.length} model views` : models[0] ? models[0].label : "Project page";
+
+    return `
+      <article class="work-project-card" style="--tile-color: ${project.color}">
+        <div class="work-model-grid ${models.length > 1 ? "multi" : "single"}">
+          ${modelTiles.join("")}
+        </div>
+        <a class="work-project-tab" href="${escapeAttribute(project.page)}" aria-label="Open ${project.title} project page">
           <span>${escapeAttribute(project.type)}</span>
           <strong>${escapeAttribute(project.title)}</strong>
-          <em>${escapeAttribute(model ? model.label : "Project page")}</em>
+          <em>${escapeAttribute(modelLabel)}</em>
         </a>
       </article>
     `;
   }
 
   if (modelCollage) {
-    const tiles = projects.flatMap((project) => {
-      const models = project.modelOptions || [];
-      if (!models.length) {
-        return [{ project, model: null }];
-      }
-      return models.map((model) => ({ project, model }));
-    });
-
-    modelCollage.innerHTML = tiles.map(renderModelTile).join("");
+    modelCollage.innerHTML = projects.map(renderProjectCard).join("");
   }
 
   if (processGrid) {

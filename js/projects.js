@@ -36,6 +36,36 @@ window.PORTFOLIO_PROJECTS = [
         note: "Queued for redacted crop extraction from the detail sheet."
       }
     ],
+    detailAssets: [
+      {
+        sheet: "S-400",
+        sourcePage: 11,
+        label: "Foundation and framing joint",
+        image: "assets/project-assets/l-ranch/drawings/details/s-400-page-11-detail-02.webp",
+        alt: "Redacted L Ranch S-400 framing and foundation detail crop"
+      },
+      {
+        sheet: "S-400",
+        sourcePage: 11,
+        label: "Framing detail sequence",
+        image: "assets/project-assets/l-ranch/drawings/details/s-400-page-11-detail-03.webp",
+        alt: "Redacted L Ranch S-400 framing detail crop"
+      },
+      {
+        sheet: "S-400",
+        sourcePage: 11,
+        label: "Grid framing details",
+        image: "assets/project-assets/l-ranch/drawings/details/s-400-page-11-detail-04.webp",
+        alt: "Redacted L Ranch S-400 grid framing detail crop"
+      },
+      {
+        sheet: "S-401",
+        sourcePage: 12,
+        label: "Roof framing interface",
+        image: "assets/project-assets/l-ranch/drawings/details/s-401-page-12-detail-04.webp",
+        alt: "Redacted L Ranch S-401 roof framing detail crop"
+      }
+    ],
     galleryTiles: [
       {
         label: "Trellis Model",
@@ -59,6 +89,18 @@ window.PORTFOLIO_PROJECTS = [
     system: "To be defined from the project drawings, model, and calculation set.",
     scope:
       "Use this page for the governing terrain, snow, wind, access, constructability, and coordination story once the project assets are ready.",
+    modelOptions: [
+      {
+        label: "Steel Model",
+        src: "assets/project-assets/high-mountain/models/steel.glb",
+        alt: "High Mountain steel framing 3D model"
+      },
+      {
+        label: "Title Sheet View",
+        src: "assets/project-assets/high-mountain/models/title-sheet.glb",
+        alt: "High Mountain title sheet 3D model view"
+      }
+    ],
     swiftxr: {
       embedUrl: "",
       projectUrl: ""
@@ -153,6 +195,36 @@ window.PORTFOLIO_PROJECTS = [
         note: "Primary framing detail target for redacted crop extraction."
       }
     ],
+    detailAssets: [
+      {
+        sheet: "S-4.0",
+        sourcePage: 25,
+        label: "Foundation edge details",
+        image: "assets/project-assets/coach-rd/drawings/details/s-4-0-page-25-detail-01.webp",
+        alt: "Redacted Coach Rd S-4.0 foundation edge detail crop"
+      },
+      {
+        sheet: "S-4.0",
+        sourcePage: 25,
+        label: "Foundation wall transitions",
+        image: "assets/project-assets/coach-rd/drawings/details/s-4-0-page-25-detail-02.webp",
+        alt: "Redacted Coach Rd S-4.0 foundation wall detail crop"
+      },
+      {
+        sheet: "S-4.1",
+        sourcePage: 26,
+        label: "Framing section",
+        image: "assets/project-assets/coach-rd/drawings/details/s-4-1-page-26-detail-03.webp",
+        alt: "Redacted Coach Rd S-4.1 framing section detail crop"
+      },
+      {
+        sheet: "S-4.1",
+        sourcePage: 26,
+        label: "Roof and framing details",
+        image: "assets/project-assets/coach-rd/drawings/details/s-4-1-page-26-detail-04.webp",
+        alt: "Redacted Coach Rd S-4.1 roof and framing detail crop"
+      }
+    ],
     galleryTiles: [
       {
         label: "Steel + Concrete Model",
@@ -207,6 +279,29 @@ window.PORTFOLIO_PROJECTS = [
         note: "Additional detail callouts on the same sheet."
       }
     ],
+    detailAssets: [
+      {
+        sheet: "S4.00",
+        sourcePage: 2,
+        label: "Canopy connection detail",
+        image: "assets/project-assets/hastings-mesa/drawings/details/s4-00-page-2-detail-01.webp",
+        alt: "Redacted Hastings Mesa S4.00 canopy connection detail crop"
+      },
+      {
+        sheet: "S4.00",
+        sourcePage: 2,
+        label: "Canopy model and detail",
+        image: "assets/project-assets/hastings-mesa/drawings/details/s4-00-page-2-detail-03.webp",
+        alt: "Redacted Hastings Mesa S4.00 canopy model and detail crop"
+      },
+      {
+        sheet: "S4.00",
+        sourcePage: 2,
+        label: "Canopy framing view",
+        image: "assets/project-assets/hastings-mesa/drawings/details/s4-00-page-2-detail-04.webp",
+        alt: "Redacted Hastings Mesa S4.00 canopy framing detail crop"
+      }
+    ],
     galleryTiles: [
       {
         label: "Entry Canopy Model",
@@ -259,6 +354,36 @@ window.PORTFOLIO_PROJECTS = [
         sourcePage: 13,
         label: "Trellis and truss details",
         note: "Queued for redacted crop extraction."
+      }
+    ],
+    detailAssets: [
+      {
+        sheet: "S4.00",
+        sourcePage: 12,
+        label: "Foundation interface",
+        image: "assets/project-assets/hhr-ranch/drawings/details/s4-00-page-12-detail-02.webp",
+        alt: "Redacted HHR Ranch S4.00 foundation interface detail crop"
+      },
+      {
+        sheet: "S4.00",
+        sourcePage: 12,
+        label: "Foundation and framing edge",
+        image: "assets/project-assets/hhr-ranch/drawings/details/s4-00-page-12-detail-04.webp",
+        alt: "Redacted HHR Ranch S4.00 foundation and framing edge detail crop"
+      },
+      {
+        sheet: "S4.01",
+        sourcePage: 13,
+        label: "Trellis framing corner",
+        image: "assets/project-assets/hhr-ranch/drawings/details/s4-01-page-13-detail-01.webp",
+        alt: "Redacted HHR Ranch S4.01 trellis framing corner detail crop"
+      },
+      {
+        sheet: "S4.01",
+        sourcePage: 13,
+        label: "Truss and framing interface",
+        image: "assets/project-assets/hhr-ranch/drawings/details/s4-01-page-13-detail-03.webp",
+        alt: "Redacted HHR Ranch S4.01 truss and framing detail crop"
       }
     ],
     galleryTiles: [
@@ -316,6 +441,36 @@ window.PORTFOLIO_PROJECTS = [
         note: "Queued for redacted crop extraction."
       }
     ],
+    detailAssets: [
+      {
+        sheet: "S-400",
+        sourcePage: 19,
+        label: "Framing detail cluster",
+        image: "assets/project-assets/mountain-laurel/drawings/details/s-400-page-19-detail-01.webp",
+        alt: "Redacted Mountain Laurel S-400 framing detail cluster crop"
+      },
+      {
+        sheet: "S-400",
+        sourcePage: 19,
+        label: "Framing edge details",
+        image: "assets/project-assets/mountain-laurel/drawings/details/s-400-page-19-detail-02.webp",
+        alt: "Redacted Mountain Laurel S-400 framing edge detail crop"
+      },
+      {
+        sheet: "S-400",
+        sourcePage: 19,
+        label: "Foundation and wall interface",
+        image: "assets/project-assets/mountain-laurel/drawings/details/s-400-page-19-detail-03.webp",
+        alt: "Redacted Mountain Laurel S-400 foundation and wall detail crop"
+      },
+      {
+        sheet: "S-400",
+        sourcePage: 19,
+        label: "Foundation/framing details",
+        image: "assets/project-assets/mountain-laurel/drawings/details/s-400-page-19-detail-04.webp",
+        alt: "Redacted Mountain Laurel S-400 foundation and framing detail crop"
+      }
+    ],
     galleryTiles: [
       {
         label: "Steel + Concrete Model",
@@ -369,6 +524,36 @@ window.PORTFOLIO_PROJECTS = [
         sourcePage: 16,
         label: "Foundation and wall details",
         note: "Queued for redacted crop extraction."
+      }
+    ],
+    detailAssets: [
+      {
+        sheet: "S-400",
+        sourcePage: 14,
+        label: "Framing detail cluster",
+        image: "assets/project-assets/waters/drawings/details/s-400-page-14-detail-01.webp",
+        alt: "Redacted Waters S-400 framing detail cluster crop"
+      },
+      {
+        sheet: "S-400",
+        sourcePage: 14,
+        label: "Foundation and floor interface",
+        image: "assets/project-assets/waters/drawings/details/s-400-page-14-detail-02.webp",
+        alt: "Redacted Waters S-400 foundation and floor detail crop"
+      },
+      {
+        sheet: "S-400",
+        sourcePage: 14,
+        label: "Wall and framing details",
+        image: "assets/project-assets/waters/drawings/details/s-400-page-14-detail-04.webp",
+        alt: "Redacted Waters S-400 wall and framing detail crop"
+      },
+      {
+        sheet: "S-401",
+        sourcePage: 15,
+        label: "Framing connection details",
+        image: "assets/project-assets/waters/drawings/details/s-401-page-15-detail-04.webp",
+        alt: "Redacted Waters S-401 framing connection detail crop"
       }
     ],
     galleryTiles: [

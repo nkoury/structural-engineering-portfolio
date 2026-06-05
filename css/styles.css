@@ -1,4 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Inter:wght@400;500;650;800;900&display=swap");
+@font-face {
+  font-display: swap;
+  font-family: "Artifakt";
+  src:
+    local("Artifakt Element"),
+    local("Artifakt"),
+    local("Artifakt Legend");
+}
 
 :root {
   --paper: #f7f3eb;
@@ -14,8 +21,8 @@
   --steel: #5f6769;
   --amber: #c58d34;
   --shadow: 0 22px 70px rgba(31, 29, 26, 0.14);
-  --font-display: "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif;
-  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Artifakt", "Aptos Display", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Artifakt", Aptos, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   --max: 1240px;
 }
 
@@ -266,7 +273,29 @@ img {
   padding-left: 18px;
 }
 
-.model-collage,
+.works-intro {
+  padding-bottom: 8px;
+  padding-top: clamp(34px, 5vw, 60px);
+}
+
+.works-intro h1 {
+  font-size: clamp(2.4rem, 5.5vw, 5.4rem);
+}
+
+.works-intro p {
+  font-size: clamp(0.94rem, 1.4vw, 1.05rem);
+  margin-bottom: 0;
+}
+
+.model-collage {
+  display: grid;
+  gap: clamp(12px, 1.6vw, 20px);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: 18px clamp(18px, 4vw, 42px) clamp(54px, 7vw, 92px);
+}
+
 .process-grid {
   display: grid;
   gap: clamp(10px, 1.4vw, 18px);
@@ -276,35 +305,47 @@ img {
   padding: 20px clamp(18px, 4vw, 42px) clamp(70px, 8vw, 116px);
 }
 
-.model-card {
-  background: #24221f;
-  border: 1px solid #312d28;
-  min-height: 330px;
+.work-project-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-rows: minmax(180px, 1fr) auto;
+  min-height: 315px;
   overflow: hidden;
-  position: relative;
 }
 
-.model-card.large {
-  grid-column: span 7;
-  min-height: 560px;
+.work-project-card:hover,
+.work-project-card:focus-within {
+  box-shadow: var(--shadow);
 }
 
-.model-card.medium {
-  grid-column: span 5;
-  min-height: 360px;
+.work-model-grid {
+  background:
+    linear-gradient(90deg, rgba(255, 253, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 253, 248, 0.04) 1px, transparent 1px),
+    #24221f;
+  background-size: 38px 38px;
+  display: grid;
+  gap: 1px;
+  height: clamp(190px, 22vw, 245px);
+  min-height: 190px;
 }
 
-.model-card.wide {
-  grid-column: span 8;
-  min-height: 360px;
+.work-model-grid.multi {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
 }
 
-.model-card.tall {
-  grid-column: span 4;
-  min-height: 480px;
+.work-model-grid.single {
+  grid-template-columns: 1fr;
 }
 
-.collage-model {
+.work-model-tile {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.work-model {
   background:
     linear-gradient(90deg, rgba(255, 253, 248, 0.04) 1px, transparent 1px),
     linear-gradient(0deg, rgba(255, 253, 248, 0.04) 1px, transparent 1px),
@@ -312,7 +353,22 @@ img {
   background-size: 38px 38px;
   display: block;
   height: 100%;
-  min-height: inherit;
+  min-height: 0;
+  width: 100%;
+}
+
+.work-model-placeholder {
+  align-content: end;
+  background:
+    linear-gradient(90deg, rgba(255, 253, 248, 0.13) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 253, 248, 0.13) 1px, transparent 1px),
+    linear-gradient(135deg, var(--tile-color), #24221f 62%, var(--orange-deep));
+  background-size: 34px 34px, 34px 34px, auto;
+  color: var(--white);
+  display: grid;
+  height: 100%;
+  min-height: 0;
+  padding: 20px;
   width: 100%;
 }
 
@@ -326,9 +382,13 @@ img {
   color: var(--white);
   display: grid;
   height: 100%;
-  min-height: inherit;
+  min-height: 0;
   padding: 28px;
   width: 100%;
+}
+
+.work-model .model-poster {
+  padding: 16px;
 }
 
 .model-poster span {
@@ -340,27 +400,42 @@ img {
 
 .model-poster strong {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 4.2rem);
-  font-weight: 500;
-  line-height: 0.94;
+  font-size: clamp(1.2rem, 2.2vw, 2.1rem);
+  font-weight: 750;
+  line-height: 1;
 }
 
-.work-tab {
-  background: rgba(255, 253, 248, 0.94);
-  bottom: 16px;
+.work-model .model-poster strong {
+  font-size: clamp(1rem, 1.7vw, 1.55rem);
+}
+
+.work-model-placeholder span {
+  color: #ffb182;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.work-model-placeholder strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.7vw, 2.4rem);
+  font-weight: 750;
+  line-height: 1;
+}
+
+.work-project-tab {
+  background: var(--white);
+  border-top: 1px solid var(--line);
   color: var(--ink);
   display: grid;
   gap: 2px;
-  left: 16px;
-  max-width: min(360px, calc(100% - 32px));
-  padding: 12px 14px 14px;
-  position: absolute;
+  min-height: 100px;
+  padding: 14px;
   text-decoration: none;
-  z-index: 2;
 }
 
-.work-tab span,
-.work-tab em {
+.work-project-tab span,
+.work-project-tab em {
   color: var(--orange-deep);
   font-size: 0.72rem;
   font-style: normal;
@@ -368,24 +443,25 @@ img {
   text-transform: uppercase;
 }
 
-.work-tab strong {
+.work-project-tab strong {
   font-family: var(--font-display);
-  font-size: clamp(1.55rem, 2.7vw, 2.8rem);
-  font-weight: 600;
-  line-height: 0.95;
+  font-size: clamp(1.4rem, 2.1vw, 2rem);
+  font-weight: 800;
+  line-height: 1;
+  overflow-wrap: anywhere;
 }
 
-.work-tab:hover,
-.work-tab:focus-visible {
+.work-project-tab:hover,
+.work-project-tab:focus-visible {
   background: var(--orange);
   color: var(--white);
   outline: 0;
 }
 
-.work-tab:hover span,
-.work-tab:hover em,
-.work-tab:focus-visible span,
-.work-tab:focus-visible em {
+.work-project-tab:hover span,
+.work-project-tab:hover em,
+.work-project-tab:focus-visible span,
+.work-project-tab:focus-visible em {
   color: var(--white);
 }
 
@@ -807,20 +883,24 @@ img {
 .detail-card-grid {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .detail-card {
   background: var(--white);
   border: 1px solid var(--line);
   display: grid;
+  grid-template-rows: 220px auto;
   min-height: 250px;
   overflow: hidden;
 }
 
 .detail-card img {
-  height: 180px;
-  object-fit: cover;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  height: 220px;
+  object-fit: contain;
+  padding: 8px;
   width: 100%;
 }
 
@@ -852,6 +932,7 @@ img {
 }
 
 .detail-card-copy {
+  align-content: start;
   display: grid;
   gap: 8px;
   padding: 16px;
@@ -988,6 +1069,21 @@ img {
   color: var(--white);
 }
 
+.resume-frame-wrap {
+  background: var(--white);
+  border: 1px solid var(--line);
+  height: min(760px, 78vh);
+  min-height: 460px;
+  overflow: hidden;
+}
+
+.resume-frame {
+  border: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 .linkedin-link {
   border-bottom: 2px solid var(--orange);
   color: var(--ink);
@@ -1003,6 +1099,10 @@ img {
 .linkedin-link:hover,
 .linkedin-link:focus-visible {
   color: var(--orange);
+}
+
+.linkedin-link.resume-link {
+  margin-top: 18px;
 }
 
 .about-photo-grid {
@@ -1093,10 +1193,6 @@ img {
   .collage-link.medium,
   .collage-link.wide,
   .collage-link.tall,
-  .model-card.large,
-  .model-card.medium,
-  .model-card.wide,
-  .model-card.tall,
   .process-card.large,
   .process-card.medium,
   .process-card.wide,
