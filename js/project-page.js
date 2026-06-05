@@ -9,19 +9,20 @@
 
   function renderRibbon(ribbon) {
     const prefix = ribbon.dataset.prefix || "";
-    const current = ribbon.dataset.current || pageRoot?.dataset.projectPage || "";
-    const projectLinks = projects
-      .map((project) => {
-        const aria = project.id === current ? ' aria-current="page"' : "";
-        return `<a href="${rootPath(project.page, prefix)}"${aria}>${project.title}</a>`;
+    const current = ribbon.dataset.current || (pageRoot ? "works" : "");
+    const links = [
+      { id: "works", href: "works.html", label: "Highlighted Works" },
+      { id: "process", href: "process.html", label: "Process" },
+      { id: "about", href: "about.html", label: "About Me" },
+      { id: "contact", href: "contact.html", label: "Contact" }
+    ];
+
+    ribbon.innerHTML = links
+      .map((link) => {
+        const aria = link.id === current ? ' aria-current="page"' : "";
+        return `<a href="${rootPath(link.href, prefix)}"${aria}>${link.label}</a>`;
       })
       .join("");
-
-    ribbon.innerHTML = [
-      `<a href="${rootPath("index.html#gallery", prefix)}">Gallery</a>`,
-      projectLinks,
-      `<a href="${rootPath("about.html", prefix)}"${current === "about" ? ' aria-current="page"' : ""}>About Me</a>`
-    ].join("");
   }
 
   function escapeAttribute(value) {

@@ -22,26 +22,6 @@ window.PORTFOLIO_PROJECTS = [
       embedUrl: "",
       projectUrl: ""
     },
-    processAssets: [
-      {
-        label: "Sketch",
-        title: "Connection detailing",
-        src: "assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 4.JPEG",
-        alt: "L Ranch hand sketch of connection detailing"
-      },
-      {
-        label: "Process",
-        title: "Coordination notes",
-        src: "assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 1.JPEG",
-        alt: "L Ranch coordination notes and drawing markups"
-      },
-      {
-        label: "Calculations",
-        title: "Selected design checks",
-        src: "assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 3.JPEG",
-        alt: "L Ranch selected hand calculation excerpt"
-      }
-    ],
     detailSheets: [
       {
         sheet: "S-400",
@@ -58,26 +38,12 @@ window.PORTFOLIO_PROJECTS = [
     ],
     galleryTiles: [
       {
-        label: "3D Structural Model",
+        label: "Trellis Model",
         size: "large"
       },
       {
-        label: "Connection Sketches",
-        size: "medium",
-        src: "assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 4.JPEG",
-        alt: "Hand sketch of L Ranch connection detailing"
-      },
-      {
-        label: "Coordination Notes",
-        size: "wide",
-        src: "assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 1.JPEG",
-        alt: "L Ranch coordination notes and detail sketches"
-      },
-      {
-        label: "Selected Calculations",
-        size: "tall",
-        src: "assets/project-assets/l-ranch/drawings/Portfolio pics 1 page 3.JPEG",
-        alt: "L Ranch hand calculation excerpt"
+        label: "S-400 / S-401 Detail Targets",
+        size: "medium"
       }
     ]
   },
@@ -415,5 +381,44 @@ window.PORTFOLIO_PROJECTS = [
         size: "medium"
       }
     ]
+  }
+];
+
+window.PORTFOLIO_PROCESS_ASSETS = [
+  {
+    label: "Coordination",
+    title: "Field and design notes",
+    src: "assets/process/sketches/coordination-notes-01.jpeg",
+    alt: "Handwritten structural coordination notes"
+  },
+  {
+    label: "Coordination",
+    title: "Load path notes",
+    src: "assets/process/sketches/coordination-notes-02.jpeg",
+    alt: "Handwritten load path and coordination notes"
+  },
+  {
+    label: "Calculation",
+    title: "Selected hand check",
+    src: "assets/process/sketches/hand-calculation-01.jpeg",
+    alt: "Structural hand calculation excerpt"
+  },
+  {
+    label: "Detailing",
+    title: "Connection study",
+    src: "assets/process/sketches/connection-detail-01.jpeg",
+    alt: "Hand sketch of a structural connection detail"
+  },
+  {
+    label: "Detailing",
+    title: "Wall condition",
+    src: "assets/process/sketches/wall-detail-01.jpeg",
+    alt: "Hand sketch of a wall structural detail"
+  },
+  {
+    label: "Study",
+    title: "Detail development",
+    src: "assets/process/sketches/detail-study-01.jpeg",
+    alt: "Hand sketch of detail development notes"
   }
 ];

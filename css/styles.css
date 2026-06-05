@@ -35,6 +35,10 @@ body {
   margin: 0;
 }
 
+.home-body {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
 }
@@ -94,6 +98,66 @@ img {
 
 .landing-name h1::first-line {
   font-weight: 400;
+}
+
+.home-shell {
+  min-height: 100svh;
+}
+
+.home-landing {
+  align-items: stretch;
+  grid-template-rows: 1fr auto;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+.home-landing .landing-name {
+  align-self: center;
+}
+
+.landing-tabs {
+  align-self: end;
+  border-left: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(28px, 7vh, 84px);
+  width: 100%;
+}
+
+.landing-tabs a {
+  border-right: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 12px;
+  min-height: clamp(108px, 18vh, 170px);
+  padding: clamp(16px, 2.4vw, 26px);
+  text-decoration: none;
+}
+
+.landing-tabs span {
+  color: var(--orange);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.landing-tabs strong {
+  align-self: end;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.7vw, 3rem);
+  font-weight: 500;
+  line-height: 0.98;
+}
+
+.landing-tabs a:hover,
+.landing-tabs a:focus-visible {
+  background: var(--orange);
+  color: var(--white);
+  outline: 0;
+}
+
+.landing-tabs a:hover span,
+.landing-tabs a:focus-visible span {
+  color: var(--white);
 }
 
 .enter-link {
@@ -172,12 +236,19 @@ img {
   min-height: 100vh;
 }
 
+.works-page,
+.process-page,
+.contact-page {
+  min-height: 100vh;
+}
+
 .gallery-intro {
   margin: 0 auto;
   max-width: var(--max);
   padding: clamp(52px, 7vw, 84px) clamp(18px, 4vw, 42px) 20px;
 }
 
+.gallery-intro h1,
 .gallery-intro h2 {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 7vw, 6.8rem);
@@ -193,6 +264,202 @@ img {
   font-size: clamp(1rem, 1.7vw, 1.24rem);
   max-width: 680px;
   padding-left: 18px;
+}
+
+.model-collage,
+.process-grid {
+  display: grid;
+  gap: clamp(10px, 1.4vw, 18px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: 20px clamp(18px, 4vw, 42px) clamp(70px, 8vw, 116px);
+}
+
+.model-card {
+  background: #24221f;
+  border: 1px solid #312d28;
+  min-height: 330px;
+  overflow: hidden;
+  position: relative;
+}
+
+.model-card.large {
+  grid-column: span 7;
+  min-height: 560px;
+}
+
+.model-card.medium {
+  grid-column: span 5;
+  min-height: 360px;
+}
+
+.model-card.wide {
+  grid-column: span 8;
+  min-height: 360px;
+}
+
+.model-card.tall {
+  grid-column: span 4;
+  min-height: 480px;
+}
+
+.collage-model {
+  background:
+    linear-gradient(90deg, rgba(255, 253, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 253, 248, 0.04) 1px, transparent 1px),
+    #24221f;
+  background-size: 38px 38px;
+  display: block;
+  height: 100%;
+  min-height: inherit;
+  width: 100%;
+}
+
+.model-poster {
+  align-content: end;
+  background:
+    linear-gradient(90deg, rgba(255, 253, 248, 0.13) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 253, 248, 0.13) 1px, transparent 1px),
+    linear-gradient(135deg, var(--tile-color), #24221f 62%, var(--orange-deep));
+  background-size: 34px 34px, 34px 34px, auto;
+  color: var(--white);
+  display: grid;
+  height: 100%;
+  min-height: inherit;
+  padding: 28px;
+  width: 100%;
+}
+
+.model-poster span {
+  color: #ffb182;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.model-poster strong {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  font-weight: 500;
+  line-height: 0.94;
+}
+
+.work-tab {
+  background: rgba(255, 253, 248, 0.94);
+  bottom: 16px;
+  color: var(--ink);
+  display: grid;
+  gap: 2px;
+  left: 16px;
+  max-width: min(360px, calc(100% - 32px));
+  padding: 12px 14px 14px;
+  position: absolute;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.work-tab span,
+.work-tab em {
+  color: var(--orange-deep);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.work-tab strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.7vw, 2.8rem);
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+.work-tab:hover,
+.work-tab:focus-visible {
+  background: var(--orange);
+  color: var(--white);
+  outline: 0;
+}
+
+.work-tab:hover span,
+.work-tab:hover em,
+.work-tab:focus-visible span,
+.work-tab:focus-visible em {
+  color: var(--white);
+}
+
+.process-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--white);
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+}
+
+.process-card.large {
+  grid-column: span 7;
+  min-height: 520px;
+}
+
+.process-card.medium {
+  grid-column: span 5;
+  min-height: 350px;
+}
+
+.process-card.wide {
+  grid-column: span 8;
+  min-height: 340px;
+}
+
+.process-card.tall {
+  grid-column: span 4;
+  min-height: 470px;
+}
+
+.process-card img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.process-card::after {
+  background: linear-gradient(0deg, rgba(31, 29, 26, 0.78), rgba(31, 29, 26, 0.02));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.process-tab {
+  bottom: 16px;
+  display: grid;
+  gap: 3px;
+  left: 16px;
+  position: absolute;
+  right: 16px;
+  z-index: 1;
+}
+
+.process-tab small {
+  color: #ffb182;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.process-tab strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 3rem);
+  font-weight: 500;
+  line-height: 0.96;
+}
+
+.process-method {
+  border-top: 1px solid var(--line);
 }
 
 .collage-grid {
@@ -671,6 +938,56 @@ img {
   align-items: center;
 }
 
+.contact-hero {
+  align-items: center;
+}
+
+.contact-panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  display: grid;
+}
+
+.contact-panel a {
+  display: grid;
+  gap: 8px;
+  min-height: 190px;
+  padding: clamp(22px, 4vw, 38px);
+  text-decoration: none;
+}
+
+.contact-panel a + a {
+  border-top: 1px solid var(--line);
+}
+
+.contact-panel span {
+  color: var(--orange);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.contact-panel strong {
+  align-self: end;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3vw, 3.6rem);
+  font-weight: 500;
+  line-height: 0.96;
+  overflow-wrap: anywhere;
+}
+
+.contact-panel a:hover,
+.contact-panel a:focus-visible {
+  background: var(--orange);
+  color: var(--white);
+  outline: 0;
+}
+
+.contact-panel a:hover span,
+.contact-panel a:focus-visible span {
+  color: var(--white);
+}
+
 .linkedin-link {
   border-bottom: 2px solid var(--orange);
   color: var(--ink);
@@ -775,7 +1092,15 @@ img {
   .collage-link.large,
   .collage-link.medium,
   .collage-link.wide,
-  .collage-link.tall {
+  .collage-link.tall,
+  .model-card.large,
+  .model-card.medium,
+  .model-card.wide,
+  .model-card.tall,
+  .process-card.large,
+  .process-card.medium,
+  .process-card.wide,
+  .process-card.tall {
     grid-column: span 12;
     min-height: 330px;
   }
@@ -791,8 +1116,24 @@ img {
 }
 
 @media (max-width: 640px) {
+  .home-body {
+    overflow: auto;
+  }
+
+  .home-landing {
+    min-height: 100svh;
+  }
+
   .landing-name h1 {
     font-size: clamp(3.6rem, 22vw, 7rem);
+  }
+
+  .landing-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-tabs a {
+    min-height: 82px;
   }
 
   .asset-strip,

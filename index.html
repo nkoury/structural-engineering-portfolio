@@ -15,42 +15,34 @@
     />
     <meta name="theme-color" content="#f7f3eb" />
     <link rel="stylesheet" href="css/styles.css" />
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.0/model-viewer.min.js"></script>
   </head>
-  <body>
-    <main>
-      <section class="landing" id="top" aria-labelledby="site-title">
+  <body class="home-body">
+    <main class="home-shell">
+      <section class="landing home-landing" id="top" aria-labelledby="site-title">
         <div class="landing-name">
           <p>Structural Engineering Portfolio</p>
           <h1 id="site-title">Noah Koury</h1>
         </div>
-        <a class="enter-link" href="#gallery">Enter</a>
-      </section>
 
-      <section class="gallery-page" id="gallery" aria-labelledby="gallery-title">
-        <header class="project-ribbon" aria-label="Project navigation">
-          <a class="ribbon-brand" href="#top">Noah Koury</a>
-          <nav data-project-ribbon></nav>
-        </header>
-
-        <div class="gallery-intro">
-          <h2 id="gallery-title">Selected Work</h2>
-          <p>
-            Structural case studies organized through model views, drawing excerpts, analysis visuals,
-            calculation evidence, and concise scope narratives.
-          </p>
-        </div>
-
-        <div class="collage-grid" data-collage-grid></div>
+        <nav class="landing-tabs" aria-label="Primary navigation">
+          <a href="works.html">
+            <span>01</span>
+            <strong>Highlighted Works</strong>
+          </a>
+          <a href="process.html">
+            <span>02</span>
+            <strong>Process</strong>
+          </a>
+          <a href="about.html">
+            <span>03</span>
+            <strong>About Me</strong>
+          </a>
+          <a href="contact.html">
+            <span>04</span>
+            <strong>Contact</strong>
+          </a>
+        </nav>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <p>&copy; <span data-current-year></span> Noah Koury</p>
-      <a href="mailto:your.email@example.com">Contact</a>
-    </footer>
-
-    <script src="js/projects.js"></script>
-    <script src="js/main.js"></script>
   </body>
 </html>
