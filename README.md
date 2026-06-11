@@ -10,14 +10,17 @@ FEA captures, calculation excerpts, site photos, and personal photos.
 - `works.html` is the compact highlighted-works index with one card per project.
 - `process.html` is the shared sketch, calculation, and detail-development gallery.
 - `contact.html` includes contact links and the embedded resume PDF.
+- `content-editor.html` is a no-code editor for page and project text.
 - `projects/l-ranch.html` is the L Ranch case study page with an active GLB model viewer.
 - `projects/*.html` are data-driven project case study pages.
 - `about.html` is the About Me page with LinkedIn and personal-photo slots.
 - `css/styles.css` contains the full visual system and responsive layout.
-- `js/projects.js` controls the project names, gallery tiles, page links, and model metadata.
+- `js/content.js` contains editable page and project copy.
+- `js/projects.js` controls project ids, page links, model paths, and asset metadata.
 - `js/main.js` renders the highlighted-works cards and process gallery from project data.
 - `js/project-page.js` renders project pages, model switching, detail cards, and optional SwiftXR embeds.
 - `docs/asset-intake.md` explains how to prepare public-safe project assets.
+- `docs/content-editing.md` explains how to update text without coding.
 - `docs/swiftxr-workflow.md` explains the SwiftXR/U3D workflow.
 - `docs/detail-extraction-workflow.md` explains the redacted PDF/detail extraction workflow.
 
@@ -77,7 +80,9 @@ by Git. Use `drawings/details/` for public redacted sheet previews and detail ic
 
 ## Updating Projects
 
-For the landing gallery, edit `js/projects.js`.
+For text changes, open `content-editor.html` and save or download the updated `js/content.js`.
+
+For asset, model, and path changes, edit `js/projects.js`.
 
 For detailed project narratives, edit:
 

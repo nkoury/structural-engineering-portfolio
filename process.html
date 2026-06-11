@@ -11,16 +11,16 @@
     <meta name="theme-color" content="#f7f3eb" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body data-page="process">
     <header class="project-ribbon" aria-label="Portfolio navigation">
-      <a class="ribbon-brand" href="index.html#top">Noah Koury</a>
+      <a class="ribbon-brand" href="index.html#top" data-content="global.ownerName">Noah Koury</a>
       <nav data-project-ribbon data-current="process"></nav>
     </header>
 
     <main class="process-page" aria-labelledby="process-title">
       <section class="gallery-intro process-intro">
-        <h1 id="process-title">Process</h1>
-        <p>
+        <h1 id="process-title" data-content="pages.process.title">Process</h1>
+        <p data-content="pages.process.intro">
           Hand sketches, calculation excerpts, coordination notes, and drawing-detail targets that
           show how structural decisions are developed before they become finished documents.
         </p>
@@ -29,14 +29,16 @@
       <section class="process-grid" data-process-grid aria-label="Process asset gallery"></section>
 
       <section class="project-section process-method">
-        <h2>Drawing Details</h2>
+        <h2 data-content="pages.process.drawingDetailsTitle">Drawing Details</h2>
         <div>
-          <p>
-            PDF drawing sets remain private until address-redacted detail crops are prepared. The
-            current project pages already map the target sheets so S4.00, S-400, S-401, and related
-            sheets can become individual public-safe detail images.
-          </p>
-          <ul class="detail-list">
+          <div data-content-paragraphs="pages.process.drawingDetailsParagraphs">
+            <p>
+              PDF drawing sets remain private until address-redacted detail crops are prepared. The
+              current project pages already map the target sheets so S4.00, S-400, S-401, and related
+              sheets can become individual public-safe detail images.
+            </p>
+          </div>
+          <ul class="detail-list" data-content-list="pages.process.drawingDetailsSteps">
             <li><strong>Redact</strong><span>Remove addresses, title-block identifiers, and client-sensitive notes before export.</span></li>
             <li><strong>Crop</strong><span>Pull key connections, foundation conditions, and framing details into individual image assets.</span></li>
             <li><strong>Assign</strong><span>Attach each detail crop back to the relevant project page with a short design note.</span></li>
@@ -46,11 +48,13 @@
     </main>
 
     <footer class="site-footer">
-      <p>&copy; <span data-current-year></span> Noah Koury</p>
-      <a href="contact.html">Contact</a>
+      <p>&copy; <span data-current-year></span> <span data-content="global.ownerName">Noah Koury</span></p>
+      <a href="contact.html" data-content="global.footerContactLabel">Contact</a>
     </footer>
 
     <script src="js/projects.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/content-loader.js"></script>
     <script src="js/project-page.js"></script>
     <script src="js/main.js"></script>
   </body>

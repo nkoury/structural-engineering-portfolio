@@ -11,34 +11,41 @@
     <meta name="theme-color" content="#f7f3eb" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body data-page="about">
     <header class="project-ribbon" aria-label="Portfolio navigation">
-      <a class="ribbon-brand" href="index.html#top">Noah Koury</a>
+      <a class="ribbon-brand" href="index.html#top" data-content="global.ownerName">Noah Koury</a>
       <nav data-project-ribbon data-current="about"></nav>
     </header>
 
     <main class="project-page about-page">
       <section class="project-hero about-hero">
         <div class="project-title">
-          <p class="project-kicker">About Me</p>
-          <h1>Noah Koury</h1>
-          <p>
+          <p class="project-kicker" data-content="pages.about.kicker">About Me</p>
+          <h1 data-content="pages.about.title">Noah Koury</h1>
+          <p data-content="pages.about.intro">
             Structural engineer focused on careful modeling, clear documentation, and design decisions
             that can be explained through drawings, calculations, and the built work.
           </p>
-          <a class="linkedin-link" href="https://www.linkedin.com/in/noah-koury" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a
+            class="linkedin-link"
+            href="https://www.linkedin.com/in/noah-koury"
+            data-content-href="pages.about.linkedinUrl"
+            data-content="pages.about.linkedinLabel"
+            target="_blank"
+            rel="noreferrer"
+          >LinkedIn</a>
         </div>
         <div class="about-photo-grid" aria-label="About Noah photo gallery">
-          <div class="about-photo portrait"><span>Portrait</span></div>
-          <div class="about-photo field"><span>Field</span></div>
-          <div class="about-photo pursuit"><span>Pursuit</span></div>
+          <div class="about-photo portrait"><span data-content="pages.about.photoLabels.portrait">Portrait</span></div>
+          <div class="about-photo field"><span data-content="pages.about.photoLabels.field">Field</span></div>
+          <div class="about-photo pursuit"><span data-content="pages.about.photoLabels.pursuit">Pursuit</span></div>
         </div>
       </section>
 
       <div class="project-body">
         <section class="project-section">
-          <h2>Personal Pursuits</h2>
-          <div>
+          <h2 data-content="pages.about.personalPursuitsTitle">Personal Pursuits</h2>
+          <div data-content-paragraphs="pages.about.personalPursuitsParagraphs">
             <p>
               Outside of project work, I'm drawn to pursuits that reward patience, judgment, craft, and
               time outside. This page will pair those parts of my life with photos that make the portfolio
@@ -52,9 +59,9 @@
         </section>
 
         <section class="project-section">
-          <h2>Engineering Approach</h2>
+          <h2 data-content="pages.about.engineeringApproachTitle">Engineering Approach</h2>
           <div>
-            <ul class="detail-list">
+            <ul class="detail-list" data-content-list="pages.about.engineeringApproachItems">
               <li><strong>Process</strong><span>Start with constraints, then make the load path and assumptions visible.</span></li>
               <li><strong>Communication</strong><span>Use clear drawings, model views, and selected calculations to show decisions.</span></li>
               <li><strong>Judgment</strong><span>Balance performance, constructability, cost, and the architectural intent.</span></li>
@@ -65,6 +72,8 @@
     </main>
 
     <script src="js/projects.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/content-loader.js"></script>
     <script src="js/project-page.js"></script>
   </body>
 </html>

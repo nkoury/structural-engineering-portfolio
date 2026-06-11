@@ -1200,6 +1200,146 @@ img {
   padding-left: 14px;
 }
 
+.editor-body {
+  background: var(--paper);
+}
+
+.content-editor-shell {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: clamp(22px, 4vw, 48px);
+}
+
+.content-editor-header {
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  padding-bottom: 22px;
+}
+
+.content-editor-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+}
+
+.editor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.editor-actions button,
+.editor-file-button {
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  color: var(--white);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 900;
+  min-height: 40px;
+  padding: 10px 12px;
+  text-transform: uppercase;
+}
+
+.editor-actions button:hover,
+.editor-actions button:focus-visible,
+.editor-file-button:hover,
+.editor-file-button:focus-visible {
+  background: var(--orange);
+  border-color: var(--orange);
+  outline: 0;
+}
+
+.editor-file-button input {
+  display: none;
+}
+
+.editor-status {
+  color: var(--orange-deep);
+  font-size: 0.86rem;
+  font-weight: 850;
+  margin: 16px 0 0;
+  text-transform: uppercase;
+}
+
+.content-editor-form {
+  display: grid;
+  gap: 18px;
+  padding-top: 22px;
+}
+
+.editor-section,
+.editor-fieldset,
+.editor-nested {
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.editor-section {
+  background: var(--white);
+}
+
+.editor-section h2,
+.editor-fieldset legend,
+.editor-nested legend {
+  color: var(--orange-deep);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.editor-fieldset,
+.editor-nested {
+  background: rgba(247, 243, 235, 0.55);
+}
+
+.editor-field {
+  display: grid;
+  gap: 6px;
+}
+
+.editor-field span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.editor-field input,
+.editor-field textarea {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  padding: 10px 11px;
+  width: 100%;
+}
+
+.editor-field textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.editor-field input:focus,
+.editor-field textarea:focus {
+  border-color: var(--orange);
+  outline: 1px solid var(--orange);
+}
+
 @media (max-width: 1100px) {
   .project-hero {
     grid-template-columns: 1fr;

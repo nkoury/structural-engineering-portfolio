@@ -16,33 +16,35 @@
     <meta name="theme-color" content="#f7f3eb" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body class="home-body">
+  <body class="home-body" data-page="home">
     <main class="home-shell">
       <section class="landing home-landing" id="top" aria-labelledby="site-title">
         <div class="landing-name">
-          <p>Structural Engineering Portfolio</p>
-          <h1 id="site-title">Noah Koury</h1>
+          <p data-content="pages.home.eyebrow">Structural Engineering Portfolio</p>
+          <h1 id="site-title" data-content="pages.home.title">Noah Koury</h1>
         </div>
 
         <nav class="landing-tabs" aria-label="Primary navigation">
           <a href="works.html">
             <span>01</span>
-            <strong>Highlighted Works</strong>
+            <strong data-content="pages.home.tabs.works">Highlighted Works</strong>
           </a>
           <a href="process.html">
             <span>02</span>
-            <strong>Process</strong>
+            <strong data-content="pages.home.tabs.process">Process</strong>
           </a>
           <a href="about.html">
             <span>03</span>
-            <strong>About Me</strong>
+            <strong data-content="pages.home.tabs.about">About Me</strong>
           </a>
           <a href="contact.html">
             <span>04</span>
-            <strong>Contact</strong>
+            <strong data-content="pages.home.tabs.contact">Contact</strong>
           </a>
         </nav>
       </section>
     </main>
+    <script src="js/content.js"></script>
+    <script src="js/content-loader.js"></script>
   </body>
 </html>

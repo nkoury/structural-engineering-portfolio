@@ -1,7 +1,16 @@
 (function () {
   const projects = window.PORTFOLIO_PROJECTS || [];
+  const content = window.PORTFOLIO_CONTENT || {};
   const pageRoot = document.querySelector("[data-project-page]");
   const ribbons = document.querySelectorAll("[data-project-ribbon]");
+
+  function getCopy(path, fallback) {
+    const value = path.split(".").reduce((current, part) => {
+      if (current === undefined || current === null) return undefined;
+      return current[part];
+    }, content);
+    return value === undefined || value === null ? fallback : value;
+  }
 
   function rootPath(path, prefix) {
     return `${prefix || ""}${path}`;
@@ -10,11 +19,12 @@
   function renderRibbon(ribbon) {
     const prefix = ribbon.dataset.prefix || "";
     const current = ribbon.dataset.current || (pageRoot ? "works" : "");
+    const nav = content.global?.nav || {};
     const links = [
-      { id: "works", href: "works.html", label: "Highlighted Works" },
-      { id: "process", href: "process.html", label: "Process" },
-      { id: "about", href: "about.html", label: "About Me" },
-      { id: "contact", href: "contact.html", label: "Contact" }
+      { id: "works", href: "works.html", label: nav.works || "Highlighted Works" },
+      { id: "process", href: "process.html", label: nav.process || "Process" },
+      { id: "about", href: "about.html", label: nav.about || "About Me" },
+      { id: "contact", href: "contact.html", label: nav.contact || "Contact" }
     ];
 
     ribbon.innerHTML = links
@@ -40,7 +50,7 @@
       return `
         <div class="project-visual-placeholder" style="--tile-color: ${project.color}">
           <span class="project-kicker">${project.title}</span>
-          <strong>Project image sequence</strong>
+          <strong>${getCopy("projectPage.placeholderTitle", "Project image sequence")}</strong>
         </div>
       `;
     }
@@ -73,7 +83,7 @@
           environment-image="neutral"
         ></model-viewer>
         ${buttons}
-        <a class="model-download" href="../${primary.src}">Open model file</a>
+        <a class="model-download" href="../${primary.src}">${getCopy("projectPage.modelDownloadLabel", "Open model file")}</a>
       </div>
     `;
   }
@@ -87,11 +97,13 @@
 
     return `
       <section class="project-section">
-        <h2>Drawing Details</h2>
+        <h2>${getCopy("projectPage.drawingDetailsTitle", "Drawing Details")}</h2>
         <div>
           <p>
-            Redacted detail crops isolate selected structural conditions from the target sheets.
-            Full drawing sets remain private while these public-safe excerpts support the project story.
+            ${getCopy(
+              "projectPage.drawingDetailsIntro",
+              "Redacted detail crops isolate selected structural conditions from the target sheets. Full drawing sets remain private while these public-safe excerpts support the project story."
+            )}
           </p>
           <div class="detail-card-grid">
             ${details
@@ -127,11 +139,13 @@
 
     return `
       <section class="project-section">
-        <h2>Process Evidence</h2>
+        <h2>${getCopy("projectPage.processEvidenceTitle", "Process Evidence")}</h2>
         <div>
           <p>
-            Selected sketches, coordination notes, and calculation excerpts give the project page a
-            process layer beyond finished drawings and model views.
+            ${getCopy(
+              "projectPage.processEvidenceIntro",
+              "Selected sketches, coordination notes, and calculation excerpts give the project page a process layer beyond finished drawings and model views."
+            )}
           </p>
           <div class="asset-strip">
             ${project.processAssets
@@ -158,7 +172,7 @@
 
     return `
       <section class="project-section">
-        <h2>Hosted Model</h2>
+        <h2>${getCopy("projectPage.hostedModelTitle", "Hosted Model")}</h2>
         <div class="swiftxr-stage">
           <iframe
             class="swiftxr-frame"
@@ -183,8 +197,8 @@
       pageRoot.innerHTML = `
         <section class="project-hero">
           <div class="project-title">
-            <p class="project-kicker">Missing Project</p>
-            <h1>Project not found</h1>
+            <p class="project-kicker">${getCopy("projectPage.missingKicker", "Missing Project")}</p>
+            <h1>${getCopy("projectPage.missingTitle", "Project not found")}</h1>
           </div>
         </section>
       `;
@@ -205,13 +219,19 @@
 
       <div class="project-body">
         <section class="project-section">
-          <h2>Project Type</h2>
+          <h2>${getCopy("projectPage.projectTypeTitle", "Project Type")}</h2>
           <div>
             <p>${project.scope}</p>
             <ul class="detail-list">
-              <li><strong>System</strong><span>${project.system}</span></li>
-              <li><strong>Primary Media</strong><span>Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence.</span></li>
-              <li><strong>Status</strong><span>Public-facing model paths are active; detail crops are staged for address-redacted extraction.</span></li>
+              <li><strong>${getCopy("projectPage.systemLabel", "System")}</strong><span>${project.system}</span></li>
+              <li><strong>${getCopy("projectPage.primaryMediaLabel", "Primary Media")}</strong><span>${getCopy(
+                "projectPage.primaryMediaValue",
+                "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence."
+              )}</span></li>
+              <li><strong>${getCopy("projectPage.statusLabel", "Status")}</strong><span>${getCopy(
+                "projectPage.statusValue",
+                "Public-facing model paths are active; detail crops are staged for address-redacted extraction."
+              )}</span></li>
             </ul>
           </div>
         </section>
@@ -221,12 +241,13 @@
         ${renderSwiftXR(project)}
 
         <section class="project-section">
-          <h2>Scope Narrative</h2>
+          <h2>${getCopy("projectPage.scopeNarrativeTitle", "Scope Narrative")}</h2>
           <div>
             <p>
-              This section is reserved for the final written story: what the design team needed,
-              what constraints shaped the structure, what you modeled or calculated, and which
-              details best demonstrate your engineering judgment.
+              ${project.scopeNarrative || getCopy(
+                "projectPage.scopeNarrativeBody",
+                "This section is reserved for the final written story: what the design team needed, what constraints shaped the structure, what you modeled or calculated, and which details best demonstrate your engineering judgment."
+              )}
             </p>
           </div>
         </section>
