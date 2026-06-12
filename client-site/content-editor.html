@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Client Site Content Editor | Noah Koury</title>
+    <meta
+      name="description"
+      content="Local content editor for the Noah Koury structural engineering portfolio."
+    />
+    <meta name="theme-color" content="#f7f3eb" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="editor-body">
+    <main class="content-editor-shell">
+      <header class="content-editor-header">
+        <div>
+          <p class="project-kicker">Portfolio Editor</p>
+          <h1>Client Site Content</h1>
+        </div>
+        <div class="editor-actions" aria-label="Content editor actions">
+          <label class="editor-file-button">
+            Import content.js
+            <input type="file" accept=".js,.json" data-import-content />
+          </label>
+          <button type="button" data-save-content>Save content.js</button>
+          <button type="button" data-download-content>Download content.js</button>
+          <button type="button" data-copy-content>Copy</button>
+        </div>
+      </header>
+
+      <p class="editor-status" data-editor-status>Ready.</p>
+      <form class="content-editor-form" data-content-editor></form>
+    </main>
+
+    <script src="js/content.js"></script>
+    <script src="js/content-editor.js"></script>
+  </body>
+</html>

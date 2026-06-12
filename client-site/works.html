@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Highlighted Works | Noah Koury</title>
+    <meta
+      name="description"
+      content="Highlighted structural engineering works by Noah Koury, shown through interactive 3D model views and project links."
+    />
+    <meta name="theme-color" content="#f7f3eb" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.0/model-viewer.min.js"></script>
+  </head>
+  <body data-page="works">
+    <header class="project-ribbon" aria-label="Portfolio navigation">
+      <a class="ribbon-brand" href="index.html#top" data-content="global.ownerName">Noah Koury</a>
+      <nav data-project-ribbon data-current="works"></nav>
+    </header>
+
+    <main class="works-page" aria-labelledby="works-title">
+      <section class="gallery-intro works-intro">
+        <h1 id="works-title" data-content="pages.works.title">Highlighted Works</h1>
+        <p data-content="pages.works.intro">
+          Interactive structural model views collected as a visual index. Each tab opens a project
+          page for scope, design elements, detail targets, and written project context.
+        </p>
+      </section>
+
+      <section class="model-collage" data-model-collage aria-label="3D model collage"></section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-current-year></span> <span data-content="global.ownerName">Noah Koury</span></p>
+      <a href="contact.html" data-content="global.footerContactLabel">Contact</a>
+    </footer>
+
+    <script src="js/projects.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/content-loader.js"></script>
+    <script src="js/project-page.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

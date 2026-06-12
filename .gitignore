@@ -13,3 +13,11 @@ assets/project-assets/**/*_backup/
 assets/project-assets/**/*.u3d
 assets/project-assets/**/source-private/
 assets/project-assets/**/drawings/source-private/
+client-site/assets/project-assets/**/*.rvt
+client-site/assets/project-assets/**/*_backup/
+client-site/assets/project-assets/**/*.u3d
+client-site/assets/project-assets/**/source-private/
+client-site/assets/project-assets/**/drawings/source-private/
+client-site/assets/process/
+client-site/assets/resume/
+client-site/assets/

@@ -7,6 +7,7 @@ FEA captures, calculation excerpts, site photos, and personal photos.
 ## Current Site Structure
 
 - `index.html` is the navigation-only landing page.
+- `client-site/` is a separate simplified version without Process navigation or resume content.
 - `works.html` is the compact highlighted-works index with one card per project.
 - `process.html` is the shared sketch, calculation, and detail-development gallery.
 - `contact.html` includes contact links and the embedded resume PDF.
