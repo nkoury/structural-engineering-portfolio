@@ -1064,18 +1064,40 @@ body[data-page="about"] .project-title h1 {
   align-items: center;
 }
 
-.contact-hero {
-  align-items: center;
-}
-
 .contact-layout {
-  align-items: stretch;
-  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+  align-items: start;
+  display: grid;
+  gap: clamp(32px, 6vw, 100px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: clamp(58px, 7vw, 92px) clamp(18px, 4vw, 42px) clamp(70px, 8vw, 118px);
 }
 
-.contact-layout .project-title h1 {
-  max-width: 7.2em;
-  overflow-wrap: normal;
+.contact-heading {
+  border-bottom: 1px solid var(--line);
+  grid-column: 1 / -1;
+  padding-bottom: 10px;
+}
+
+.contact-heading h1 {
+  font-family: var(--font-body);
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.contact-intro {
+  max-width: 640px;
+}
+
+.contact-intro p {
+  border-left: 2px solid var(--orange);
+  color: var(--muted);
+  font-size: clamp(1rem, 1.45vw, 1.15rem);
+  margin: 0;
+  padding-left: 18px;
 }
 
 .contact-panel {
@@ -1449,16 +1471,16 @@ body[data-page="about"] .project-title h1 {
     grid-template-columns: 1fr;
   }
 
-  .contact-layout .project-title h1 {
-    max-width: 100%;
-  }
-
   .project-title h1 {
     font-size: clamp(2.9rem, 10vw, 6.1rem);
   }
 }
 
 @media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
   .project-section {
     grid-template-columns: 1fr;
   }

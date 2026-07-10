@@ -70,7 +70,7 @@ window.PORTFOLIO_CONTENT = {
                                   "metaTitle":  "Contact | Noah Koury",
                                   "metaDescription":  "Contact Noah Koury for structural engineering portfolio inquiries and project conversations.",
                                   "kicker":  "Contact",
-                                  "title":  "Start a Conversation",
+                                  "title":  "Connect",
                                   "intro":  "Use this page for prospective clients, architects, builders, and collaborators who want to discuss structural scope, model review, drawing coordination, or engineering support.",
                                   "emailLabel":  "Email",
                                   "email":  "noahkoury1@gmail.com",
