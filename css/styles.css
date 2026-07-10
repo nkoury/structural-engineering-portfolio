@@ -1,13 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&display=swap");
-
-@font-face {
-  font-display: swap;
-  font-family: "Artifakt";
-  src:
-    local("Artifakt Element"),
-    local("Artifakt"),
-    local("Artifakt Legend");
-}
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
 
 :root {
   --paper: #f7f3eb;
@@ -23,7 +14,7 @@
   --steel: #5f6769;
   --amber: #c58d34;
   --shadow: 0 22px 70px rgba(31, 29, 26, 0.14);
-  --font-display: "Artifakt", "Aptos Display", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "IBM Plex Sans", "Aptos Display", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   --font-body: "IBM Plex Sans", Aptos, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   --max: 1240px;
 }
