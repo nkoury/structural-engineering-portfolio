@@ -152,7 +152,7 @@ h6,
   align-self: end;
   border-left: 1px solid var(--line);
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 0;
   width: 100%;
 }
@@ -1376,6 +1376,42 @@ h6,
 .editor-field textarea:focus {
   border-color: var(--orange);
   outline: 1px solid var(--orange);
+}
+
+.editor-image-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.editor-image-tools button {
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--orange-deep);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 900;
+  min-height: 40px;
+  padding: 10px 12px;
+  text-transform: uppercase;
+}
+
+.editor-image-preview {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  max-width: 320px;
+  padding: 8px;
+}
+
+.editor-image-preview[hidden] {
+  display: none;
+}
+
+.editor-image-preview img {
+  max-height: 180px;
+  object-fit: contain;
+  width: 100%;
 }
 
 @media (max-width: 1100px) {

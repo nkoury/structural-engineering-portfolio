@@ -4,6 +4,7 @@ window.PORTFOLIO_CONTENT = {
     "portfolioLabel": "Structural Engineering Portfolio",
     "nav": {
       "works": "Highlighted Works",
+      "process": "Process",
       "about": "About Me",
       "contact": "Contact"
     },
@@ -17,6 +18,7 @@ window.PORTFOLIO_CONTENT = {
       "title": "Noah Koury",
       "tabs": {
         "works": "Highlighted Works",
+        "process": "Process",
         "about": "About Me",
         "contact": "Contact"
       }
@@ -26,6 +28,30 @@ window.PORTFOLIO_CONTENT = {
       "metaDescription": "Highlighted structural engineering works by Noah Koury, shown through interactive 3D model views and project links.",
       "title": "Highlighted Works",
       "intro": "Interactive structural model views collected as a visual index. Each tab opens a project page for scope, design elements, detail targets, and written project context."
+    },
+    "process": {
+      "metaTitle": "Process | Noah Koury",
+      "metaDescription": "Structural engineering process evidence for Noah Koury, including sketches, calculations, coordination notes, and drawing-detail workflows.",
+      "title": "Process",
+      "intro": "Hand sketches, calculation excerpts, coordination notes, and drawing-detail targets that show how structural decisions are developed before they become finished documents.",
+      "drawingDetailsTitle": "Drawing Details",
+      "drawingDetailsParagraphs": [
+        "PDF drawing sets remain private until address-redacted detail crops are prepared. The current project pages already map the target sheets so S4.00, S-400, S-401, and related sheets can become individual public-safe detail images."
+      ],
+      "drawingDetailsSteps": [
+        {
+          "label": "Redact",
+          "text": "Remove addresses, title-block identifiers, and client-sensitive notes before export."
+        },
+        {
+          "label": "Crop",
+          "text": "Pull key connections, foundation conditions, and framing details into individual image assets."
+        },
+        {
+          "label": "Assign",
+          "text": "Attach each detail crop back to the relevant project page with a short design note."
+        }
+      ]
     },
     "about": {
       "metaTitle": "About Me | Noah Koury",
@@ -71,7 +97,10 @@ window.PORTFOLIO_CONTENT = {
       "email": "noahkoury1@gmail.com",
       "linkedinLabel": "LinkedIn",
       "linkedinName": "Noah Koury",
-      "linkedinUrl": "https://www.linkedin.com/in/noah-koury"
+      "linkedinUrl": "https://www.linkedin.com/in/noah-koury",
+      "resumeTitle": "Resume",
+      "resumeIntro": "A current resume is embedded here for quick review, with the PDF available directly for download or opening in a separate tab.",
+      "resumeLinkLabel": "Open Resume PDF"
     }
   },
   "projectPage": {
@@ -81,11 +110,13 @@ window.PORTFOLIO_CONTENT = {
     "modelDownloadLabel": "Open model file",
     "drawingDetailsTitle": "Drawing Details",
     "drawingDetailsIntro": "Redacted detail crops isolate selected structural conditions from the target sheets. Full drawing sets remain private while these public-safe excerpts support the project story.",
+    "processEvidenceTitle": "Process Evidence",
+    "processEvidenceIntro": "Selected sketches, coordination notes, and calculation excerpts give the project page a process layer beyond finished drawings and model views.",
     "hostedModelTitle": "Hosted Model",
     "projectTypeTitle": "Project Type",
     "systemLabel": "System",
     "primaryMediaLabel": "Primary Media",
-    "primaryMediaValue": "Interactive GLB model views, redacted drawing detail targets, and selected calculation evidence.",
+    "primaryMediaValue": "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence.",
     "statusLabel": "Status",
     "statusValue": "Public-facing model paths are active; detail crops are staged for address-redacted extraction.",
     "scopeNarrativeTitle": "Scope Narrative",
@@ -404,5 +435,37 @@ window.PORTFOLIO_CONTENT = {
         }
       ]
     }
-  }
+  },
+  "processAssets": [
+    {
+      "label": "Coordination",
+      "title": "Field and design notes",
+      "alt": "Handwritten structural coordination notes"
+    },
+    {
+      "label": "Coordination",
+      "title": "Load path notes",
+      "alt": "Handwritten load path and coordination notes"
+    },
+    {
+      "label": "Calculation",
+      "title": "Selected hand check",
+      "alt": "Structural hand calculation excerpt"
+    },
+    {
+      "label": "Detailing",
+      "title": "Connection study",
+      "alt": "Hand sketch of a structural connection detail"
+    },
+    {
+      "label": "Detailing",
+      "title": "Wall condition",
+      "alt": "Hand sketch of a wall structural detail"
+    },
+    {
+      "label": "Study",
+      "title": "Detail development",
+      "alt": "Hand sketch of detail development notes"
+    }
+  ]
 };

@@ -95,12 +95,9 @@
 
       overlayArray(project.modelOptions, editable.modelOptions, ["label", "alt"]);
       overlayArray(project.detailSheets, editable.detailSheets, ["label", "note"]);
-      overlayArray(project.detailAssets, editable.detailAssets, ["label", "alt"]);
+      overlayArray(project.detailAssets, editable.detailAssets, ["label", "alt", "image"]);
       overlayArray(project.galleryTiles, editable.galleryTiles, ["label", "alt"]);
-      overlayArray(project.processAssets, editable.processAssets, ["label", "title", "alt"]);
     });
-
-    overlayArray(window.PORTFOLIO_PROCESS_ASSETS, content.processAssets, ["label", "title", "alt"]);
   }
 
   function applyEditableContent() {

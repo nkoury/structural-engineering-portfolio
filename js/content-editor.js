@@ -9,12 +9,10 @@
     ["global", "Global"],
     ["pages.home", "Landing Page"],
     ["pages.works", "Highlighted Works"],
-    ["pages.process", "Process Page"],
     ["pages.about", "About Me"],
     ["pages.contact", "Contact Page"],
     ["projectPage", "Shared Project Page Text"],
     ["projects", "Projects"],
-    ["processAssets", "Process Assets"]
   ];
 
   function getByPath(path) {
@@ -43,8 +41,85 @@
     );
   }
 
+  function isDetailImageField(path, key) {
+    return key === "image" && path.includes("detailAssets");
+  }
+
   function setStatus(message) {
     if (status) status.textContent = message;
+  }
+
+  function readFileAsDataUrl(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.addEventListener("load", () => resolve(reader.result));
+      reader.addEventListener("error", () => reject(reader.error));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function updateImagePreview(preview, value) {
+    if (!preview) return;
+    preview.innerHTML = "";
+
+    if (!value) {
+      preview.hidden = true;
+      return;
+    }
+
+    const image = document.createElement("img");
+    image.src = value;
+    image.alt = "Selected detail preview";
+    preview.appendChild(image);
+    preview.hidden = false;
+  }
+
+  function renderImageUpload(parent, path, input) {
+    const tools = document.createElement("div");
+    tools.className = "editor-image-tools";
+
+    const uploadLabel = document.createElement("label");
+    uploadLabel.className = "editor-file-button editor-image-upload";
+    uploadLabel.textContent = "Upload detail image";
+
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*";
+    uploadLabel.appendChild(fileInput);
+
+    const clearButton = document.createElement("button");
+    clearButton.type = "button";
+    clearButton.textContent = "Clear image";
+
+    tools.append(uploadLabel, clearButton);
+
+    const preview = document.createElement("div");
+    preview.className = "editor-image-preview";
+    updateImagePreview(preview, input.value);
+
+    fileInput.addEventListener("change", async () => {
+      const file = fileInput.files?.[0];
+      if (!file) return;
+
+      try {
+        const value = await readFileAsDataUrl(file);
+        input.value = value;
+        setByPath(path, value);
+        updateImagePreview(preview, value);
+        setStatus(`Uploaded ${file.name} into content.js.`);
+      } catch (error) {
+        setStatus(`Upload failed: ${error.message}`);
+      }
+    });
+
+    clearButton.addEventListener("click", () => {
+      input.value = "";
+      setByPath(path, "");
+      updateImagePreview(preview, "");
+      setStatus("Detail image cleared.");
+    });
+
+    parent.append(tools, preview);
   }
 
   function renderString(parent, path, key, value) {
@@ -64,6 +139,9 @@
     });
 
     label.appendChild(input);
+    if (isDetailImageField(path, key)) {
+      renderImageUpload(label, path, input);
+    }
     parent.appendChild(label);
   }
 

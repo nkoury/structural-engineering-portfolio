@@ -9,10 +9,12 @@
     ["global", "Global"],
     ["pages.home", "Landing Page"],
     ["pages.works", "Highlighted Works"],
+    ["pages.process", "Process Page"],
     ["pages.about", "About Me"],
     ["pages.contact", "Contact Page"],
     ["projectPage", "Shared Project Page Text"],
     ["projects", "Projects"],
+    ["processAssets", "Process Assets"]
   ];
 
   function getByPath(path) {

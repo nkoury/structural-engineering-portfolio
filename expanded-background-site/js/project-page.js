@@ -22,6 +22,7 @@
     const nav = content.global?.nav || {};
     const links = [
       { id: "works", href: "works.html", label: nav.works || "Highlighted Works" },
+      { id: "process", href: "process.html", label: nav.process || "Process" },
       { id: "about", href: "about.html", label: nav.about || "About Me" },
       { id: "contact", href: "contact.html", label: nav.contact || "Contact" }
     ];
@@ -131,6 +132,38 @@
     `;
   }
 
+  function renderProcessAssets(project) {
+    if (!project.processAssets || !project.processAssets.length) {
+      return "";
+    }
+
+    return `
+      <section class="project-section">
+        <h2>${getCopy("projectPage.processEvidenceTitle", "Process Evidence")}</h2>
+        <div>
+          <p>
+            ${getCopy(
+              "projectPage.processEvidenceIntro",
+              "Selected sketches, coordination notes, and calculation excerpts give the project page a process layer beyond finished drawings and model views."
+            )}
+          </p>
+          <div class="asset-strip">
+            ${project.processAssets
+              .map(
+                (asset) => `
+                  <a class="asset-slot image-slot" href="../${asset.src}">
+                    <img src="../${asset.src}" alt="${escapeAttribute(asset.alt)}" />
+                    <span>${asset.label}</span><strong>${asset.title}</strong>
+                  </a>
+                `
+              )
+              .join("")}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
   function renderSwiftXR(project) {
     const embedUrl = project.swiftxr && project.swiftxr.embedUrl;
     if (!embedUrl) {
@@ -203,6 +236,7 @@
           </div>
         </section>
 
+        ${renderProcessAssets(project)}
         ${renderDetailCards(project)}
         ${renderSwiftXR(project)}
 

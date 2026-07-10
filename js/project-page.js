@@ -16,13 +16,20 @@
     return `${prefix || ""}${path}`;
   }
 
+  function projectAssetPath(path) {
+    if (!path) return "";
+    if (/^(data:|https?:|\/)/i.test(path) || path.startsWith("../")) {
+      return path;
+    }
+    return `../${path}`;
+  }
+
   function renderRibbon(ribbon) {
     const prefix = ribbon.dataset.prefix || "";
     const current = ribbon.dataset.current || (pageRoot ? "works" : "");
     const nav = content.global?.nav || {};
     const links = [
       { id: "works", href: "works.html", label: nav.works || "Highlighted Works" },
-      { id: "process", href: "process.html", label: nav.process || "Process" },
       { id: "about", href: "about.html", label: nav.about || "About Me" },
       { id: "contact", href: "contact.html", label: nav.contact || "Contact" }
     ];
@@ -109,7 +116,7 @@
             ${details
               .map((detail) => {
                 const media = detail.image
-                  ? `<img src="../${detail.image}" alt="${escapeAttribute(detail.alt || `${project.title} ${detail.sheet} detail crop`)}" loading="lazy" />`
+                  ? `<img src="${projectAssetPath(detail.image)}" alt="${escapeAttribute(detail.alt || `${project.title} ${detail.sheet} detail crop`)}" loading="lazy" />`
                   : `<div class="detail-card-placeholder"><span>Sheet</span><strong>${detail.sheet}</strong></div>`;
                 const pageLabel = detail.sourcePage ? `PDF page ${detail.sourcePage}` : detail.sheet;
                 const note = detail.note || `Redacted crop from ${detail.sheet}.`;
@@ -125,38 +132,6 @@
                   </article>
                 `;
               })
-              .join("")}
-          </div>
-        </div>
-      </section>
-    `;
-  }
-
-  function renderProcessAssets(project) {
-    if (!project.processAssets || !project.processAssets.length) {
-      return "";
-    }
-
-    return `
-      <section class="project-section">
-        <h2>${getCopy("projectPage.processEvidenceTitle", "Process Evidence")}</h2>
-        <div>
-          <p>
-            ${getCopy(
-              "projectPage.processEvidenceIntro",
-              "Selected sketches, coordination notes, and calculation excerpts give the project page a process layer beyond finished drawings and model views."
-            )}
-          </p>
-          <div class="asset-strip">
-            ${project.processAssets
-              .map(
-                (asset) => `
-                  <a class="asset-slot image-slot" href="../${asset.src}">
-                    <img src="../${asset.src}" alt="${escapeAttribute(asset.alt)}" />
-                    <span>${asset.label}</span><strong>${asset.title}</strong>
-                  </a>
-                `
-              )
               .join("")}
           </div>
         </div>
@@ -236,7 +211,6 @@
           </div>
         </section>
 
-        ${renderProcessAssets(project)}
         ${renderDetailCards(project)}
         ${renderSwiftXR(project)}
 

@@ -568,3 +568,42 @@ window.PORTFOLIO_PROJECTS = [
     ]
   }
 ];
+
+window.PORTFOLIO_PROCESS_ASSETS = [
+  {
+    label: "Coordination",
+    title: "Field and design notes",
+    src: "../assets/process/sketches/coordination-notes-01.jpeg",
+    alt: "Handwritten structural coordination notes"
+  },
+  {
+    label: "Coordination",
+    title: "Load path notes",
+    src: "../assets/process/sketches/coordination-notes-02.jpeg",
+    alt: "Handwritten load path and coordination notes"
+  },
+  {
+    label: "Calculation",
+    title: "Selected hand check",
+    src: "../assets/process/sketches/hand-calculation-01.jpeg",
+    alt: "Structural hand calculation excerpt"
+  },
+  {
+    label: "Detailing",
+    title: "Connection study",
+    src: "../assets/process/sketches/connection-detail-01.jpeg",
+    alt: "Hand sketch of a structural connection detail"
+  },
+  {
+    label: "Detailing",
+    title: "Wall condition",
+    src: "../assets/process/sketches/wall-detail-01.jpeg",
+    alt: "Hand sketch of a wall structural detail"
+  },
+  {
+    label: "Study",
+    title: "Detail development",
+    src: "../assets/process/sketches/detail-study-01.jpeg",
+    alt: "Hand sketch of detail development notes"
+  }
+];
