@@ -39,6 +39,17 @@
       element.setAttribute("href", `${element.dataset.hrefPrefix || ""}${value}`);
     });
 
+    document.querySelectorAll("[data-content-src]").forEach((element) => {
+      const value = getContentValue(element.dataset.contentSrc);
+      if (typeof value === "string" && value) {
+        element.setAttribute("src", value);
+        element.hidden = false;
+      } else {
+        element.removeAttribute("src");
+        element.hidden = true;
+      }
+    });
+
     document.querySelectorAll("[data-content-paragraphs]").forEach((element) => {
       const paragraphs = getContentValue(element.dataset.contentParagraphs);
       if (!Array.isArray(paragraphs)) return;

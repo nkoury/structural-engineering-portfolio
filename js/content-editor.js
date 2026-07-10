@@ -45,6 +45,14 @@
     return key === "image" && path.includes("detailAssets");
   }
 
+  function isAboutImageField(path) {
+    return path.join(".").startsWith("pages.about.photoImages.");
+  }
+
+  function isImageUploadField(path, key) {
+    return isDetailImageField(path, key) || isAboutImageField(path);
+  }
+
   function setStatus(message) {
     if (status) status.textContent = message;
   }
@@ -69,18 +77,18 @@
 
     const image = document.createElement("img");
     image.src = value;
-    image.alt = "Selected detail preview";
+    image.alt = "Selected image preview";
     preview.appendChild(image);
     preview.hidden = false;
   }
 
-  function renderImageUpload(parent, path, input) {
+  function renderImageUpload(parent, path, input, options = {}) {
     const tools = document.createElement("div");
     tools.className = "editor-image-tools";
 
     const uploadLabel = document.createElement("label");
     uploadLabel.className = "editor-file-button editor-image-upload";
-    uploadLabel.textContent = "Upload detail image";
+    uploadLabel.textContent = options.uploadLabel || "Upload image";
 
     const fileInput = document.createElement("input");
     fileInput.type = "file";
@@ -116,7 +124,7 @@
       input.value = "";
       setByPath(path, "");
       updateImagePreview(preview, "");
-      setStatus("Detail image cleared.");
+      setStatus(options.clearStatus || "Image cleared.");
     });
 
     parent.append(tools, preview);
@@ -139,8 +147,11 @@
     });
 
     label.appendChild(input);
-    if (isDetailImageField(path, key)) {
-      renderImageUpload(label, path, input);
+    if (isImageUploadField(path, key)) {
+      renderImageUpload(label, path, input, {
+        uploadLabel: isDetailImageField(path, key) ? "Upload detail image" : "Upload about image",
+        clearStatus: isDetailImageField(path, key) ? "Detail image cleared." : "About image cleared."
+      });
     }
     parent.appendChild(label);
   }

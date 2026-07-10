@@ -40,6 +40,11 @@ window.PORTFOLIO_CONTENT = {
                                                     "field":  "Field",
                                                     "pursuit":  "Pursuit"
                                                 },
+                                "photoImages":  {
+                                                    "portrait":  "",
+                                                    "field":  "",
+                                                    "pursuit":  ""
+                                                },
                                 "personalPursuitsTitle":  "Personal Pursuits",
                                 "personalPursuitsParagraphs":  [
                                                                    "Outside of project work, I\u0027m drawn to pursuits that reward patience, judgment, craft, and time outside. This page will pair those parts of my life with photos that make the portfolio feel more personal without distracting from the engineering work.",
