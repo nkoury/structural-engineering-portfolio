@@ -49,7 +49,6 @@
   function renderProjectCard(project) {
     const models = project.modelOptions && project.modelOptions.length ? project.modelOptions : [null];
     const modelTiles = models.map((model) => `<div class="work-model-tile">${renderProjectModel(model, project)}</div>`);
-    const modelLabel = models.length > 1 ? `${models.length} model views` : models[0] ? models[0].label : "Project page";
 
     return `
       <article class="work-project-card" style="--tile-color: ${project.color}">
@@ -59,7 +58,6 @@
         <a class="work-project-tab" href="${escapeAttribute(project.page)}" aria-label="Open ${project.title} project page">
           <span>${escapeAttribute(project.type)}</span>
           <strong>${escapeAttribute(project.title)}</strong>
-          <em>${escapeAttribute(modelLabel)}</em>
         </a>
       </article>
     `;

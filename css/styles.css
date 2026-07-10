@@ -458,14 +458,14 @@ h6,
   border-top: 1px solid var(--line);
   color: var(--ink);
   display: grid;
-  gap: 2px;
-  min-height: 100px;
+  gap: 6px;
+  grid-template-rows: auto minmax(2em, auto);
+  min-height: 108px;
   padding: 14px;
   text-decoration: none;
 }
 
-.work-project-tab span,
-.work-project-tab em {
+.work-project-tab span {
   color: var(--orange-deep);
   font-size: 0.72rem;
   font-style: normal;
@@ -478,6 +478,7 @@ h6,
   font-size: clamp(1.4rem, 2.1vw, 2rem);
   font-weight: 800;
   line-height: 1;
+  min-height: 2em;
   text-wrap: balance;
 }
 
@@ -489,9 +490,7 @@ h6,
 }
 
 .work-project-tab:hover span,
-.work-project-tab:hover em,
-.work-project-tab:focus-visible span,
-.work-project-tab:focus-visible em {
+.work-project-tab:focus-visible span {
   color: var(--white);
 }
 
