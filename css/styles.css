@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&display=swap");
+
 @font-face {
   font-display: swap;
   font-family: "Artifakt";
@@ -22,7 +24,7 @@
   --amber: #c58d34;
   --shadow: 0 22px 70px rgba(31, 29, 26, 0.14);
   --font-display: "Artifakt", "Aptos Display", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Artifakt", Aptos, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", Aptos, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   --max: 1240px;
 }
 
@@ -38,6 +40,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
+  font-weight: 600;
   line-height: 1.5;
   margin: 0;
 }
@@ -117,9 +120,9 @@ h6,
 }
 
 .landing-name h1 {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(3.8rem, 13vw, 11rem);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0;
   line-height: 0.96;
   margin: 0;
@@ -128,7 +131,12 @@ h6,
 }
 
 .landing-name h1::first-line {
-  font-weight: 400;
+  font-weight: 600;
+}
+
+body[data-page="about"] .project-title h1 {
+  font-family: var(--font-body);
+  font-weight: 600;
 }
 
 .home-shell {
