@@ -44,6 +44,7 @@ model-viewer {
 .v2-logo {
   aspect-ratio: 807 / 699;
   background: url("../../assets/brand/nk-logo-mark.png") center / contain no-repeat;
+  display: block;
   left: clamp(18px, 4.2vw, 80px);
   position: fixed;
   top: 20px;

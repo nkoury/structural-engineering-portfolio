@@ -43,6 +43,7 @@ body::before {
   aspect-ratio: 807 / 699;
   background: url("../../assets/brand/nk-logo-mark.png") center / contain no-repeat;
   content: "";
+  display: block;
   left: var(--brand-logo-left);
   pointer-events: none;
   position: fixed;
