@@ -32,7 +32,7 @@ window.PORTFOLIO_CONTENT = {
       "metaDescription": "About Noah Koury, Structural Engineer, including personal pursuits, professional background, photos, and LinkedIn.",
       "kicker": "About Me",
       "title": "Noah Koury",
-      "intro": "Structural Project Engineer with 4+ years of experience designing and supporting construction of \ncomplex high-end residential structures. I combine hands-on field experience with years of structural \ndesign experience to come up with efficient solutions achieving architectural intent, and a buildable product. Proficient in RAM, RISAFloor, RISA-3D, EnerCalc/RetainPro, and Revit, with experience \ndelivering projects from schematic design through construction administration. Strong focus on architectural \ncoordination, constructible detailing, and responsive field issue resolution across wood, steel, concrete, and \ncomposite framing systems.",
+      "intro": "Structural Project Engineer with 4+ years of experience designing and supporting construction of complex high-end residential structures. I combine hands-on field experience with years of structural design experience to come up with efficient solutions achieving architectural intent, and a buildable product. Proficient in RAM, RISAFloor, RISA-3D, EnerCalc/RetainPro, and Revit, with experience delivering projects from schematic design through construction administration. Strong focus on architectural coordination, constructible detailing, and responsive field issue resolution across wood, steel, concrete, and composite framing systems.",
       "linkedinLabel": "LinkedIn",
       "linkedinUrl": "https://www.linkedin.com/in/noah-koury",
       "photoLabels": {
@@ -107,6 +107,10 @@ window.PORTFOLIO_CONTENT = {
         {
           "label": "Trellis Model",
           "alt": "Interactive 3D structural trellis model for the L Ranch project"
+        },
+        {
+          "label": "Steel + Concrete Model",
+          "alt": "Interactive 3D steel and concrete model for the L Ranch project"
         }
       ],
       "detailSheets": [

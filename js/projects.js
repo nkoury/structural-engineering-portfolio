@@ -16,6 +16,11 @@ window.PORTFOLIO_PROJECTS = [
         label: "Trellis Model",
         src: "assets/project-assets/l-ranch/models/trellis-gltf-colors.glb",
         alt: "Interactive 3D structural trellis model for the L Ranch project"
+      },
+      {
+        label: "Steel + Concrete Model",
+        src: "assets/project-assets/l-ranch/models/l-ranch-steel-concrete.glb",
+        alt: "Interactive 3D steel and concrete model for the L Ranch project"
       }
     ],
     swiftxr: {
