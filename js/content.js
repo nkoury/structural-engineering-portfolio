@@ -23,7 +23,7 @@ window.PORTFOLIO_CONTENT = {
     },
     "works": {
       "metaTitle": "Highlighted Works | Noah Koury",
-      "metaDescription": "Highlighted Structural Engineering works done primarily by myself, shown through interactive 3D model views.",
+      "metaDescription": "Highlighted Structural Engineering works, shown through interactive 3D model views.",
       "title": "Highlighted Works",
       "intro": "Interactive structural model views collected as a visual index. Each tab opens a project page for scope, design elements, and some project context."
     },
@@ -32,7 +32,7 @@ window.PORTFOLIO_CONTENT = {
       "metaDescription": "About Noah Koury, Structural Engineer, including personal pursuits, professional background, photos, and LinkedIn.",
       "kicker": "About Me",
       "title": "Noah Koury",
-      "intro": "Structural Project Engineer with 4+ years of experience designing and supporting construction of complex high-end residential structures. I combine hands-on field experience with years of structural design experience to come up with efficient solutions achieving architectural intent, and a buildable product. Proficient in RAM, RISAFloor, RISA-3D, EnerCalc/RetainPro, and Revit, with experience delivering projects from schematic design through construction administration. Strong focus on architectural coordination, constructible detailing, and responsive field issue resolution across wood, steel, concrete, and composite framing systems.",
+      "intro": "I am a structural Project Engineer with 4+ years of experience designing and supporting construction of complex high-end residential structures. I combine hands-on field experience with years of structural design experience to come up with efficient solutions achieving architectural intent, and a buildable product. Proficient in RAM, RISA-3D, EnerCalc/RetainPro, and Revit, with experience delivering projects from schematic design through construction administration. Strong focus on architectural coordination, constructible detailing, and responsive field issue resolution across wood, steel, concrete, and composite framing systems.",
       "linkedinLabel": "LinkedIn",
       "linkedinUrl": "https://www.linkedin.com/in/noah-koury",
       "photoLabels": {
@@ -48,7 +48,7 @@ window.PORTFOLIO_CONTENT = {
       "personalPursuitsTitle": "Personal Pursuits",
       "personalPursuitsParagraphs": [
         "Outside of project work, I'm drawn to personal challenge, skill building, and engaging my creative side. I'm always adding new hobbies to my list, and finding new ways to engage with my community.",
-        " I love running, weight lifting, cooking and baking, drawing and travel. I occasionally hop on the bike, go for a swim, read a book, and watch whatever sports I can find on the TV. I'm a big fan of Formula 1, the Chicago Bears, and my alma mater- CSU Rams."
+        "I love exercise, cooking, drawing and travel. I occasionally hop on the bike, go for a swim, read a book, and watch whatever sports I can find on the TV. I'm a big fan of Formula 1, the Chicago Bears, and my alma mater- the CSU Rams."
       ],
       "engineeringApproachTitle": "Engineering Approach",
       "engineeringApproachItems": [
@@ -85,24 +85,24 @@ window.PORTFOLIO_CONTENT = {
     "placeholderTitle": "Project image sequence",
     "modelDownloadLabel": "Open model file",
     "drawingDetailsTitle": "Drawing Details",
-    "drawingDetailsIntro": "Here are some example details that I drew and designed to achieve an architectural intent.",
+    "drawingDetailsIntro": "Here are some example details that I designed and drew to achieve an architectural intent.",
     "hostedModelTitle": "Hosted Model",
     "projectTypeTitle": "Project Type",
     "systemLabel": "System",
     "primaryMediaLabel": "Primary Media",
     "primaryMediaValue": "Interactive 3D model views and project scope.",
     "statusLabel": "Status",
-    "statusValue": "Active.",
+    "statusValue": "Construction complete.",
     "scopeNarrativeTitle": "Scope Narrative",
-    "scopeNarrativeBody": "This section is reserved for the final written story: what the design team needed, what constraints shaped the structure, what you modeled or calculated, and which details best demonstrate your engineering judgment."
+    "scopeNarrativeBody": "One of my first projects carried from schematic design through construction administration- I learned a lot on this job. Designing the combined moment-frame steel trellis with a cable support system was a fun challenge, utilizing my RISA 3D FEA skills, combined with my detail drafting and construction communication."
   },
   "projects": {
     "l-ranch": {
       "title": "L Ranch",
       "type": "Residential / Ranch",
-      "summary": "A residential ranch structure centered on trellis framing, model coordination, and public-safe technical evidence.",
-      "system": "Steel trellis framing with concrete and foundation components.",
-      "scope": "Use this narrative to describe the design constraints, your role, model scope, calculation decisions, and the details that best show your engineering judgment.",
+      "summary": "A residential ranch structure with a complex moment-frame steel trellis.",
+      "system": "Wood framing with steel elements.",
+      "scope": "Primarily wood-framed structure with a complex moment-frame steel trellis supported by a turn-buckle and clevis cable system.",
       "modelOptions": [
         {
           "label": "Trellis Model",
