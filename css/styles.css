@@ -1148,11 +1148,11 @@ body[data-page="about"] .project-title h1 {
 
 .contact-panel a[href^="mailto:"] strong {
   font-family: var(--font-body);
-  font-size: clamp(1.2rem, 2.4vw, 2rem);
+  font-size: clamp(1.05rem, 2vw, 1.65rem);
   font-weight: 600;
   line-height: 1;
   overflow-wrap: normal;
-  padding-right: 52px;
+  padding-right: 44px;
   white-space: nowrap;
 }
 
@@ -1181,13 +1181,13 @@ body[data-page="about"] .project-title h1 {
 
 @media (min-width: 760px) {
   .contact-panel a[href^="mailto:"] strong {
-    font-size: clamp(1.55rem, 2.7vw, 2.25rem);
+    font-size: clamp(1.35rem, 2.1vw, 1.9rem);
   }
 }
 
 @media (min-width: 1120px) {
   .contact-panel a[href^="mailto:"] strong {
-    font-size: clamp(1.9rem, 2.4vw, 2.35rem);
+    font-size: clamp(1.55rem, 1.75vw, 2rem);
   }
 }
 
