@@ -74,6 +74,7 @@ window.PORTFOLIO_CONTENT = {
       "intro": "Feel free to reach me at my email, or send me a message on LinkedIn. I'm always looking to connect with other design professionals, industry leaders, and prospective clients. Let's build something great, together!",
       "emailLabel": "Email",
       "email": "noahkoury1@gmail.com",
+      "emailLinkLabel": "Email Me",
       "linkedinLabel": "LinkedIn",
       "linkedinName": "Noah Koury",
       "linkedinUrl": "https://www.linkedin.com/in/noah-koury"
