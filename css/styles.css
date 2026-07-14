@@ -1157,18 +1157,14 @@ body[data-page="about"] .project-title h1 {
 }
 
 .contact-panel a[href^="mailto:"] {
-  background: var(--orange);
-  color: var(--white);
-}
-
-.contact-panel a[href^="mailto:"] span {
-  color: var(--white);
+  border-left: 3px solid var(--orange);
 }
 
 .contact-panel a[href^="mailto:"]::after {
   align-items: center;
-  border: 1px solid color-mix(in srgb, var(--white) 58%, transparent);
+  border: 1px solid var(--orange);
   bottom: clamp(22px, 4vw, 38px);
+  color: var(--orange);
   content: "->";
   display: flex;
   font-weight: 900;
@@ -1201,7 +1197,13 @@ body[data-page="about"] .project-title h1 {
 
 .contact-panel a[href^="mailto:"]:hover,
 .contact-panel a[href^="mailto:"]:focus-visible {
-  background: var(--ink);
+  background: var(--orange);
+}
+
+.contact-panel a[href^="mailto:"]:hover::after,
+.contact-panel a[href^="mailto:"]:focus-visible::after {
+  border-color: color-mix(in srgb, var(--white) 58%, transparent);
+  color: var(--white);
 }
 
 .contact-panel a:hover span,
