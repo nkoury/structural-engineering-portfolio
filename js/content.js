@@ -12,7 +12,7 @@ window.PORTFOLIO_CONTENT = {
   "pages": {
     "home": {
       "metaTitle": "Noah Koury | Structural Engineering Portfolio",
-      "metaDescription": "Structural engineering portfolio for Noah Koury, featuring project case studies, 3D models, drawings, analysis, and calculations.",
+      "metaDescription": "This is my personal Structural Engineering portfolio, featuring some of my favorite projects, their individual 3D models, and some key design elements that helped to advance my ability.",
       "eyebrow": "Structural Engineering Portfolio",
       "title": "Noah Koury",
       "tabs": {
@@ -23,16 +23,16 @@ window.PORTFOLIO_CONTENT = {
     },
     "works": {
       "metaTitle": "Highlighted Works | Noah Koury",
-      "metaDescription": "Highlighted structural engineering works by Noah Koury, shown through interactive 3D model views and project links.",
+      "metaDescription": "Highlighted Structural Engineering works done primarily by myself, shown through interactive 3D model views.",
       "title": "Highlighted Works",
-      "intro": "Interactive structural model views collected as a visual index. Each tab opens a project page for scope, design elements, detail targets, and written project context."
+      "intro": "Interactive structural model views collected as a visual index. Each tab opens a project page for scope, design elements, and some project context."
     },
     "about": {
       "metaTitle": "About Me | Noah Koury",
-      "metaDescription": "About Noah Koury, structural engineer, including personal pursuits, professional background, photos, and LinkedIn.",
+      "metaDescription": "About Noah Koury, Structural Engineer, including personal pursuits, professional background, photos, and LinkedIn.",
       "kicker": "About Me",
       "title": "Noah Koury",
-      "intro": "Structural engineer focused on careful modeling, clear documentation, and design decisions that can be explained through drawings, calculations, and the built work.",
+      "intro": "Structural Project Engineer with 4+ years of experience designing and supporting construction of \ncomplex high-end residential structures. I combine hands-on field experience with years of structural \ndesign experience to come up with efficient solutions achieving architectural intent, and a buildable product. Proficient in RAM, RISAFloor, RISA-3D, EnerCalc/RetainPro, and Revit, with experience \ndelivering projects from schematic design through construction administration. Strong focus on architectural \ncoordination, constructible detailing, and responsive field issue resolution across wood, steel, concrete, and \ncomposite framing systems.",
       "linkedinLabel": "LinkedIn",
       "linkedinUrl": "https://www.linkedin.com/in/noah-koury",
       "photoLabels": {
@@ -71,7 +71,7 @@ window.PORTFOLIO_CONTENT = {
       "metaDescription": "Contact Noah Koury for structural engineering portfolio inquiries and project conversations.",
       "kicker": "Contact",
       "title": "Connect",
-      "intro": "Use this page for prospective clients, architects, builders, and collaborators who want to discuss structural scope, model review, drawing coordination, or engineering support.",
+      "intro": "Feel free to reach me at my email, or send me a message on LinkedIn. I'm always looking to connect with other design professionals, industry leaders, and prospective clients. Let's build something great, together!",
       "emailLabel": "Email",
       "email": "noahkoury1@gmail.com",
       "linkedinLabel": "LinkedIn",
@@ -85,14 +85,14 @@ window.PORTFOLIO_CONTENT = {
     "placeholderTitle": "Project image sequence",
     "modelDownloadLabel": "Open model file",
     "drawingDetailsTitle": "Drawing Details",
-    "drawingDetailsIntro": "Redacted detail crops isolate selected structural conditions from the target sheets. Full drawing sets remain private while these public-safe excerpts support the project story.",
+    "drawingDetailsIntro": "Here are some example details that I drew and designed to achieve an architectural intent.",
     "hostedModelTitle": "Hosted Model",
     "projectTypeTitle": "Project Type",
     "systemLabel": "System",
     "primaryMediaLabel": "Primary Media",
-    "primaryMediaValue": "Interactive GLB model views, redacted drawing detail targets, and selected calculation evidence.",
+    "primaryMediaValue": "Interactive 3D model views and project scope.",
     "statusLabel": "Status",
-    "statusValue": "Public-facing model paths are active; detail crops are staged for address-redacted extraction.",
+    "statusValue": "Active.",
     "scopeNarrativeTitle": "Scope Narrative",
     "scopeNarrativeBody": "This section is reserved for the final written story: what the design team needed, what constraints shaped the structure, what you modeled or calculated, and which details best demonstrate your engineering judgment."
   },
