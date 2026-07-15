@@ -11,7 +11,8 @@ resume. The previous fuller version is preserved in `expanded-background-site/`.
 - `projects/*.html` are data-driven project case study pages.
 - `about.html` is the About Me page.
 - `contact.html` contains email and LinkedIn contact links.
-- `content-editor.html` edits root-site copy and detail image uploads in `js/content.js`.
+- `content-editor.html` edits root-site copy and detail image uploads in `js/content.js`, then
+  can publish that file directly to GitHub.
 - `expanded-background-site/` is the backup version with Process and resume content.
 - `assets/` stores shared model, drawing-detail, process, and resume assets.
 - `js/projects.js` controls project ids, page links, model paths, and default detail slots.
@@ -23,7 +24,30 @@ resume. The previous fuller version is preserved in `expanded-background-site/`.
 
 Project pages start with drawing-detail placeholder slots. Open `content-editor.html`, find a
 project's `Detail Assets`, and use the `Upload detail image` field to embed your chosen detail image
-into `js/content.js`. Save or download the updated `content.js`, then commit it with the site.
+into `js/content.js`.
+
+## Direct Content Publishing
+
+The content editor can now publish `js/content.js` directly to GitHub:
+
+1. Open `content-editor.html`.
+2. Edit the text or upload safe public images.
+3. Paste a fine-grained GitHub token in the `GitHub token` field.
+4. Click `Publish content to GitHub`.
+5. Wait for GitHub Pages to deploy, then open `https://noahkoury.com`.
+
+Use a fine-grained GitHub personal access token scoped only to this repository with `Contents:
+Read and write` permission. The token is stored only in browser session storage so it does not need
+to be pasted again during the same browser session. Do not commit the token, paste it into
+`js/content.js`, or replace it with a GitHub account password or unrelated API key.
+
+The public pages load editable content through `js/content-bootstrap.js`, which adds a fresh cache
+key to `js/content.js`. That keeps normal page scripts cacheable while making content-editor
+publishes visible after the GitHub Pages deployment finishes. GitHub Pages is still a static host, so
+updates are direct but not truly instant; they usually appear after the Pages deployment completes.
+
+The old `Save content.js`, `Download content.js`, and `Copy` buttons remain available as backups if
+the GitHub API publish fails or if you want to keep a local copy before publishing.
 
 ## Publishing Rules
 

@@ -2,8 +2,19 @@
   const source = window.PORTFOLIO_CONTENT || {};
   const form = document.querySelector("[data-content-editor]");
   const status = document.querySelector("[data-editor-status]");
+  const githubTokenInput = document.querySelector("[data-github-token]");
+  const githubPublishButton = document.querySelector("[data-publish-github]");
   const draft = structuredClone(source);
   let saveHandle = null;
+
+  const githubPublishConfig = {
+    owner: "nkoury",
+    repo: "structural-engineering-portfolio",
+    branch: "main",
+    path: "js/content.js",
+    liveUrl: "https://noahkoury.com"
+  };
+  const githubTokenStorageKey = "portfolio-content-editor-github-token";
 
   const sections = [
     ["global", "Global"],
@@ -55,6 +66,26 @@
 
   function setStatus(message) {
     if (status) status.textContent = message;
+  }
+
+  function getStoredToken() {
+    try {
+      return sessionStorage.getItem(githubTokenStorageKey) || "";
+    } catch (error) {
+      return "";
+    }
+  }
+
+  function setStoredToken(token) {
+    try {
+      if (token) {
+        sessionStorage.setItem(githubTokenStorageKey, token);
+      } else {
+        sessionStorage.removeItem(githubTokenStorageKey);
+      }
+    } catch (error) {
+      // Publishing still works; the token just cannot be remembered for the tab.
+    }
   }
 
   function readFileAsDataUrl(file) {
@@ -223,6 +254,101 @@
     return `window.PORTFOLIO_CONTENT = ${JSON.stringify(draft, null, 2)};\n`;
   }
 
+  function encodeBase64(text) {
+    const bytes = new TextEncoder().encode(text);
+    let binary = "";
+    const chunkSize = 0x8000;
+
+    for (let index = 0; index < bytes.length; index += chunkSize) {
+      const chunk = bytes.subarray(index, index + chunkSize);
+      binary += String.fromCharCode(...chunk);
+    }
+
+    return btoa(binary);
+  }
+
+  async function readJsonResponse(response, fallbackMessage) {
+    let payload = null;
+    try {
+      payload = await response.json();
+    } catch (error) {
+      // GitHub usually returns JSON errors, but keep failures readable if it does not.
+    }
+
+    if (!response.ok) {
+      throw new Error(payload?.message || fallbackMessage || response.statusText);
+    }
+
+    return payload;
+  }
+
+  function githubHeaders(token) {
+    return {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${token}`,
+      "X-GitHub-Api-Version": "2022-11-28"
+    };
+  }
+
+  function githubContentUrl() {
+    const { owner, repo, path } = githubPublishConfig;
+    const encodedPath = path.split("/").map(encodeURIComponent).join("/");
+    return `https://api.github.com/repos/${owner}/${repo}/contents/${encodedPath}`;
+  }
+
+  async function publishContentToGitHub() {
+    if (!githubTokenInput || !githubPublishButton) return;
+
+    const token = githubTokenInput.value.trim();
+    if (!token) {
+      setStatus("Paste a fine-grained GitHub token first.");
+      githubTokenInput.focus();
+      return;
+    }
+
+    // Never hard-code the GitHub token in this public site. Use a fine-grained
+    // token scoped only to this repository with Contents read/write permission.
+    setStoredToken(token);
+    githubPublishButton.disabled = true;
+    githubPublishButton.textContent = "Publishing...";
+
+    try {
+      const url = githubContentUrl();
+      const headers = githubHeaders(token);
+      const fileText = serializeContent();
+
+      setStatus("Reading current GitHub content.js...");
+      const currentResponse = await fetch(`${url}?ref=${encodeURIComponent(githubPublishConfig.branch)}`, {
+        headers
+      });
+      const currentFile = await readJsonResponse(currentResponse, "Could not read content.js from GitHub.");
+
+      setStatus("Publishing content.js to GitHub...");
+      const updateResponse = await fetch(url, {
+        method: "PUT",
+        headers: {
+          ...headers,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          branch: githubPublishConfig.branch,
+          message: "Update site content from content editor",
+          content: encodeBase64(fileText),
+          sha: currentFile.sha
+        })
+      });
+      const result = await readJsonResponse(updateResponse, "Could not publish content.js to GitHub.");
+      const shortSha = result?.commit?.sha ? result.commit.sha.slice(0, 7) : "created";
+
+      setStatus(
+        `Published content.js to GitHub (${shortSha}). GitHub Pages should update shortly; open the live site to confirm.`
+      );
+    } finally {
+      githubPublishButton.disabled = false;
+      githubPublishButton.textContent = "Publish content to GitHub";
+    }
+  }
+
   function downloadContent() {
     const blob = new Blob([serializeContent()], { type: "text/javascript" });
     const link = document.createElement("a");
@@ -273,6 +399,17 @@
 
   document.querySelector("[data-save-content]")?.addEventListener("click", () => {
     saveContent().catch((error) => setStatus(`Save failed: ${error.message}`));
+  });
+
+  if (githubTokenInput) {
+    githubTokenInput.value = getStoredToken();
+    githubTokenInput.addEventListener("input", () => {
+      setStoredToken(githubTokenInput.value);
+    });
+  }
+
+  githubPublishButton?.addEventListener("click", () => {
+    publishContentToGitHub().catch((error) => setStatus(`Publish failed: ${error.message}`));
   });
 
   document.querySelector("[data-import-content]")?.addEventListener("change", async (event) => {

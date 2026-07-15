@@ -10,7 +10,7 @@
       content="Local content editor for the Noah Koury structural engineering portfolio."
     />
     <meta name="theme-color" content="#f7f3eb" />
-    <link rel="stylesheet" href="css/styles.css?v=20260710-logo" />
+    <link rel="stylesheet" href="css/styles.css?v=20260715-direct-publish" />
   </head>
   <body class="editor-body">
     <main class="content-editor-shell">
@@ -31,11 +31,36 @@
       </header>
 
       <p class="editor-status" data-editor-status>Ready.</p>
+      <section class="editor-publish-panel" aria-labelledby="github-publish-title">
+        <div>
+          <p class="project-kicker">Direct publishing</p>
+          <h2 id="github-publish-title">Publish Content to GitHub</h2>
+          <p>
+            Use a fine-grained GitHub token with contents read/write access for this
+            repository only. The token stays in this browser session and is never
+            written into content.js.
+          </p>
+        </div>
+        <div class="editor-publish-controls">
+          <label class="editor-token-field">
+            <span>GitHub token</span>
+            <input
+              type="password"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="github_pat_..."
+              data-github-token
+            />
+          </label>
+          <button type="button" data-publish-github>Publish content to GitHub</button>
+          <a href="https://noahkoury.com" target="_blank" rel="noreferrer">Open live site</a>
+        </div>
+      </section>
       <form class="content-editor-form" data-content-editor></form>
     </main>
 
-    <script src="js/content.js?v=20260715-project-sections"></script>
-    <script src="js/content-editor.js?v=20260715-project-sections"></script>
+    <script src="js/content-bootstrap.js?v=20260715-direct-publish" data-content-src="js/content.js"></script>
+    <script src="js/content-editor.js?v=20260715-direct-publish"></script>
     <script src="js/analytics.js"></script>
   </body>
 </html>
