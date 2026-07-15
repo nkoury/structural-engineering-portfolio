@@ -48,7 +48,7 @@ window.PORTFOLIO_CONTENT = {
       "personalPursuitsTitle": "Personal Pursuits",
       "personalPursuitsParagraphs": [
         "Outside of project work, I'm drawn to personal challenge, skill building, and engaging my creative side. I'm always adding new hobbies to my list, and finding new ways to engage with my community.",
-        "I love exercise, cooking, drawing and travel. I occasionally hop on the bike, go for a swim, read a book, and watch whatever sports I can find on the TV. I'm a big fan of Formula 1, the Chicago Bears, and my alma mater- the CSU Rams."
+        "I love exercising, cooking, and travel. I occasionally hop on the bike, go for a swim, read a book, and watch whatever sports I can find on the TV. I'm a big fan of Formula 1, the Chicago Bears, and my alma mater- the CSU Rams."
       ],
       "engineeringApproachTitle": "Engineering Approach",
       "engineeringApproachItems": [
@@ -102,7 +102,7 @@ window.PORTFOLIO_CONTENT = {
       "type": "Residential / Ranch",
       "summary": "A residential ranch structure with a complex moment-frame steel trellis.",
       "system": "Wood framing with steel elements.",
-      "scope": "Primarily wood-framed structure with a complex moment-frame steel trellis supported by a turn-buckle and clevis cable system.",
+      "scope": "Primarily wood-framed structure with a complex moment-frame steel trellis supported by a turnbuckle and clevis cable system.",
       "modelOptions": [
         {
           "label": "Trellis Model",
