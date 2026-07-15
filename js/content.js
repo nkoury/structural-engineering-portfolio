@@ -71,7 +71,7 @@ window.PORTFOLIO_CONTENT = {
       "metaDescription": "Contact Noah Koury for structural engineering portfolio inquiries and project conversations.",
       "kicker": "Contact",
       "title": "Connect",
-      "intro": "Feel free to reach me at my email, or send me a message on LinkedIn. I'm always looking to connect with other design professionals, industry leaders, and prospective clients. Let's build something great, together!",
+      "intro": "Feel free to reach me at my email, or send me a message on LinkedIn. I'm always looking to connect with other design professionals, industry leaders, and prospective clients. My resume is also available upon request. Let's build something great, together!",
       "emailLabel": "Email",
       "email": "noahkoury1@gmail.com",
       "linkedinLabel": "LinkedIn",
