@@ -213,18 +213,6 @@
 
         ${renderDetailCards(project)}
         ${renderSwiftXR(project)}
-
-        <section class="project-section">
-          <h2>${getCopy("projectPage.scopeNarrativeTitle", "Scope Narrative")}</h2>
-          <div>
-            <p>
-              ${project.scopeNarrative || getCopy(
-                "projectPage.scopeNarrativeBody",
-                "This section is reserved for the final written story: what the design team needed, what constraints shaped the structure, what you modeled or calculated, and which details best demonstrate your engineering judgment."
-              )}
-            </p>
-          </div>
-        </section>
       </div>
     `;
   }

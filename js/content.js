@@ -48,7 +48,7 @@ window.PORTFOLIO_CONTENT = {
       "personalPursuitsTitle": "Personal Pursuits",
       "personalPursuitsParagraphs": [
         "Outside of project work, I'm drawn to personal challenge, skill building, and engaging my creative side. I'm always adding new hobbies to my list, and finding new ways to engage with my community.",
-        "I love exercising, cooking, and travel. I occasionally hop on the bike, go for a swim, read a book, and watch whatever sports I can find on the TV. I'm a big fan of Formula 1, the Chicago Bears, and my alma mater- the CSU Rams."
+        "I love exercising, cooking and travel. I occasionally hop on the bike, go for a swim, read a book, and watch whatever sports I can find on the TV. I'm a big fan of Formula 1, the Chicago Bears, and my alma mater- the CSU Rams."
       ],
       "engineeringApproachTitle": "Engineering Approach",
       "engineeringApproachItems": [
@@ -92,15 +92,13 @@ window.PORTFOLIO_CONTENT = {
     "primaryMediaLabel": "Primary Media",
     "primaryMediaValue": "Interactive 3D model views and project scope.",
     "statusLabel": "Status",
-    "statusValue": "Construction complete.",
-    "scopeNarrativeTitle": "Scope Narrative",
-    "scopeNarrativeBody": "One of my first projects carried from schematic design through construction administration- I learned a lot on this job. Designing the combined moment-frame steel trellis with a cable support system was a fun challenge, utilizing my RISA 3D FEA skills, combined with my detail drafting and construction communication."
+    "statusValue": "Construction complete."
   },
   "projects": {
     "l-ranch": {
       "title": "L Ranch",
-      "type": "Residential / Ranch",
-      "summary": "A residential ranch structure with a complex moment-frame steel trellis.",
+      "type": "Trellis Moment Frame",
+      "summary": "One of my first projects carried from schematic design through construction administration- I learned a lot on this job. Designing the combined moment-frame steel trellis with a cable support system was a fun challenge, utilizing my RISA 3D FEA skills, combined with my detail drafting and construction communication.",
       "system": "Wood framing with steel elements.",
       "scope": "Primarily wood-framed structure with a complex moment-frame steel trellis supported by a turnbuckle and clevis cable system.",
       "modelOptions": [
@@ -109,8 +107,8 @@ window.PORTFOLIO_CONTENT = {
           "alt": "Interactive 3D structural trellis model for the L Ranch project"
         },
         {
-          "label": "Steel + Concrete Model",
-          "alt": "Interactive 3D steel and concrete model for the L Ranch project"
+          "label": "Comprehensive Model",
+          "alt": "Interactive 3D model for the L Ranch project"
         }
       ],
       "detailSheets": [
@@ -148,10 +146,10 @@ window.PORTFOLIO_CONTENT = {
     },
     "high-mountain": {
       "title": "High Mountain",
-      "type": "Mountain Structure",
-      "summary": "A ready-to-fill mountain-site case study for scope, site constraints, design elements, analysis visuals, and project images.",
-      "system": "To be defined from the project drawings, model, and calculation set.",
-      "scope": "Use this page for the governing terrain, snow, wind, access, constructability, and coordination story once the project assets are ready.",
+      "type": "Steel Cantilevers",
+      "summary": "One of my first high-end jobs with a lot of broken-out FEA models for solving compounding deflections, wind girts supporting high deflection tolerance slider doors and high-end exterior finishes.",
+      "system": "Steel post-and-beam frame with wood infill framing",
+      "scope": "Advanced steel detailing with some broken out FEA models and high-level architectural elements and finishes",
       "modelOptions": [
         {
           "label": "Steel Model",

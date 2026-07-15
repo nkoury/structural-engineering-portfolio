@@ -118,9 +118,7 @@ window.PORTFOLIO_CONTENT = {
     "primaryMediaLabel": "Primary Media",
     "primaryMediaValue": "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence.",
     "statusLabel": "Status",
-    "statusValue": "Public-facing model paths are active; detail crops are staged for address-redacted extraction.",
-    "scopeNarrativeTitle": "Scope Narrative",
-    "scopeNarrativeBody": "This section is reserved for the final written story: what the design team needed, what constraints shaped the structure, what you modeled or calculated, and which details best demonstrate your engineering judgment."
+    "statusValue": "Public-facing model paths are active; detail crops are staged for address-redacted extraction."
   },
   "projects": {
     "l-ranch": {
