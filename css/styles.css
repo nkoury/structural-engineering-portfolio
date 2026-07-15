@@ -78,10 +78,7 @@ h6,
 .model-switcher button,
 .model-download,
 .contact-panel strong,
-.content-editor-header h1,
-.editor-section h2,
-.editor-fieldset legend,
-.editor-nested legend {
+.content-editor-header h1 {
   hyphens: none;
   overflow-wrap: normal;
   word-break: keep-all;
@@ -1153,78 +1150,247 @@ body[data-page="about"] .project-title h1 {
   padding-top: 22px;
 }
 
-.editor-section,
-.editor-fieldset,
-.editor-nested {
+.editor-live-shell {
   border: 1px solid var(--line);
   display: grid;
-  gap: 14px;
-  padding: 16px;
+  grid-template-columns: 190px minmax(0, 1fr);
+  min-height: min(760px, calc(100vh - 260px));
 }
 
-.editor-section {
-  background: var(--white);
-}
-
-.editor-section h2,
-.editor-fieldset legend,
-.editor-nested legend {
-  color: var(--orange-deep);
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 900;
-  letter-spacing: 0;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.editor-fieldset,
-.editor-nested {
-  background: rgba(247, 243, 235, 0.55);
-}
-
-.editor-field {
+.editor-live-nav {
+  align-content: start;
+  background: var(--ink);
   display: grid;
-  gap: 6px;
+  gap: 1px;
+  padding: 0;
 }
 
-.editor-field span {
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 850;
-  text-transform: uppercase;
-}
-
-.editor-field input,
-.editor-field textarea {
-  background: #fff;
-  border: 1px solid var(--line);
-  color: var(--ink);
+.editor-live-nav button,
+.editor-project-selector button {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 253, 248, 0.16);
+  color: var(--white);
+  cursor: pointer;
   font: inherit;
-  font-size: 0.95rem;
-  line-height: 1.45;
-  padding: 10px 11px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  min-height: 58px;
+  padding: 16px 18px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.editor-live-nav button:hover,
+.editor-live-nav button:focus-visible,
+.editor-live-nav button[aria-current="page"] {
+  background: var(--orange);
+  outline: 0;
+}
+
+.editor-live-canvas {
+  background:
+    linear-gradient(90deg, rgba(31, 29, 26, 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(31, 29, 26, 0.025) 1px, transparent 1px),
+    var(--paper);
+  background-size: 42px 42px;
+  max-height: min(820px, calc(100vh - 260px));
+  overflow: auto;
+}
+
+.editor-preview-page {
+  display: grid;
+  gap: clamp(24px, 4vw, 54px);
+  min-width: 760px;
+  padding: clamp(26px, 4vw, 54px);
+}
+
+.editor-preview-home {
+  padding: 0;
+}
+
+.editor-preview-home .landing {
+  min-height: min(720px, calc(100vh - 260px));
+}
+
+.editor-preview-home .landing::before {
+  left: clamp(22px, 4vw, 48px);
+}
+
+.editor-live-public-section {
+  display: grid;
+  gap: clamp(22px, 4vw, 54px);
+  grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+}
+
+.editor-live-input {
+  appearance: none;
+  background: rgba(255, 253, 248, 0.8);
+  border: 1px dashed transparent;
+  color: inherit;
+  display: block;
+  font: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  min-width: 0;
+  overflow: hidden;
+  padding: 4px 6px;
+  resize: none;
   width: 100%;
 }
 
-.editor-field textarea {
-  min-height: 92px;
-  resize: vertical;
+.editor-live-input:hover {
+  border-color: color-mix(in srgb, var(--orange) 42%, transparent);
 }
 
-.editor-field input:focus,
-.editor-field textarea:focus {
+.editor-live-input:focus {
+  background: var(--white);
   border-color: var(--orange);
-  outline: 1px solid var(--orange);
+  box-shadow: 0 0 0 2px var(--orange-soft);
+  outline: 0;
 }
 
-.editor-image-tools {
+.editor-live-input.as-kicker,
+.editor-live-input.as-card-label,
+.editor-live-input.as-list-label {
+  color: var(--orange);
+  font-size: 0.78rem;
+  font-weight: 900;
+  min-height: 30px;
+  text-transform: uppercase;
+}
+
+.editor-live-input.as-hero {
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: clamp(3.8rem, 10vw, 9rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 0.96;
+  padding: 0;
+}
+
+.editor-live-input.as-page-title,
+.editor-live-input.as-project-title {
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: clamp(2.7rem, 7vw, 6.8rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
+  padding: 0;
+}
+
+.editor-live-input.as-page-title {
+  font-size: clamp(2.3rem, 5vw, 4.2rem);
+}
+
+.editor-live-input.as-section-title {
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 600;
+  line-height: 1.08;
+  padding: 0;
+}
+
+.editor-live-input.as-tab {
+  align-self: end;
+  background: transparent;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.7vw, 3rem);
+  font-weight: 500;
+  line-height: 0.98;
+  padding: 0;
+}
+
+.editor-live-input.as-body,
+.editor-live-input.as-list-text {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  line-height: 1.48;
+}
+
+.editor-live-input.as-scope {
+  background: linear-gradient(90deg, var(--orange-soft), rgba(239, 91, 36, 0) 68%);
+  border-left: 1px solid var(--orange);
+  padding: 12px 0 12px 16px;
+}
+
+.editor-tab-card {
+  border-right: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 12px;
+  min-height: clamp(108px, 18vh, 170px);
+  padding: clamp(16px, 2.4vw, 26px);
+}
+
+.editor-tab-card span {
+  color: var(--orange);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.editor-works-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.editor-work-card {
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-align: left;
+}
+
+.editor-card-media {
+  align-items: center;
+  aspect-ratio: 1.12;
+  background:
+    linear-gradient(90deg, rgba(255, 253, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 253, 248, 0.05) 1px, transparent 1px),
+    #211f1c;
+  background-size: 32px 32px;
+  color: color-mix(in srgb, var(--white) 72%, transparent);
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.editor-card-media span {
+  border: 1px solid color-mix(in srgb, var(--orange) 72%, transparent);
+  color: var(--orange);
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 9px 10px;
+}
+
+.editor-about-hero,
+.editor-project-hero,
+.editor-project-body {
+  padding: 0;
+}
+
+.editor-about-photo-grid {
+  align-items: stretch;
+}
+
+.editor-live-image-field {
+  display: grid;
+  gap: 10px;
+}
+
+.editor-editable-photo {
+  min-height: 220px;
+}
+
+.editor-live-image-actions {
+  display: flex;
   gap: 8px;
 }
 
-.editor-image-tools button {
+.editor-live-image-actions button {
   background: var(--white);
   border: 1px solid var(--line);
   color: var(--orange-deep);
@@ -1237,21 +1403,136 @@ body[data-page="about"] .project-title h1 {
   text-transform: uppercase;
 }
 
-.editor-image-preview {
-  background: var(--paper);
+.editor-contact-layout {
+  padding: 0;
+}
+
+.editor-contact-panel {
+  min-width: 0;
+}
+
+.editor-contact-card {
+  display: grid;
+  gap: 18px;
+  min-height: 190px;
+  padding: clamp(22px, 4vw, 38px);
+}
+
+.editor-contact-card + .editor-contact-card {
+  border-top: 1px solid var(--line);
+}
+
+.editor-live-input.as-contact-value {
+  align-self: end;
+  background: transparent;
+  font-size: clamp(1.15rem, 2vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.editor-live-input.as-contact-value.large {
+  font-size: clamp(1.7rem, 3vw, 3.6rem);
+  font-weight: 500;
+}
+
+.editor-live-field {
+  display: grid;
+  gap: 7px;
+}
+
+.editor-live-field span {
+  color: var(--orange-deep);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.editor-project-selector {
+  background: var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.editor-project-selector button {
+  border-bottom: 0;
+  border-right: 1px solid rgba(255, 253, 248, 0.14);
+  min-height: 44px;
+  padding: 12px 14px;
+}
+
+.editor-project-selector button:hover,
+.editor-project-selector button:focus-visible,
+.editor-project-selector button[aria-current="page"] {
+  background: var(--orange);
+  outline: 0;
+}
+
+.editor-model-stage {
+  min-height: 430px;
+}
+
+.editor-model-placeholder {
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(255, 253, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 253, 248, 0.05) 1px, transparent 1px),
+    #211f1c;
+  background-size: 34px 34px;
+  color: var(--white);
+  display: grid;
+  inset: 0;
+  justify-items: center;
+  padding: 34px;
+  position: absolute;
+  text-align: center;
+}
+
+.editor-model-placeholder strong {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+}
+
+.editor-project-details .editor-live-input {
+  padding-left: 0;
+}
+
+.editor-model-copy-section {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 18px;
+  padding-top: 34px;
+}
+
+.editor-model-copy-section h2 {
+  font-family: var(--font-body);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+.editor-model-copy-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.editor-model-copy-card {
+  background: var(--white);
   border: 1px solid var(--line);
-  max-width: 320px;
-  padding: 8px;
+  display: grid;
+  gap: 12px;
+  padding: 16px;
 }
 
-.editor-image-preview[hidden] {
-  display: none;
-}
-
-.editor-image-preview img {
-  max-height: 180px;
-  object-fit: contain;
-  width: 100%;
+.editor-live-note {
+  color: var(--muted);
+  margin: 0;
 }
 
 @media (max-width: 1100px) {
@@ -1267,6 +1548,26 @@ body[data-page="about"] .project-title h1 {
 @media (max-width: 900px) {
   .contact-layout {
     grid-template-columns: 1fr;
+  }
+
+  .editor-live-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .editor-live-nav {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .editor-live-nav button {
+    border-bottom: 0;
+    border-right: 1px solid rgba(255, 253, 248, 0.16);
+    flex: 0 0 auto;
+    min-height: 48px;
+  }
+
+  .editor-preview-page {
+    min-width: 700px;
   }
 
   .editor-publish-panel {
@@ -1317,6 +1618,24 @@ body[data-page="about"] .project-title h1 {
   }
 
   .detail-list li {
+    grid-template-columns: 1fr;
+  }
+
+  .editor-live-shell,
+  .editor-live-canvas {
+    max-height: none;
+  }
+
+  .editor-preview-page {
+    min-width: 0;
+  }
+
+  .editor-live-public-section,
+  .editor-model-copy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editor-works-grid {
     grid-template-columns: 1fr;
   }
 
