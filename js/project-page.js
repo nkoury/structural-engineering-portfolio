@@ -16,14 +16,6 @@
     return `${prefix || ""}${path}`;
   }
 
-  function projectAssetPath(path) {
-    if (!path) return "";
-    if (/^(data:|https?:|\/)/i.test(path) || path.startsWith("../")) {
-      return path;
-    }
-    return `../${path}`;
-  }
-
   function renderRibbon(ribbon) {
     const prefix = ribbon.dataset.prefix || "";
     const current = ribbon.dataset.current || (pageRoot ? "works" : "");
@@ -92,50 +84,6 @@
         ${buttons}
         <a class="model-download" href="../${primary.src}">${getCopy("projectPage.modelDownloadLabel", "Open model file")}</a>
       </div>
-    `;
-  }
-
-  function renderDetailCards(project) {
-    const details = project.detailAssets && project.detailAssets.length ? project.detailAssets : project.detailSheets || [];
-
-    if (!details.length) {
-      return "";
-    }
-
-    return `
-      <section class="project-section">
-        <h2>${getCopy("projectPage.drawingDetailsTitle", "Drawing Details")}</h2>
-        <div>
-          <p>
-            ${getCopy(
-              "projectPage.drawingDetailsIntro",
-              "Redacted detail crops isolate selected structural conditions from the target sheets. Full drawing sets remain private while these public-safe excerpts support the project story."
-            )}
-          </p>
-          <div class="detail-card-grid">
-            ${details
-              .map((detail) => {
-                const media = detail.image
-                  ? `<img src="${projectAssetPath(detail.image)}" alt="${escapeAttribute(detail.alt || `${project.title} ${detail.sheet} detail crop`)}" loading="lazy" />`
-                  : `<div class="detail-card-placeholder"><span>Sheet</span><strong>${detail.sheet}</strong></div>`;
-                const pageLabel = detail.sourcePage ? `PDF page ${detail.sourcePage}` : detail.sheet;
-                const note = detail.note || `Redacted crop from ${detail.sheet}.`;
-
-                return `
-                  <article class="detail-card">
-                    ${media}
-                    <div class="detail-card-copy">
-                      <span>${pageLabel}</span>
-                      <strong>${detail.label}</strong>
-                      <p>${note}</p>
-                    </div>
-                  </article>
-                `;
-              })
-              .join("")}
-          </div>
-        </div>
-      </section>
     `;
   }
 
@@ -211,7 +159,6 @@
           </div>
         </section>
 
-        ${renderDetailCards(project)}
         ${renderSwiftXR(project)}
       </div>
     `;
