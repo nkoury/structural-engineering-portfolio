@@ -1,8 +1,8 @@
 # Noah Koury Structural Engineering Portfolio
 
 This is a static, GitHub Pages-ready portfolio site for structural engineering case studies.
-The repository root is now the simplified public-facing site without the Process tab or embedded
-resume. The previous fuller version is preserved in `expanded-background-site/`.
+The repository root is the public-facing site. Historical alternate versions were removed after
+creating the `backup/pre-bloat-cleanup-20260715` rollback branch.
 
 ## Current Site Structure
 
@@ -11,21 +11,14 @@ resume. The previous fuller version is preserved in `expanded-background-site/`.
 - `projects/*.html` are data-driven project case study pages.
 - `about.html` is the About Me page.
 - `contact.html` contains email and LinkedIn contact links.
-- `content-editor.html` edits root-site copy and detail image uploads in `js/content.js`, then
-  can publish that file directly to GitHub.
-- `expanded-background-site/` is the backup version with Process and resume content.
-- `assets/` stores shared model, drawing-detail, process, and resume assets.
-- `js/projects.js` controls project ids, page links, model paths, and default detail slots.
-- `js/content.js` contains editable text, per-project project-section copy, and uploaded detail
+- `content-editor.html` edits site copy and About Me image uploads in `js/content.js`, then can
+  publish that file directly to GitHub.
+- `assets/` stores shared model and brand assets.
+- `js/projects.js` controls project ids, page links, model paths, and SwiftXR embed URLs.
+- `js/content.js` contains editable text, per-project project-section copy, and uploaded About Me
   images.
 - `js/analytics-config.js` and `js/analytics.js` configure production-only Cloudflare Web
   Analytics.
-
-## Detail Image Editing
-
-Project pages start with drawing-detail placeholder slots. Open `content-editor.html`, find a
-project's `Detail Assets`, and use the `Upload detail image` field to embed your chosen detail image
-into `js/content.js`.
 
 ## Direct Content Publishing
 
@@ -61,8 +54,8 @@ Before committing assets to GitHub, remove or obscure:
 - Notes that reveal confidential business, budget, schedule, or claim information
 
 Keep original U3D files and confidential source packages outside the public repo. Publish only
-redacted PDFs, cropped drawing images, preview images, hosted viewer links, or content-editor detail
-image uploads when they are safe.
+redacted PDFs, cropped drawing images, preview images, hosted viewer links, or model assets when
+they are safe.
 
 ## Deploying To GitHub Pages
 

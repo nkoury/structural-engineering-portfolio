@@ -51,16 +51,12 @@
     );
   }
 
-  function isDetailImageField(path, key) {
-    return key === "image" && path.includes("detailAssets");
-  }
-
   function isAboutImageField(path) {
     return path.join(".").startsWith("pages.about.photoImages.");
   }
 
   function isImageUploadField(path, key) {
-    return isDetailImageField(path, key) || isAboutImageField(path);
+    return isAboutImageField(path);
   }
 
   function setStatus(message) {
@@ -179,8 +175,8 @@
     label.appendChild(input);
     if (isImageUploadField(path, key)) {
       renderImageUpload(label, path, input, {
-        uploadLabel: isDetailImageField(path, key) ? "Upload detail image" : "Upload about image",
-        clearStatus: isDetailImageField(path, key) ? "Detail image cleared." : "About image cleared."
+        uploadLabel: "Upload about image",
+        clearStatus: "About image cleared."
       });
     }
     parent.appendChild(label);

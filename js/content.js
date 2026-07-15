@@ -84,8 +84,6 @@ window.PORTFOLIO_CONTENT = {
     "missingTitle": "Project not found",
     "placeholderTitle": "Project image sequence",
     "modelDownloadLabel": "Open model file",
-    "drawingDetailsTitle": "Drawing Details",
-    "drawingDetailsIntro": "Here are some example details that I designed and drew to achieve an architectural intent.",
     "hostedModelTitle": "Hosted Model",
     "projectTypeTitle": "Project Type",
     "systemLabel": "System",
@@ -115,38 +113,6 @@ window.PORTFOLIO_CONTENT = {
         {
           "label": "Comprehensive Model",
           "alt": "Interactive 3D model for the L Ranch project"
-        }
-      ],
-      "detailSheets": [
-        {
-          "label": "Foundation and framing details",
-          "note": "Queued for redacted crop extraction from the detail sheet."
-        },
-        {
-          "label": "Roof and truss details",
-          "note": "Queued for redacted crop extraction from the detail sheet."
-        }
-      ],
-      "detailAssets": [
-        {
-          "label": "Foundation and framing joint",
-          "alt": "Redacted L Ranch S-400 framing and foundation detail crop",
-          "image": ""
-        },
-        {
-          "label": "Framing detail sequence",
-          "alt": "Redacted L Ranch S-400 framing detail crop",
-          "image": ""
-        },
-        {
-          "label": "Grid framing details",
-          "alt": "Redacted L Ranch S-400 grid framing detail crop",
-          "image": ""
-        },
-        {
-          "label": "Roof framing interface",
-          "alt": "Redacted L Ranch S-401 roof framing detail crop",
-          "image": ""
         }
       ]
     },
@@ -199,9 +165,9 @@ window.PORTFOLIO_CONTENT = {
     "coach-rd": {
       "title": "Coach Rd",
       "type": "Residential Structure",
-      "summary": "A residential structural model and drawing-set case study with foundation and framing detail targets.",
+      "summary": "A residential structural model case study with foundation, framing, and project-scope context.",
       "system": "Steel and concrete framing with multi-level foundation and framing plans.",
-      "scope": "Use this page to describe the mountain residential design scope, governing load path decisions, and how model views connect to the detail sheets.",
+      "scope": "Use this page to describe the mountain residential design scope, governing load path decisions, and how model views connect to the project story.",
       "projectTypeTitle": "Project Type",
       "systemLabel": "System",
       "primaryMediaLabel": "Primary Media",
@@ -217,44 +183,12 @@ window.PORTFOLIO_CONTENT = {
           "label": "Title Sheet View",
           "alt": "Coach Rd title sheet 3D model view"
         }
-      ],
-      "detailSheets": [
-        {
-          "label": "Foundation details",
-          "note": "Primary detail sheet target for redacted crop extraction."
-        },
-        {
-          "label": "Framing details",
-          "note": "Primary framing detail target for redacted crop extraction."
-        }
-      ],
-      "detailAssets": [
-        {
-          "label": "Foundation edge details",
-          "alt": "Redacted Coach Rd S-4.0 foundation edge detail crop",
-          "image": ""
-        },
-        {
-          "label": "Foundation wall transitions",
-          "alt": "Redacted Coach Rd S-4.0 foundation wall detail crop",
-          "image": ""
-        },
-        {
-          "label": "Framing section",
-          "alt": "Redacted Coach Rd S-4.1 framing section detail crop",
-          "image": ""
-        },
-        {
-          "label": "Roof and framing details",
-          "alt": "Redacted Coach Rd S-4.1 roof and framing detail crop",
-          "image": ""
-        }
       ]
     },
     "hastings-mesa": {
       "title": "Hastings Mesa",
       "type": "Barn / Canopy Structure",
-      "summary": "A compact barn and entry-canopy case study with a focused detail sheet and multiple 3D model views.",
+      "summary": "A compact barn and entry-canopy case study with multiple 3D model views and project-scope context.",
       "system": "Entry canopy, steel/concrete framing, and title-sheet model context.",
       "scope": "Use this page to explain the canopy support strategy, framing decisions, and detail coordination for the barn structure.",
       "projectTypeTitle": "Project Type",
@@ -276,39 +210,12 @@ window.PORTFOLIO_CONTENT = {
           "label": "Title Sheet View",
           "alt": "Hastings Mesa title sheet 3D model view"
         }
-      ],
-      "detailSheets": [
-        {
-          "label": "Entry canopy details",
-          "note": "Focused sheet for redacted detail crop extraction."
-        },
-        {
-          "label": "Framing detail references",
-          "note": "Additional detail callouts on the same sheet."
-        }
-      ],
-      "detailAssets": [
-        {
-          "label": "Canopy connection detail",
-          "alt": "Redacted Hastings Mesa S4.00 canopy connection detail crop",
-          "image": ""
-        },
-        {
-          "label": "Canopy model and detail",
-          "alt": "Redacted Hastings Mesa S4.00 canopy model and detail crop",
-          "image": ""
-        },
-        {
-          "label": "Canopy framing view",
-          "alt": "Redacted Hastings Mesa S4.00 canopy framing detail crop",
-          "image": ""
-        }
       ]
     },
     "hhr-ranch": {
       "title": "HHR Ranch",
       "type": "Residential / Ranch",
-      "summary": "A ranch residence case study with steel/concrete model views, truss coordination, and S4 detail targets.",
+      "summary": "A ranch residence case study with steel/concrete model views and truss coordination context.",
       "system": "Steel/concrete framing, truss coordination, and framed residential details.",
       "scope": "Use this page to describe the framing hierarchy, truss interface, foundation conditions, and the details that required engineering coordination.",
       "projectTypeTitle": "Project Type",
@@ -330,45 +237,13 @@ window.PORTFOLIO_CONTENT = {
           "label": "Truss View",
           "alt": "HHR Ranch truss 3D model"
         }
-      ],
-      "detailSheets": [
-        {
-          "label": "Foundation and framing details",
-          "note": "Queued for redacted crop extraction."
-        },
-        {
-          "label": "Trellis and truss details",
-          "note": "Queued for redacted crop extraction."
-        }
-      ],
-      "detailAssets": [
-        {
-          "label": "Foundation interface",
-          "alt": "Redacted HHR Ranch S4.00 foundation interface detail crop",
-          "image": ""
-        },
-        {
-          "label": "Foundation and framing edge",
-          "alt": "Redacted HHR Ranch S4.00 foundation and framing edge detail crop",
-          "image": ""
-        },
-        {
-          "label": "Trellis framing corner",
-          "alt": "Redacted HHR Ranch S4.01 trellis framing corner detail crop",
-          "image": ""
-        },
-        {
-          "label": "Truss and framing interface",
-          "alt": "Redacted HHR Ranch S4.01 truss and framing detail crop",
-          "image": ""
-        }
       ]
     },
     "mountain-laurel": {
       "title": "Mountain Laurel",
       "type": "Mountain Residence",
-      "summary": "A mountain residence case study with steel/concrete model views and a deep S-400 through S-403 detail sequence.",
-      "system": "Steel and concrete framing with multi-level residential framing and detail sheets.",
+      "summary": "A mountain residence case study with steel/concrete model views and project-scope context.",
+      "system": "Steel and concrete framing with multi-level residential framing context.",
       "scope": "Use this page to outline the framing strategy, foundation conditions, and detail development across the drawing set.",
       "projectTypeTitle": "Project Type",
       "systemLabel": "System",
@@ -385,49 +260,13 @@ window.PORTFOLIO_CONTENT = {
           "label": "Title Sheet View",
           "alt": "Mountain Laurel title sheet 3D model view"
         }
-      ],
-      "detailSheets": [
-        {
-          "label": "Foundation and framing details",
-          "note": "Queued for redacted crop extraction."
-        },
-        {
-          "label": "Upper-level details",
-          "note": "Queued for redacted crop extraction."
-        },
-        {
-          "label": "Micropile detail",
-          "note": "Queued for redacted crop extraction."
-        }
-      ],
-      "detailAssets": [
-        {
-          "label": "Framing detail cluster",
-          "alt": "Redacted Mountain Laurel S-400 framing detail cluster crop",
-          "image": ""
-        },
-        {
-          "label": "Framing edge details",
-          "alt": "Redacted Mountain Laurel S-400 framing edge detail crop",
-          "image": ""
-        },
-        {
-          "label": "Foundation and wall interface",
-          "alt": "Redacted Mountain Laurel S-400 foundation and wall detail crop",
-          "image": ""
-        },
-        {
-          "label": "Foundation/framing details",
-          "alt": "Redacted Mountain Laurel S-400 foundation and framing detail crop",
-          "image": ""
-        }
       ]
     },
     "waters": {
       "title": "Waters",
       "type": "Residential Structure",
-      "summary": "A compact residential structural case study with steel/concrete model views and S-400 through S-402 detail targets.",
-      "system": "Steel and concrete framing with foundation, floor, roof, and detail-sheet coordination.",
+      "summary": "A compact residential structural case study with steel/concrete model views and project-scope context.",
+      "system": "Steel and concrete framing with foundation, floor, and roof coordination.",
       "scope": "Use this page to describe the structural scope, steel/concrete load path, and selected details that explain the design process.",
       "projectTypeTitle": "Project Type",
       "systemLabel": "System",
@@ -443,42 +282,6 @@ window.PORTFOLIO_CONTENT = {
         {
           "label": "Title Sheet View",
           "alt": "Waters title sheet 3D model view"
-        }
-      ],
-      "detailSheets": [
-        {
-          "label": "Foundation and framing details",
-          "note": "Queued for redacted crop extraction."
-        },
-        {
-          "label": "Framing details",
-          "note": "Queued for redacted crop extraction."
-        },
-        {
-          "label": "Foundation and wall details",
-          "note": "Queued for redacted crop extraction."
-        }
-      ],
-      "detailAssets": [
-        {
-          "label": "Framing detail cluster",
-          "alt": "Redacted Waters S-400 framing detail cluster crop",
-          "image": ""
-        },
-        {
-          "label": "Foundation and floor interface",
-          "alt": "Redacted Waters S-400 foundation and floor detail crop",
-          "image": ""
-        },
-        {
-          "label": "Wall and framing details",
-          "alt": "Redacted Waters S-400 wall and framing detail crop",
-          "image": ""
-        },
-        {
-          "label": "Framing connection details",
-          "alt": "Redacted Waters S-401 framing connection detail crop",
-          "image": ""
         }
       ]
     }

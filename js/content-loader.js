@@ -118,8 +118,6 @@
       });
 
       overlayArray(project.modelOptions, editable.modelOptions, ["label", "alt"]);
-      overlayArray(project.detailSheets, editable.detailSheets, ["label", "note"]);
-      overlayArray(project.detailAssets, editable.detailAssets, ["label", "alt", "image"]);
       overlayArray(project.galleryTiles, editable.galleryTiles, ["label", "alt"]);
     });
   }

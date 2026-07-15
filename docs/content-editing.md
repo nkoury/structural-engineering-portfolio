@@ -26,12 +26,12 @@ options if you want a local copy or if GitHub publishing is temporarily unavaila
 - Landing page name, eyebrow, and tab labels
 - Highlighted Works intro text
 - About Me page copy and LinkedIn URL
-- Contact page email, LinkedIn text, and resume text
+- About Me image uploads
+- Contact page email and LinkedIn text
 - Project titles, types, summaries, systems, scopes, project-section labels, primary media text,
-  status text, model labels, and detail labels
-- Process asset labels and captions
+  status text, and model labels
 
 ## What Still Requires File Changes
 
-The editor is for text. Asset changes still require placing files in the right folders and updating
-asset paths in project data when needed, such as adding a new model, image, PDF, or resume file.
+The editor is for copy and About Me image uploads. Project model changes still require placing files
+in the right folders and updating asset paths in `js/projects.js`.

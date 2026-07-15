@@ -74,7 +74,6 @@ h5,
 h6,
 .landing-tabs strong,
 .work-project-tab strong,
-.process-tab strong,
 .project-ribbon a,
 .model-switcher button,
 .model-download,
@@ -288,7 +287,6 @@ body[data-page="about"] .project-title h1 {
 }
 
 .works-page,
-.process-page,
 .contact-page {
   min-height: 100vh;
 }
@@ -340,15 +338,6 @@ body[data-page="about"] .project-title h1 {
   margin: 0 auto;
   max-width: var(--max);
   padding: 18px clamp(18px, 4vw, 42px) clamp(54px, 7vw, 92px);
-}
-
-.process-grid {
-  display: grid;
-  gap: clamp(10px, 1.4vw, 18px);
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  margin: 0 auto;
-  max-width: var(--max);
-  padding: 20px clamp(18px, 4vw, 42px) clamp(70px, 8vw, 116px);
 }
 
 .work-project-card {
@@ -508,196 +497,6 @@ body[data-page="about"] .project-title h1 {
 .work-project-tab:hover span,
 .work-project-tab:focus-visible span {
   color: var(--white);
-}
-
-.process-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  color: var(--white);
-  min-height: 300px;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-}
-
-.process-card.large {
-  grid-column: span 7;
-  min-height: 520px;
-}
-
-.process-card.medium {
-  grid-column: span 5;
-  min-height: 350px;
-}
-
-.process-card.wide {
-  grid-column: span 8;
-  min-height: 340px;
-}
-
-.process-card.tall {
-  grid-column: span 4;
-  min-height: 470px;
-}
-
-.process-card img {
-  height: 100%;
-  inset: 0;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
-}
-
-.process-card::after {
-  background: linear-gradient(0deg, rgba(31, 29, 26, 0.78), rgba(31, 29, 26, 0.02));
-  content: "";
-  inset: 0;
-  position: absolute;
-}
-
-.process-tab {
-  bottom: 16px;
-  display: grid;
-  gap: 3px;
-  left: 16px;
-  position: absolute;
-  right: 16px;
-  z-index: 1;
-}
-
-.process-tab small {
-  color: #ffb182;
-  font-size: 0.78rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.process-tab strong {
-  font-family: var(--font-display);
-  font-size: clamp(1.55rem, 3vw, 3rem);
-  font-weight: 500;
-  line-height: 0.96;
-}
-
-.process-method {
-  border-top: 1px solid var(--line);
-}
-
-.collage-grid {
-  display: grid;
-  gap: clamp(10px, 1.4vw, 18px);
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  margin: 0 auto;
-  max-width: var(--max);
-  padding: 20px clamp(18px, 4vw, 42px) clamp(70px, 8vw, 116px);
-}
-
-.collage-link {
-  background: var(--white);
-  border: 1px solid var(--line);
-  color: var(--ink);
-  display: grid;
-  min-height: 260px;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-}
-
-.collage-link:hover,
-.collage-link:focus-visible {
-  box-shadow: var(--shadow);
-  outline: 1px solid var(--orange);
-  outline-offset: -1px;
-  transform: translateY(-2px);
-}
-
-.collage-link.large {
-  grid-column: span 7;
-  min-height: 520px;
-}
-
-.collage-link.medium {
-  grid-column: span 5;
-  min-height: 340px;
-}
-
-.collage-link.wide {
-  grid-column: span 8;
-  min-height: 320px;
-}
-
-.collage-link.tall {
-  grid-column: span 4;
-  min-height: 440px;
-}
-
-.collage-visual {
-  background:
-    linear-gradient(90deg, rgba(255, 253, 248, 0.18) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(255, 253, 248, 0.16) 1px, transparent 1px),
-    linear-gradient(135deg, var(--tile-color), #26231e);
-  background-size: 34px 34px, 34px 34px, auto;
-  inset: 0;
-  position: absolute;
-}
-
-.collage-visual::before,
-.collage-visual::after {
-  content: "";
-  position: absolute;
-}
-
-.collage-visual::before {
-  border: 2px solid rgba(255, 253, 248, 0.68);
-  height: 38%;
-  left: 18%;
-  top: 22%;
-  transform: skewY(-12deg);
-  width: 58%;
-}
-
-.collage-visual::after {
-  background: rgba(255, 253, 248, 0.62);
-  height: 2px;
-  left: 10%;
-  right: 10%;
-  top: 62%;
-  transform: rotate(-8deg);
-}
-
-.collage-image {
-  height: 100%;
-  inset: 0;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
-}
-
-.collage-caption {
-  align-self: end;
-  background: linear-gradient(0deg, rgba(31, 29, 26, 0.78), rgba(31, 29, 26, 0));
-  color: var(--white);
-  display: grid;
-  gap: 4px;
-  min-height: 45%;
-  padding: 26px;
-  position: relative;
-  z-index: 1;
-}
-
-.collage-caption strong {
-  align-self: end;
-  font-family: var(--font-display);
-  font-size: clamp(1.55rem, 3.2vw, 3.4rem);
-  font-weight: 500;
-  line-height: 0.98;
-}
-
-.collage-caption span {
-  color: #ffb182;
-  font-size: 0.88rem;
-  font-weight: 800;
-  text-transform: uppercase;
 }
 
 .site-footer {
@@ -933,141 +732,6 @@ body[data-page="about"] .project-title h1 {
   color: var(--muted);
 }
 
-.detail-card-grid {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.detail-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  display: grid;
-  grid-template-rows: 220px auto;
-  min-height: 250px;
-  overflow: hidden;
-}
-
-.detail-card img {
-  background: #fff;
-  border-bottom: 1px solid var(--line);
-  height: 220px;
-  object-fit: contain;
-  padding: 8px;
-  width: 100%;
-}
-
-.detail-card-placeholder {
-  align-content: center;
-  background:
-    linear-gradient(90deg, rgba(31, 29, 26, 0.08) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(31, 29, 26, 0.06) 1px, transparent 1px),
-    linear-gradient(135deg, var(--paper), var(--orange-soft));
-  background-size: 28px 28px, 28px 28px, auto;
-  display: grid;
-  min-height: 180px;
-  padding: 18px;
-}
-
-.detail-card-placeholder span,
-.detail-card-copy span {
-  color: var(--orange-deep);
-  font-size: 0.78rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.detail-card-placeholder strong {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 500;
-  line-height: 0.9;
-}
-
-.detail-card-copy {
-  align-content: start;
-  display: grid;
-  gap: 8px;
-  padding: 16px;
-}
-
-.detail-card-copy strong {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 600;
-  line-height: 1;
-}
-
-.detail-card-copy p {
-  background: transparent;
-  border: 0;
-  font-size: 0.92rem;
-  margin: 0;
-  padding: 0;
-}
-
-.asset-strip {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.asset-slot {
-  align-content: end;
-  background:
-    linear-gradient(135deg, rgba(95, 103, 105, 0.86), rgba(167, 86, 53, 0.82)),
-    var(--steel);
-  color: var(--white);
-  min-height: 190px;
-  overflow: hidden;
-  padding: 18px;
-  position: relative;
-  text-decoration: none;
-}
-
-.asset-slot img {
-  height: 100%;
-  inset: 0;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
-}
-
-.asset-slot.image-slot::after {
-  background: linear-gradient(0deg, rgba(31, 29, 26, 0.82), rgba(31, 29, 26, 0.05));
-  content: "";
-  inset: 0;
-  position: absolute;
-}
-
-.asset-slot:hover,
-.asset-slot:focus-visible {
-  box-shadow: var(--shadow);
-  outline: 1px solid var(--orange);
-  outline-offset: -1px;
-}
-
-.asset-slot strong,
-.asset-slot span {
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-
-.asset-slot strong {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.05;
-}
-
-.asset-slot span {
-  color: #ffb182;
-  font-size: 0.82rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
 .about-hero {
   align-items: center;
 }
@@ -1211,21 +875,6 @@ body[data-page="about"] .project-title h1 {
   color: var(--white);
 }
 
-.resume-frame-wrap {
-  background: var(--white);
-  border: 1px solid var(--line);
-  height: min(760px, 78vh);
-  min-height: 460px;
-  overflow: hidden;
-}
-
-.resume-frame {
-  border: 0;
-  display: block;
-  height: 100%;
-  width: 100%;
-}
-
 .linkedin-link {
   border-bottom: 2px solid var(--orange);
   color: var(--ink);
@@ -1241,10 +890,6 @@ body[data-page="about"] .project-title h1 {
 .linkedin-link:hover,
 .linkedin-link:focus-visible {
   color: var(--orange);
-}
-
-.linkedin-link.resume-link {
-  margin-top: 18px;
 }
 
 .about-photo-grid {
@@ -1632,18 +1277,6 @@ body[data-page="about"] .project-title h1 {
     grid-template-columns: 1fr;
   }
 
-  .collage-link.large,
-  .collage-link.medium,
-  .collage-link.wide,
-  .collage-link.tall,
-  .process-card.large,
-  .process-card.medium,
-  .process-card.wide,
-  .process-card.tall {
-    grid-column: span 12;
-    min-height: 330px;
-  }
-
   .project-ribbon {
     align-items: flex-start;
     flex-direction: column;
@@ -1683,8 +1316,6 @@ body[data-page="about"] .project-title h1 {
     font-size: 1.1rem;
   }
 
-  .asset-strip,
-  .detail-card-grid,
   .detail-list li {
     grid-template-columns: 1fr;
   }
