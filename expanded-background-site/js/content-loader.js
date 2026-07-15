@@ -87,7 +87,20 @@
       const editable = projectContent[project.id];
       if (!editable) return;
 
-      ["title", "type", "year", "summary", "system", "scope"].forEach((key) => {
+      [
+        "title",
+        "type",
+        "year",
+        "summary",
+        "system",
+        "scope",
+        "projectTypeTitle",
+        "systemLabel",
+        "primaryMediaLabel",
+        "primaryMedia",
+        "statusLabel",
+        "status"
+      ].forEach((key) => {
         if (typeof editable[key] === "string") {
           project[key] = editable[key];
         }

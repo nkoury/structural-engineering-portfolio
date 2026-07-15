@@ -27,8 +27,8 @@ options if you want a local copy or if GitHub publishing is temporarily unavaila
 - Highlighted Works intro text
 - About Me page copy and LinkedIn URL
 - Contact page email, LinkedIn text, and resume text
-- Shared project-page section headings and default paragraphs
-- Project titles, types, summaries, systems, scopes, model labels, and detail labels
+- Project titles, types, summaries, systems, scopes, project-section labels, primary media text,
+  status text, model labels, and detail labels
 - Process asset labels and captions
 
 ## What Still Requires File Changes

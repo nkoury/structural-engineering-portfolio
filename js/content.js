@@ -101,6 +101,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "One of my first projects carried from schematic design through construction administration- I learned a lot on this job. Designing the combined moment-frame steel trellis with a cable support system was a fun challenge, utilizing my RISA 3D FEA skills, combined with my detail drafting and construction communication.",
       "system": "Wood framing with steel elements.",
       "scope": "Primarily wood-framed structure with a complex moment-frame steel trellis supported by a turnbuckle and clevis cable system.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive 3D model views and project scope.",
+      "statusLabel": "Status",
+      "status": "Construction complete.",
       "modelOptions": [
         {
           "label": "Trellis Model",
@@ -150,6 +156,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "One of my first high-end jobs with a lot of broken-out FEA models for solving compounding deflections, wind girts supporting high deflection tolerance slider doors and high-end exterior finishes.",
       "system": "Steel post-and-beam frame with wood infill framing",
       "scope": "Advanced steel detailing with some broken out FEA models and high-level architectural elements and finishes",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive 3D model views and project scope.",
+      "statusLabel": "Status",
+      "status": "Construction complete.",
       "modelOptions": [
         {
           "label": "Steel Model",
@@ -167,6 +179,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A model-led case study ready for structural concrete and steel coordination visuals.",
       "system": "Steel and concrete framing model with title-sheet context view.",
       "scope": "Use this page to explain the project constraints, model coordination, and key structural elements after public-safe drawing assets are prepared.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive 3D model views and project scope.",
+      "statusLabel": "Status",
+      "status": "Construction complete.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
@@ -184,6 +202,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A residential structural model and drawing-set case study with foundation and framing detail targets.",
       "system": "Steel and concrete framing with multi-level foundation and framing plans.",
       "scope": "Use this page to describe the mountain residential design scope, governing load path decisions, and how model views connect to the detail sheets.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive 3D model views and project scope.",
+      "statusLabel": "Status",
+      "status": "Construction complete.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
@@ -233,6 +257,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A compact barn and entry-canopy case study with a focused detail sheet and multiple 3D model views.",
       "system": "Entry canopy, steel/concrete framing, and title-sheet model context.",
       "scope": "Use this page to explain the canopy support strategy, framing decisions, and detail coordination for the barn structure.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive 3D model views and project scope.",
+      "statusLabel": "Status",
+      "status": "Construction complete.",
       "modelOptions": [
         {
           "label": "Entry Canopy",
@@ -281,6 +311,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A ranch residence case study with steel/concrete model views, truss coordination, and S4 detail targets.",
       "system": "Steel/concrete framing, truss coordination, and framed residential details.",
       "scope": "Use this page to describe the framing hierarchy, truss interface, foundation conditions, and the details that required engineering coordination.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive 3D model views and project scope.",
+      "statusLabel": "Status",
+      "status": "Construction complete.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
@@ -334,6 +370,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A mountain residence case study with steel/concrete model views and a deep S-400 through S-403 detail sequence.",
       "system": "Steel and concrete framing with multi-level residential framing and detail sheets.",
       "scope": "Use this page to outline the framing strategy, foundation conditions, and detail development across the drawing set.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive 3D model views and project scope.",
+      "statusLabel": "Status",
+      "status": "Construction complete.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
@@ -387,6 +429,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A compact residential structural case study with steel/concrete model views and S-400 through S-402 detail targets.",
       "system": "Steel and concrete framing with foundation, floor, roof, and detail-sheet coordination.",
       "scope": "Use this page to describe the structural scope, steel/concrete load path, and selected details that explain the design process.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive 3D model views and project scope.",
+      "statusLabel": "Status",
+      "status": "Construction complete.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",

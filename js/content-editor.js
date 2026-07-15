@@ -22,7 +22,6 @@
     ["pages.works", "Highlighted Works"],
     ["pages.about", "About Me"],
     ["pages.contact", "Contact Page"],
-    ["projectPage", "Shared Project Page Text"],
     ["projects", "Projects"],
   ];
 

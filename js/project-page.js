@@ -142,16 +142,16 @@
 
       <div class="project-body">
         <section class="project-section">
-          <h2>${getCopy("projectPage.projectTypeTitle", "Project Type")}</h2>
+          <h2>${project.projectTypeTitle || getCopy("projectPage.projectTypeTitle", "Project Type")}</h2>
           <div>
             <p>${project.scope}</p>
             <ul class="detail-list">
-              <li><strong>${getCopy("projectPage.systemLabel", "System")}</strong><span>${project.system}</span></li>
-              <li><strong>${getCopy("projectPage.primaryMediaLabel", "Primary Media")}</strong><span>${getCopy(
+              <li><strong>${project.systemLabel || getCopy("projectPage.systemLabel", "System")}</strong><span>${project.system}</span></li>
+              <li><strong>${project.primaryMediaLabel || getCopy("projectPage.primaryMediaLabel", "Primary Media")}</strong><span>${project.primaryMedia || getCopy(
                 "projectPage.primaryMediaValue",
                 "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence."
               )}</span></li>
-              <li><strong>${getCopy("projectPage.statusLabel", "Status")}</strong><span>${getCopy(
+              <li><strong>${project.statusLabel || getCopy("projectPage.statusLabel", "Status")}</strong><span>${project.status || getCopy(
                 "projectPage.statusValue",
                 "Public-facing model paths are active; detail crops are staged for address-redacted extraction."
               )}</span></li>

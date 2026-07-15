@@ -16,7 +16,8 @@ resume. The previous fuller version is preserved in `expanded-background-site/`.
 - `expanded-background-site/` is the backup version with Process and resume content.
 - `assets/` stores shared model, drawing-detail, process, and resume assets.
 - `js/projects.js` controls project ids, page links, model paths, and default detail slots.
-- `js/content.js` contains editable text and uploaded detail images.
+- `js/content.js` contains editable text, per-project project-section copy, and uploaded detail
+  images.
 - `js/analytics-config.js` and `js/analytics.js` configure production-only Cloudflare Web
   Analytics.
 

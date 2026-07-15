@@ -127,6 +127,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A residential ranch structure centered on trellis framing, model coordination, and public-safe technical evidence.",
       "system": "Steel trellis framing with concrete and foundation components.",
       "scope": "Use this narrative to describe the design constraints, your role, model scope, calculation decisions, and the details that best show your engineering judgment.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence.",
+      "statusLabel": "Status",
+      "status": "Public-facing model paths are active; detail crops are staged for address-redacted extraction.",
       "modelOptions": [
         {
           "label": "Trellis Model",
@@ -168,6 +174,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A ready-to-fill mountain-site case study for scope, site constraints, design elements, analysis visuals, and project images.",
       "system": "To be defined from the project drawings, model, and calculation set.",
       "scope": "Use this page for the governing terrain, snow, wind, access, constructability, and coordination story once the project assets are ready.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence.",
+      "statusLabel": "Status",
+      "status": "Public-facing model paths are active; detail crops are staged for address-redacted extraction.",
       "modelOptions": [
         {
           "label": "Steel Model",
@@ -185,6 +197,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A model-led case study ready for structural concrete and steel coordination visuals.",
       "system": "Steel and concrete framing model with title-sheet context view.",
       "scope": "Use this page to explain the project constraints, model coordination, and key structural elements after public-safe drawing assets are prepared.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence.",
+      "statusLabel": "Status",
+      "status": "Public-facing model paths are active; detail crops are staged for address-redacted extraction.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
@@ -202,6 +220,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A residential structural model and drawing-set case study with foundation and framing detail targets.",
       "system": "Steel and concrete framing with multi-level foundation and framing plans.",
       "scope": "Use this page to describe the mountain residential design scope, governing load path decisions, and how model views connect to the detail sheets.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence.",
+      "statusLabel": "Status",
+      "status": "Public-facing model paths are active; detail crops are staged for address-redacted extraction.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
@@ -247,6 +271,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A compact barn and entry-canopy case study with a focused detail sheet and multiple 3D model views.",
       "system": "Entry canopy, steel/concrete framing, and title-sheet model context.",
       "scope": "Use this page to explain the canopy support strategy, framing decisions, and detail coordination for the barn structure.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence.",
+      "statusLabel": "Status",
+      "status": "Public-facing model paths are active; detail crops are staged for address-redacted extraction.",
       "modelOptions": [
         {
           "label": "Entry Canopy",
@@ -292,6 +322,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A ranch residence case study with steel/concrete model views, truss coordination, and S4 detail targets.",
       "system": "Steel/concrete framing, truss coordination, and framed residential details.",
       "scope": "Use this page to describe the framing hierarchy, truss interface, foundation conditions, and the details that required engineering coordination.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence.",
+      "statusLabel": "Status",
+      "status": "Public-facing model paths are active; detail crops are staged for address-redacted extraction.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
@@ -341,6 +377,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A mountain residence case study with steel/concrete model views and a deep S-400 through S-403 detail sequence.",
       "system": "Steel and concrete framing with multi-level residential framing and detail sheets.",
       "scope": "Use this page to outline the framing strategy, foundation conditions, and detail development across the drawing set.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence.",
+      "statusLabel": "Status",
+      "status": "Public-facing model paths are active; detail crops are staged for address-redacted extraction.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
@@ -390,6 +432,12 @@ window.PORTFOLIO_CONTENT = {
       "summary": "A compact residential structural case study with steel/concrete model views and S-400 through S-402 detail targets.",
       "system": "Steel and concrete framing with foundation, floor, roof, and detail-sheet coordination.",
       "scope": "Use this page to describe the structural scope, steel/concrete load path, and selected details that explain the design process.",
+      "projectTypeTitle": "Project Type",
+      "systemLabel": "System",
+      "primaryMediaLabel": "Primary Media",
+      "primaryMedia": "Interactive GLB model views, redacted drawing detail targets, process imagery, and selected calculation evidence.",
+      "statusLabel": "Status",
+      "status": "Public-facing model paths are active; detail crops are staged for address-redacted extraction.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
