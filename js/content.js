@@ -127,7 +127,7 @@ window.PORTFOLIO_CONTENT = {
       "primaryMediaLabel": "Primary Media",
       "primaryMedia": "Interactive 3D model views and project scope.",
       "statusLabel": "Status",
-      "status": "Construction complete.",
+      "status": "Construction underway.",
       "modelOptions": [
         {
           "label": "Steel Model",
@@ -142,15 +142,15 @@ window.PORTFOLIO_CONTENT = {
     "bismarck-bluffs": {
       "title": "Bismarck Bluffs",
       "type": "Residential Structure",
-      "summary": "A model-led case study ready for structural concrete and steel coordination visuals.",
-      "system": "Steel and concrete framing model with title-sheet context view.",
-      "scope": "Use this page to explain the project constraints, model coordination, and key structural elements after public-safe drawing assets are prepared.",
+      "summary": "An un-assuming rancher with an advanced soil study and numerous proprietary roof and floor products requiring special detailing.",
+      "system": "Steel framing with proprietary glass greenhouse roofing.",
+      "scope": "Hand calculated multi-wall soil retainage with liquifiable soils to ensure the structure would be retained within the slope.",
       "projectTypeTitle": "Project Type",
       "systemLabel": "System",
       "primaryMediaLabel": "Primary Media",
       "primaryMedia": "Interactive 3D model views and project scope.",
       "statusLabel": "Status",
-      "status": "Construction complete.",
+      "status": "Permit in progress.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
@@ -165,15 +165,15 @@ window.PORTFOLIO_CONTENT = {
     "coach-rd": {
       "title": "Coach Rd",
       "type": "Residential Structure",
-      "summary": "A residential structural model case study with foundation, framing, and project-scope context.",
-      "system": "Steel and concrete framing with multi-level foundation and framing plans.",
-      "scope": "Use this page to describe the mountain residential design scope, governing load path decisions, and how model views connect to the project story.",
+      "summary": "One of the largest structures I've worked on with a brace frame lateral system and underground square footage with composite roof and flooring.",
+      "system": "Steel post and beam with brace frames and composite assemblies.",
+      "scope": "Lots of FEA models, RAM composite analysis, and RAMFrame braced lateral system with advanced detailing.",
       "projectTypeTitle": "Project Type",
       "systemLabel": "System",
       "primaryMediaLabel": "Primary Media",
       "primaryMedia": "Interactive 3D model views and project scope.",
       "statusLabel": "Status",
-      "status": "Construction complete.",
+      "status": "Design phases underway.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
@@ -188,15 +188,15 @@ window.PORTFOLIO_CONTENT = {
     "hastings-mesa": {
       "title": "Hastings Mesa",
       "type": "Barn / Canopy Structure",
-      "summary": "A compact barn and entry-canopy case study with multiple 3D model views and project-scope context.",
-      "system": "Entry canopy, steel/concrete framing, and title-sheet model context.",
-      "scope": "Use this page to explain the canopy support strategy, framing decisions, and detail coordination for the barn structure.",
+      "summary": "My latest micropile foundation design with some new-to-me steel detailing both for the entry roof canopy and very large (40'+) openings with high deflection tolerance. This project's design phase was completed in less than a month with extensive coordination and rapid product delivery.",
+      "system": "Entry canopy, steel framing, deep micropile foundation.",
+      "scope": "New detailing, advanced deep foundation design, with high-quality architect coordination. Poor lot soil conditions.",
       "projectTypeTitle": "Project Type",
       "systemLabel": "System",
       "primaryMediaLabel": "Primary Media",
       "primaryMedia": "Interactive 3D model views and project scope.",
       "statusLabel": "Status",
-      "status": "Construction complete.",
+      "status": "Permit process underway.",
       "modelOptions": [
         {
           "label": "Entry Canopy",
@@ -215,9 +215,9 @@ window.PORTFOLIO_CONTENT = {
     "hhr-ranch": {
       "title": "HHR Ranch",
       "type": "Residential / Ranch",
-      "summary": "A ranch residence case study with steel/concrete model views and truss coordination context.",
-      "system": "Steel/concrete framing, truss coordination, and framed residential details.",
-      "scope": "Use this page to describe the framing hierarchy, truss interface, foundation conditions, and the details that required engineering coordination.",
+      "summary": "This job was the first high-level product that I was left to coordinate, design, and administer through construction on my own. Some advanced design and detailing of a wood truss and it's connections, as well as extensive code review by the building jurisdiction.",
+      "system": "Light-frame wood framing, steel infill, and custom truss roof system.",
+      "scope": "Mostly light-frame wood with some steel infill for individual elements such as a large 6-panel slider door and other components-and-cladding wind load deflection criteria.",
       "projectTypeTitle": "Project Type",
       "systemLabel": "System",
       "primaryMediaLabel": "Primary Media",
@@ -242,15 +242,15 @@ window.PORTFOLIO_CONTENT = {
     "mountain-laurel": {
       "title": "Mountain Laurel",
       "type": "Mountain Residence",
-      "summary": "A mountain residence case study with steel/concrete model views and project-scope context.",
-      "system": "Steel and concrete framing with multi-level residential framing context.",
-      "scope": "Use this page to outline the framing strategy, foundation conditions, and detail development across the drawing set.",
+      "summary": "Advanced soil retaining with concrete buttress wall, high-level steel coordination, multi-story lateral analysis.",
+      "system": "Steel and concrete framing with multi-level wood framing.",
+      "scope": "Steel post-and-beam with wood shear walls, soil buttress wall, with micropile retaining walls to create a high elevation driveway/entry.",
       "projectTypeTitle": "Project Type",
       "systemLabel": "System",
       "primaryMediaLabel": "Primary Media",
       "primaryMedia": "Interactive 3D model views and project scope.",
       "statusLabel": "Status",
-      "status": "Construction complete.",
+      "status": "Construction underway.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
@@ -265,15 +265,15 @@ window.PORTFOLIO_CONTENT = {
     "waters": {
       "title": "Waters",
       "type": "Residential Structure",
-      "summary": "A compact residential structural case study with steel/concrete model views and project-scope context.",
-      "system": "Steel and concrete framing with foundation, floor, and roof coordination.",
-      "scope": "Use this page to describe the structural scope, steel/concrete load path, and selected details that explain the design process.",
+      "summary": "Adverse lot soil conditions, high-end finishes, steel frame.",
+      "system": "Steel and wood framing with inset foundation to address deep soil cut.",
+      "scope": "Adverse lot soil conditions, advanced detailing, and high-end finishes",
       "projectTypeTitle": "Project Type",
       "systemLabel": "System",
       "primaryMediaLabel": "Primary Media",
       "primaryMedia": "Interactive 3D model views and project scope.",
       "statusLabel": "Status",
-      "status": "Construction complete.",
+      "status": "Construction underway.",
       "modelOptions": [
         {
           "label": "Steel + Concrete",
