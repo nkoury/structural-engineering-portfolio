@@ -26,9 +26,19 @@
     document.write(`<script src="${escapeAttribute(withVersion(src))}"><\/script>`);
   }
 
-  window.setTimeout(() => {
-    if (document.body?.dataset.contentState === "loading") {
+  function markContentReady() {
+    document.documentElement.dataset.contentState = "ready";
+    if (document.body) {
       document.body.dataset.contentState = "ready";
+    }
+  }
+
+  window.setTimeout(() => {
+    if (
+      document.documentElement.dataset.contentState === "loading" ||
+      document.body?.dataset.contentState === "loading"
+    ) {
+      markContentReady();
     }
   }, 12000);
 

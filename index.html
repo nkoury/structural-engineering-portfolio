@@ -14,7 +14,9 @@
       content="A project gallery and case-study portfolio for structural engineering work."
     />
     <meta name="theme-color" content="#f7f3eb" />
-    <link rel="stylesheet" href="css/styles.css?v=20260716-content-gate" />
+    <script>document.documentElement.dataset.contentState = "loading";</script>
+    <style>html[data-content-state="loading"] body { opacity: 0; visibility: hidden; }</style>
+    <link rel="stylesheet" href="css/styles.css?v=20260716-document-gate" />
   </head>
   <body class="home-body" data-page="home" data-content-state="loading">
     <main class="home-shell">
@@ -40,7 +42,7 @@
         </nav>
       </section>
     </main>
-    <script src="js/content-bootstrap.js?v=20260716-content-gate" data-content-src="js/content.js" data-loader-src="js/content-loader.js"></script>
+    <script src="js/content-bootstrap.js?v=20260716-document-gate" data-content-src="js/content.js" data-loader-src="js/content-loader.js"></script>
     <script src="js/analytics.js"></script>
   </body>
 </html>

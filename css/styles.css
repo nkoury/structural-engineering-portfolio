@@ -40,16 +40,21 @@ body {
   margin: 0;
 }
 
+html[data-content-state="loading"] body,
 body[data-content-state="loading"] {
   opacity: 0;
+  visibility: hidden;
 }
 
+html[data-content-state="ready"] body,
 body[data-content-state="ready"] {
   opacity: 1;
   transition: opacity 120ms ease;
+  visibility: visible;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html[data-content-state="ready"] body,
   body[data-content-state="ready"] {
     transition: none;
   }

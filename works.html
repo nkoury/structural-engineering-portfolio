@@ -9,7 +9,9 @@
       content="Highlighted structural engineering works by Noah Koury, shown through interactive 3D model views and project links."
     />
     <meta name="theme-color" content="#f7f3eb" />
-    <link rel="stylesheet" href="css/styles.css?v=20260716-content-gate" />
+    <script>document.documentElement.dataset.contentState = "loading";</script>
+    <style>html[data-content-state="loading"] body { opacity: 0; visibility: hidden; }</style>
+    <link rel="stylesheet" href="css/styles.css?v=20260716-document-gate" />
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.0/model-viewer.min.js"></script>
   </head>
   <body data-page="works" data-content-state="loading">
@@ -36,7 +38,7 @@
     </footer>
 
     <script src="js/projects.js?v=20260716-highlighted-order"></script>
-    <script src="js/content-bootstrap.js?v=20260716-content-gate" data-content-src="js/content.js" data-loader-src="js/content-loader.js"></script>
+    <script src="js/content-bootstrap.js?v=20260716-document-gate" data-content-src="js/content.js" data-loader-src="js/content-loader.js"></script>
     <script src="js/project-page.js?v=20260715-per-project-section"></script>
     <script src="js/main.js?v=20260716-highlighted-order"></script>
     <script src="js/analytics.js"></script>

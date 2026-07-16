@@ -129,15 +129,61 @@
     });
   }
 
-  function applyEditableContent() {
-    setMeta();
-    applyTextBindings();
-    markContentReady();
+  function waitForImage(image) {
+    if (!image.src || image.hidden) return Promise.resolve();
+
+    const decodeImage = () => {
+      if (typeof image.decode !== "function") return Promise.resolve();
+      return image.decode().catch(() => {});
+    };
+
+    if (image.complete) {
+      return decodeImage();
+    }
+
+    return new Promise((resolve) => {
+      const done = () => {
+        image.removeEventListener("load", done);
+        image.removeEventListener("error", done);
+        decodeImage().finally(resolve);
+      };
+
+      image.addEventListener("load", done, { once: true });
+      image.addEventListener("error", done, { once: true });
+    });
   }
 
   function markContentReady() {
-    if (!document.body) return;
-    document.body.dataset.contentState = "ready";
+    document.documentElement.dataset.contentState = "ready";
+    if (document.body) {
+      document.body.dataset.contentState = "ready";
+    }
+  }
+
+  function markContentReadyAfterMedia() {
+    const images = Array.from(document.querySelectorAll("img[data-content-src]"))
+      .filter((image) => image.src && !image.hidden);
+
+    if (!images.length) {
+      markContentReady();
+      return;
+    }
+
+    let didReveal = false;
+    const reveal = () => {
+      if (didReveal) return;
+      didReveal = true;
+      markContentReady();
+    };
+
+    Promise.all(images.map(waitForImage)).then(reveal, reveal);
+    window.setTimeout(reveal, 2500);
+  }
+
+  function applyEditableContent() {
+    setMeta();
+    applyTextBindings();
+    markContentReadyAfterMedia();
   }
 
   window.PORTFOLIO_CONTENT_HELPERS = {
