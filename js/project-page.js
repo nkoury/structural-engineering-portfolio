@@ -42,6 +42,13 @@
       .replace(/>/g, "&gt;");
   }
 
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
   function renderModel(project) {
     const models = project.modelOptions || (project.modelViewer ? [project.modelViewer] : []);
 
@@ -110,6 +117,43 @@
     `;
   }
 
+  function renderProjectPhotos(project) {
+    const photos = project.photos || {};
+    const title = photos.title || "Project Photos";
+    const comingSoonText = photos.comingSoonText || "Photos Coming Soon!";
+    const items = Array.isArray(photos.items) ? photos.items : [];
+    const visibleItems = items.filter((item) => item && item.image);
+
+    if (photos.mode !== "photos" || !visibleItems.length) {
+      return `
+        <section class="project-section project-photos-section">
+          <h2>${escapeHtml(title)}</h2>
+          <div class="project-photo-coming-soon">
+            <p>${escapeHtml(comingSoonText)}</p>
+          </div>
+        </section>
+      `;
+    }
+
+    return `
+      <section class="project-section project-photos-section">
+        <h2>${escapeHtml(title)}</h2>
+        <div class="project-photo-grid">
+          ${visibleItems
+            .map(
+              (item, index) => `
+                <figure class="about-photo project-photo project-photo-${index + 1}">
+                  <img src="${escapeAttribute(item.image)}" alt="${escapeAttribute(item.alt || item.label || `${project.title} project photo`)}" />
+                  <figcaption>${escapeHtml(item.label || `Photo ${index + 1}`)}</figcaption>
+                </figure>
+              `
+            )
+            .join("")}
+        </div>
+      </section>
+    `;
+  }
+
   function renderProjectPage() {
     if (!pageRoot) {
       return;
@@ -160,6 +204,7 @@
         </section>
 
         ${renderSwiftXR(project)}
+        ${renderProjectPhotos(project)}
       </div>
     `;
   }

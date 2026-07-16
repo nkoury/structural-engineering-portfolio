@@ -90,6 +90,10 @@
     });
   }
 
+  function cloneContentObject(value) {
+    return JSON.parse(JSON.stringify(value));
+  }
+
   function applyProjectContent() {
     const projects = window.PORTFOLIO_PROJECTS || [];
     const projectContent = content.projects || {};
@@ -119,6 +123,9 @@
 
       overlayArray(project.modelOptions, editable.modelOptions, ["label", "alt"]);
       overlayArray(project.galleryTiles, editable.galleryTiles, ["label", "alt"]);
+      if (editable.photos && typeof editable.photos === "object") {
+        project.photos = cloneContentObject(editable.photos);
+      }
     });
   }
 

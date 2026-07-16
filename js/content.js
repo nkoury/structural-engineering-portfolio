@@ -114,7 +114,29 @@ window.PORTFOLIO_CONTENT = {
           "label": "Comprehensive Model",
           "alt": "Interactive 3D model for the L Ranch project"
         }
-      ]
+      ],
+      "photos": {
+        "mode": "comingSoon",
+        "title": "Project Photos",
+        "comingSoonText": "Photos Coming Soon!",
+        "items": [
+          {
+            "label": "Photo 1",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 2",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 3",
+            "image": "",
+            "alt": ""
+          }
+        ]
+      }
     },
     "high-mountain": {
       "title": "High Mountain",
@@ -137,7 +159,29 @@ window.PORTFOLIO_CONTENT = {
           "label": "Title Sheet View",
           "alt": "High Mountain title sheet 3D model view"
         }
-      ]
+      ],
+      "photos": {
+        "mode": "comingSoon",
+        "title": "Project Photos",
+        "comingSoonText": "Photos Coming Soon!",
+        "items": [
+          {
+            "label": "Photo 1",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 2",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 3",
+            "image": "",
+            "alt": ""
+          }
+        ]
+      }
     },
     "bismarck-bluffs": {
       "title": "Bismarck Bluffs",
@@ -160,7 +204,29 @@ window.PORTFOLIO_CONTENT = {
           "label": "Title Sheet View",
           "alt": "Bismarck Bluffs title sheet 3D model view"
         }
-      ]
+      ],
+      "photos": {
+        "mode": "comingSoon",
+        "title": "Project Photos",
+        "comingSoonText": "Photos Coming Soon!",
+        "items": [
+          {
+            "label": "Photo 1",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 2",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 3",
+            "image": "",
+            "alt": ""
+          }
+        ]
+      }
     },
     "coach-rd": {
       "title": "Coach Rd",
@@ -183,7 +249,29 @@ window.PORTFOLIO_CONTENT = {
           "label": "Title Sheet View",
           "alt": "Coach Rd title sheet 3D model view"
         }
-      ]
+      ],
+      "photos": {
+        "mode": "comingSoon",
+        "title": "Project Photos",
+        "comingSoonText": "Photos Coming Soon!",
+        "items": [
+          {
+            "label": "Photo 1",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 2",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 3",
+            "image": "",
+            "alt": ""
+          }
+        ]
+      }
     },
     "hastings-mesa": {
       "title": "Hastings Mesa",
@@ -210,7 +298,29 @@ window.PORTFOLIO_CONTENT = {
           "label": "Title Sheet View",
           "alt": "Hastings Mesa title sheet 3D model view"
         }
-      ]
+      ],
+      "photos": {
+        "mode": "comingSoon",
+        "title": "Project Photos",
+        "comingSoonText": "Photos Coming Soon!",
+        "items": [
+          {
+            "label": "Photo 1",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 2",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 3",
+            "image": "",
+            "alt": ""
+          }
+        ]
+      }
     },
     "hhr-ranch": {
       "title": "HHR Ranch",
@@ -237,7 +347,29 @@ window.PORTFOLIO_CONTENT = {
           "label": "Truss View",
           "alt": "HHR Ranch truss 3D model"
         }
-      ]
+      ],
+      "photos": {
+        "mode": "comingSoon",
+        "title": "Project Photos",
+        "comingSoonText": "Photos Coming Soon!",
+        "items": [
+          {
+            "label": "Photo 1",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 2",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 3",
+            "image": "",
+            "alt": ""
+          }
+        ]
+      }
     },
     "mountain-laurel": {
       "title": "Mountain Laurel",
@@ -260,7 +392,29 @@ window.PORTFOLIO_CONTENT = {
           "label": "Title Sheet View",
           "alt": "Mountain Laurel title sheet 3D model view"
         }
-      ]
+      ],
+      "photos": {
+        "mode": "comingSoon",
+        "title": "Project Photos",
+        "comingSoonText": "Photos Coming Soon!",
+        "items": [
+          {
+            "label": "Photo 1",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 2",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 3",
+            "image": "",
+            "alt": ""
+          }
+        ]
+      }
     },
     "waters": {
       "title": "Waters",
@@ -283,7 +437,29 @@ window.PORTFOLIO_CONTENT = {
           "label": "Title Sheet View",
           "alt": "Waters title sheet 3D model view"
         }
-      ]
+      ],
+      "photos": {
+        "mode": "comingSoon",
+        "title": "Project Photos",
+        "comingSoonText": "Photos Coming Soon!",
+        "items": [
+          {
+            "label": "Photo 1",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 2",
+            "image": "",
+            "alt": ""
+          },
+          {
+            "label": "Photo 3",
+            "image": "",
+            "alt": ""
+          }
+        ]
+      }
     }
   }
 };

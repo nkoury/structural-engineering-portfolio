@@ -56,6 +56,38 @@
     return draft.projects?.[id] || {};
   }
 
+  function ensureProjectPhotoDefaults(id) {
+    if (!draft.projects) draft.projects = {};
+    if (!draft.projects[id]) draft.projects[id] = {};
+    if (!draft.projects[id].photos || typeof draft.projects[id].photos !== "object") {
+      draft.projects[id].photos = {
+        mode: "comingSoon",
+        title: "Project Photos",
+        comingSoonText: "Photos Coming Soon!",
+        items: []
+      };
+    }
+
+    const photos = draft.projects[id].photos;
+    if (!photos.mode) photos.mode = "comingSoon";
+    if (!photos.title) photos.title = "Project Photos";
+    if (!photos.comingSoonText) photos.comingSoonText = "Photos Coming Soon!";
+    if (!Array.isArray(photos.items)) photos.items = [];
+
+    for (let index = 0; index < 3; index += 1) {
+      if (!photos.items[index] || typeof photos.items[index] !== "object") {
+        photos.items[index] = {
+          label: `Photo ${index + 1}`,
+          image: "",
+          alt: ""
+        };
+      }
+      if (!photos.items[index].label) photos.items[index].label = `Photo ${index + 1}`;
+      if (typeof photos.items[index].image !== "string") photos.items[index].image = "";
+      if (typeof photos.items[index].alt !== "string") photos.items[index].alt = "";
+    }
+  }
+
   function projectMeta(id) {
     const catalog = projectCatalog.find((project) => project.id === id) || {};
     return {
@@ -154,6 +186,28 @@
     const wrapper = createElement("label", `editor-live-field ${options.fieldClass || ""}`.trim());
     const span = createElement("span", "", { text: label });
     wrapper.append(span, editable(path, { ...options, label }));
+    return wrapper;
+  }
+
+  function selectField(label, path, options) {
+    const wrapper = createElement("label", "editor-live-field editor-select-field");
+    const span = createElement("span", "", { text: label });
+    const select = createElement("select", "editor-live-select", { "aria-label": label });
+    const currentValue = getByPath(path, options[0]?.value || "");
+
+    options.forEach((option) => {
+      const optionNode = createElement("option", "", { value: option.value, text: option.label });
+      if (option.value === currentValue) optionNode.selected = true;
+      select.appendChild(optionNode);
+    });
+
+    select.addEventListener("change", () => {
+      setByPath(path, select.value);
+      setStatus("Unsaved edits.");
+      renderEditor();
+    });
+
+    wrapper.append(span, select);
     return wrapper;
   }
 
@@ -412,6 +466,7 @@
 
     const project = projectMeta(activeProjectId);
     const path = `projects.${activeProjectId}`;
+    ensureProjectPhotoDefaults(activeProjectId);
     const hero = createElement("section", "project-hero editor-project-hero");
     const title = createElement("div", "project-title");
     title.append(
@@ -448,7 +503,8 @@
     );
 
     const models = renderProjectModelFields(path, projectContent(activeProjectId).modelOptions || []);
-    body.append(projectSection, models);
+    const photos = renderProjectPhotoFields(path, projectContent(activeProjectId).photos);
+    body.append(projectSection, models, photos);
     page.append(selector, hero, body);
     canvas.appendChild(page);
   }
@@ -490,6 +546,64 @@
     }
 
     section.appendChild(grid);
+    return section;
+  }
+
+  function renderProjectPhotoFields(path, photos) {
+    const section = createElement("section", "project-section editor-project-photo-section");
+    const titleColumn = createElement("div", "");
+    titleColumn.append(
+      editable(`${path}.photos.title`, {
+        singleLine: true,
+        className: "as-section-title",
+        label: "Project photos title"
+      }),
+      selectField("Photo section display", `${path}.photos.mode`, [
+        { value: "photos", label: "Show uploaded photos" },
+        { value: "comingSoon", label: "Photos Coming Soon!" }
+      ])
+    );
+
+    const contentColumn = createElement("div", "");
+    const mode = photos?.mode || "comingSoon";
+
+    if (mode === "photos") {
+      const grid = createElement("div", "about-photo-grid editor-project-photo-grid");
+      photos.items.forEach((item, index) => {
+        const card = createElement("div", "editor-project-photo-card");
+        card.append(
+          imageField(item.label || `Photo ${index + 1}`, `${path}.photos.items.${index}.image`),
+          field("Photo label", `${path}.photos.items.${index}.label`, { singleLine: true }),
+          field("Alt text", `${path}.photos.items.${index}.alt`, {})
+        );
+        grid.appendChild(card);
+      });
+      contentColumn.appendChild(grid);
+    } else {
+      const comingSoonPreview = createElement("div", "project-photo-coming-soon editor-coming-soon-preview");
+      comingSoonPreview.appendChild(
+        createElement("p", "", { text: getByPath(`${path}.photos.comingSoonText`, "Photos Coming Soon!") })
+      );
+      contentColumn.append(
+        comingSoonPreview,
+        field("Coming soon text", `${path}.photos.comingSoonText`, { singleLine: true })
+      );
+
+      const uploadPrep = createElement("div", "editor-model-copy-grid editor-photo-prep-grid");
+      photos.items.forEach((item, index) => {
+        const card = createElement("div", "editor-model-copy-card");
+        card.append(
+          createElement("p", "project-kicker", { text: `Prepared Photo ${index + 1}` }),
+          imageField(item.label || `Photo ${index + 1}`, `${path}.photos.items.${index}.image`),
+          field("Photo label", `${path}.photos.items.${index}.label`, { singleLine: true }),
+          field("Alt text", `${path}.photos.items.${index}.alt`, {})
+        );
+        uploadPrep.appendChild(card);
+      });
+      contentColumn.appendChild(uploadPrep);
+    }
+
+    section.append(titleColumn, contentColumn);
     return section;
   }
 
