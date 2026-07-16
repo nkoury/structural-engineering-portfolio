@@ -16,6 +16,11 @@
     return `${prefix || ""}${path}`;
   }
 
+  function mediaPath(src, prefix) {
+    if (!src || /^(data:|https?:|\/)/.test(src)) return src || "";
+    return rootPath(src, prefix);
+  }
+
   function renderRibbon(ribbon) {
     const prefix = ribbon.dataset.prefix || "";
     const current = ribbon.dataset.current || (pageRoot ? "works" : "");
@@ -143,7 +148,7 @@
             .map(
               (item, index) => `
                 <figure class="about-photo project-photo project-photo-${index + 1}">
-                  <img src="${escapeAttribute(item.image)}" alt="${escapeAttribute(item.alt || item.label || `${project.title} project photo`)}" />
+                  <img src="${escapeAttribute(mediaPath(item.image, "../"))}" alt="${escapeAttribute(item.alt || item.label || `${project.title} project photo`)}" loading="lazy" decoding="async" />
                   <figcaption>${escapeHtml(item.label || `Photo ${index + 1}`)}</figcaption>
                 </figure>
               `

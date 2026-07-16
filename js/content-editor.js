@@ -6,6 +6,7 @@
   const githubTokenInput = document.querySelector("[data-github-token]");
   const githubPublishButton = document.querySelector("[data-publish-github]");
   const draft = structuredClone(source);
+  const pendingImageUploads = new Map();
   let saveHandle = null;
   let activeView = "home";
   let activeProjectId = projectIds()[0] || "";
@@ -153,6 +154,49 @@
     });
   }
 
+  function slug(value) {
+    return String(value || "")
+      .replace(/([a-z])([A-Z])/g, "$1-$2")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  function extensionForFile(file) {
+    const byName = file.name.split(".").pop();
+    if (byName && byName !== file.name) return slug(byName).slice(0, 8) || "jpg";
+
+    const byType = file.type.split("/").pop();
+    if (byType === "jpeg") return "jpg";
+    return slug(byType || "jpg").slice(0, 8) || "jpg";
+  }
+
+  function timestamp() {
+    return new Date().toISOString().replace(/\D/g, "").slice(0, 14);
+  }
+
+  function imageAssetPathForField(path, file) {
+    const parts = normalizePath(path);
+    const extension = extensionForFile(file);
+    const stamp = timestamp();
+
+    if (parts[0] === "pages" && parts[1] === "about" && parts[2] === "photoImages") {
+      return `assets/content/about/${slug(parts[3] || "photo")}-${stamp}.${extension}`;
+    }
+
+    if (parts[0] === "projects" && parts[2] === "photos" && parts[3] === "items") {
+      const photoNumber = Number(parts[4]) + 1 || 1;
+      return `assets/content/projects/${slug(parts[1])}/photo-${photoNumber}-${stamp}.${extension}`;
+    }
+
+    return `assets/content/uploads/${parts.map(slug).filter(Boolean).join("-")}-${stamp}.${extension}`;
+  }
+
+  function imagePreviewValue(path, value) {
+    const pending = pendingImageUploads.get(path);
+    return pending && pending.assetPath === value ? pending.previewValue : value;
+  }
+
   function createElement(tag, className, attributes = {}) {
     const element = document.createElement(tag);
     if (className) element.className = className;
@@ -233,8 +277,9 @@
     const value = getByPath(path);
 
     function update(valueToShow) {
-      if (valueToShow) {
-        image.src = valueToShow;
+      const previewValue = imagePreviewValue(path, valueToShow);
+      if (previewValue) {
+        image.src = previewValue;
         image.hidden = false;
         placeholder.hidden = true;
       } else {
@@ -261,16 +306,19 @@
       if (!file) return;
 
       try {
-        const nextValue = await readFileAsDataUrl(file);
-        setByPath(path, nextValue);
-        update(nextValue);
-        setStatus(`Uploaded ${file.name} into content.js.`);
+        const previewValue = await readFileAsDataUrl(file);
+        const assetPath = imageAssetPathForField(path, file);
+        pendingImageUploads.set(path, { file, assetPath, previewValue });
+        setByPath(path, assetPath);
+        update(assetPath);
+        setStatus(`Staged ${file.name} as an image asset. Publish to upload it.`);
       } catch (error) {
         setStatus(`Upload failed: ${error.message}`);
       }
     });
 
     clearButton.addEventListener("click", () => {
+      pendingImageUploads.delete(path);
       setByPath(path, "");
       update("");
       setStatus(`${label} image cleared.`);
@@ -621,12 +669,25 @@
     return section;
   }
 
-  function serializeContent() {
-    return `window.PORTFOLIO_CONTENT = ${JSON.stringify(draft, null, 2)};\n`;
+  function serializeContent(content = draft) {
+    return `window.PORTFOLIO_CONTENT = ${JSON.stringify(content, null, 2)};\n`;
   }
 
   function encodeBase64(text) {
     const bytes = new TextEncoder().encode(text);
+    let binary = "";
+    const chunkSize = 0x8000;
+
+    for (let index = 0; index < bytes.length; index += chunkSize) {
+      const chunk = bytes.subarray(index, index + chunkSize);
+      binary += String.fromCharCode(...chunk);
+    }
+
+    return btoa(binary);
+  }
+
+  async function encodeFileBase64(file) {
+    const bytes = new Uint8Array(await file.arrayBuffer());
     let binary = "";
     const chunkSize = 0x8000;
 
@@ -675,6 +736,16 @@
     return readJsonResponse(response, `Could not read ${path} from GitHub.`);
   }
 
+  async function readGitHubFileIfExists(path, headers) {
+    const url = githubContentUrl(path);
+    const response = await fetch(`${url}?ref=${encodeURIComponent(githubPublishConfig.branch)}`, {
+      headers
+    });
+
+    if (response.status === 404) return null;
+    return readJsonResponse(response, `Could not read ${path} from GitHub.`);
+  }
+
   function decodeGitHubContent(file) {
     const normalized = String(file.content || "").replace(/\s/g, "");
     const binary = atob(normalized);
@@ -699,6 +770,38 @@
     });
 
     return readJsonResponse(updateResponse, `Could not publish ${path} to GitHub.`);
+  }
+
+  async function publishGitHubAsset(path, file, headers) {
+    const currentFile = await readGitHubFileIfExists(path, headers);
+    const body = {
+      branch: githubPublishConfig.branch,
+      message: `Upload site image ${path}`,
+      content: await encodeFileBase64(file)
+    };
+
+    if (currentFile?.sha) {
+      body.sha = currentFile.sha;
+    }
+
+    const updateResponse = await fetch(githubContentUrl(path), {
+      method: "PUT",
+      headers: {
+        ...headers,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    });
+
+    return readJsonResponse(updateResponse, `Could not publish ${path} to GitHub.`);
+  }
+
+  async function publishPendingImageUploads(headers) {
+    const uploads = Array.from(pendingImageUploads.values());
+    for (const [index, upload] of uploads.entries()) {
+      setStatus(`Uploading image ${index + 1} of ${uploads.length}...`);
+      await publishGitHubAsset(upload.assetPath, upload.file, headers);
+    }
   }
 
   async function publishContentVersion(version, headers) {
@@ -748,9 +851,11 @@
 
     try {
       const headers = githubHeaders(token);
-      const fileText = serializeContent();
       const contentVersion = `content-${new Date().toISOString().replace(/\D/g, "").slice(0, 14)}`;
 
+      await publishPendingImageUploads(headers);
+
+      const fileText = serializeContent();
       setStatus("Publishing content.js to GitHub...");
       const result = await publishGitHubFile(
         githubPublishConfig.path,
@@ -766,6 +871,7 @@
       setStatus(
         `Published content.js to GitHub (${shortSha}) and updated the live site cache version. GitHub Pages should update shortly.`
       );
+      pendingImageUploads.clear();
     } finally {
       githubPublishButton.disabled = false;
       githubPublishButton.textContent = "Publish content to GitHub";
@@ -843,6 +949,7 @@
       const imported = parseContentFile(await file.text());
       Object.keys(draft).forEach((key) => delete draft[key]);
       Object.assign(draft, imported);
+      pendingImageUploads.clear();
       activeProjectId = projectIds()[0] || "";
       renderEditor();
       setStatus(`Imported ${file.name}.`);

@@ -38,7 +38,8 @@
           <p>
             Use a fine-grained GitHub token with contents read/write access for this
             repository only. The token stays in this browser session and is never
-            written into content.js.
+            written into content.js. Image uploads publish as separate files under
+            assets/content so the live site can load text first and photos only as needed.
           </p>
         </div>
         <div class="editor-publish-controls">
@@ -61,7 +62,7 @@
 
     <script src="js/projects.js?v=20260715-live-editor"></script>
     <script src="js/content-bootstrap.js?v=20260716-content-cache" data-content-src="js/content.js" data-content-version="fresh"></script>
-    <script src="js/content-editor.js?v=20260716-content-cache"></script>
+    <script src="js/content-editor.js?v=20260716-content-assets"></script>
     <script src="js/analytics.js"></script>
   </body>
 </html>
