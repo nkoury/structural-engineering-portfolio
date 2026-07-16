@@ -132,6 +132,12 @@
   function applyEditableContent() {
     setMeta();
     applyTextBindings();
+    markContentReady();
+  }
+
+  function markContentReady() {
+    if (!document.body) return;
+    document.body.dataset.contentState = "ready";
   }
 
   window.PORTFOLIO_CONTENT_HELPERS = {

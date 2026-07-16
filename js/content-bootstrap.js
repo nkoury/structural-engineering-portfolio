@@ -26,6 +26,12 @@
     document.write(`<script src="${escapeAttribute(withVersion(src))}"><\/script>`);
   }
 
+  window.setTimeout(() => {
+    if (document.body?.dataset.contentState === "loading") {
+      document.body.dataset.contentState = "ready";
+    }
+  }, 12000);
+
   // Editable portfolio content is intentionally loaded with a fresh cache key.
   // That lets content-editor GitHub publishes show on the live site after the
   // GitHub Pages deployment finishes, without editing every HTML file each time.

@@ -40,6 +40,21 @@ body {
   margin: 0;
 }
 
+body[data-content-state="loading"] {
+  opacity: 0;
+}
+
+body[data-content-state="ready"] {
+  opacity: 1;
+  transition: opacity 120ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-content-state="ready"] {
+    transition: none;
+  }
+}
+
 body::before {
   aspect-ratio: 807 / 699;
   background: url("../assets/brand/nk-logo-mark.png") center / contain no-repeat;
