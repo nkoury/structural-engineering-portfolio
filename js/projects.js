@@ -37,6 +37,77 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
+    "id": "hhr-ranch",
+    "title": "HHR Ranch",
+    "type": "Residential / Ranch",
+    "year": "TBD",
+    "page": "projects/hhr-ranch.html",
+    "color": "#596148",
+    "summary": "A ranch residence case study with steel/concrete model views and truss coordination context.",
+    "system": "Steel/concrete framing, truss coordination, and framed residential details.",
+    "scope": "Use this page to describe the framing hierarchy, truss interface, foundation conditions, and the details that required engineering coordination.",
+    "modelOptions": [
+      {
+        "label": "Steel + Concrete",
+        "src": "assets/project-assets/hhr-ranch/models/steel-concrete.glb",
+        "alt": "HHR Ranch steel and concrete 3D model"
+      },
+      {
+        "label": "Title Sheet View",
+        "src": "assets/project-assets/hhr-ranch/models/title-sheet.glb",
+        "alt": "HHR Ranch title sheet 3D model view"
+      },
+      {
+        "label": "Truss View",
+        "src": "assets/project-assets/hhr-ranch/models/truss.glb",
+        "alt": "HHR Ranch truss 3D model"
+      }
+    ],
+    "galleryTiles": [
+      {
+        "label": "Steel + Concrete Model",
+        "size": "large"
+      },
+      {
+        "label": "Truss Coordination",
+        "size": "medium"
+      }
+    ]
+  },
+  {
+    "id": "mountain-laurel",
+    "title": "Mountain Laurel",
+    "type": "Mountain Residence",
+    "year": "TBD",
+    "page": "projects/mountain-laurel.html",
+    "color": "#59686d",
+    "summary": "A mountain residence case study with steel/concrete model views and project-scope context.",
+    "system": "Steel and concrete framing with multi-level residential framing context.",
+    "scope": "Use this page to outline the framing strategy, foundation conditions, and detail development across the drawing set.",
+    "modelOptions": [
+      {
+        "label": "Steel + Concrete",
+        "src": "assets/project-assets/mountain-laurel/models/steel-concrete.glb",
+        "alt": "Mountain Laurel steel and concrete 3D model"
+      },
+      {
+        "label": "Title Sheet View",
+        "src": "assets/project-assets/mountain-laurel/models/title-sheet.glb",
+        "alt": "Mountain Laurel title sheet 3D model view"
+      }
+    ],
+    "galleryTiles": [
+      {
+        "label": "Steel + Concrete Model",
+        "size": "wide"
+      },
+      {
+        "label": "S-400 Detail Set",
+        "size": "tall"
+      }
+    ]
+  },
+  {
     "id": "high-mountain",
     "title": "High Mountain",
     "type": "Mountain Structure",
@@ -178,77 +249,6 @@ window.PORTFOLIO_PROJECTS = [
       {
         "label": "Steel + Concrete Model",
         "size": "wide"
-      }
-    ]
-  },
-  {
-    "id": "hhr-ranch",
-    "title": "HHR Ranch",
-    "type": "Residential / Ranch",
-    "year": "TBD",
-    "page": "projects/hhr-ranch.html",
-    "color": "#596148",
-    "summary": "A ranch residence case study with steel/concrete model views and truss coordination context.",
-    "system": "Steel/concrete framing, truss coordination, and framed residential details.",
-    "scope": "Use this page to describe the framing hierarchy, truss interface, foundation conditions, and the details that required engineering coordination.",
-    "modelOptions": [
-      {
-        "label": "Steel + Concrete",
-        "src": "assets/project-assets/hhr-ranch/models/steel-concrete.glb",
-        "alt": "HHR Ranch steel and concrete 3D model"
-      },
-      {
-        "label": "Title Sheet View",
-        "src": "assets/project-assets/hhr-ranch/models/title-sheet.glb",
-        "alt": "HHR Ranch title sheet 3D model view"
-      },
-      {
-        "label": "Truss View",
-        "src": "assets/project-assets/hhr-ranch/models/truss.glb",
-        "alt": "HHR Ranch truss 3D model"
-      }
-    ],
-    "galleryTiles": [
-      {
-        "label": "Steel + Concrete Model",
-        "size": "large"
-      },
-      {
-        "label": "Truss Coordination",
-        "size": "medium"
-      }
-    ]
-  },
-  {
-    "id": "mountain-laurel",
-    "title": "Mountain Laurel",
-    "type": "Mountain Residence",
-    "year": "TBD",
-    "page": "projects/mountain-laurel.html",
-    "color": "#59686d",
-    "summary": "A mountain residence case study with steel/concrete model views and project-scope context.",
-    "system": "Steel and concrete framing with multi-level residential framing context.",
-    "scope": "Use this page to outline the framing strategy, foundation conditions, and detail development across the drawing set.",
-    "modelOptions": [
-      {
-        "label": "Steel + Concrete",
-        "src": "assets/project-assets/mountain-laurel/models/steel-concrete.glb",
-        "alt": "Mountain Laurel steel and concrete 3D model"
-      },
-      {
-        "label": "Title Sheet View",
-        "src": "assets/project-assets/mountain-laurel/models/title-sheet.glb",
-        "alt": "Mountain Laurel title sheet 3D model view"
-      }
-    ],
-    "galleryTiles": [
-      {
-        "label": "Steel + Concrete Model",
-        "size": "wide"
-      },
-      {
-        "label": "S-400 Detail Set",
-        "size": "tall"
       }
     ]
   },
