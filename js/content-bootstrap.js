@@ -6,7 +6,8 @@
 
   const contentSrc = script.getAttribute("data-content-src");
   const loaderSrc = script.getAttribute("data-loader-src");
-  const version = script.getAttribute("data-content-version") || String(Date.now());
+  const versionSetting = script.getAttribute("data-content-version") || "site-content-v1";
+  const version = versionSetting === "fresh" ? String(Date.now()) : versionSetting;
 
   function withVersion(src) {
     if (!src) return "";

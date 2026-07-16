@@ -17,6 +17,20 @@
     path: "js/content.js",
     liveUrl: "https://noahkoury.com"
   };
+  const publicHtmlPaths = [
+    "index.html",
+    "works.html",
+    "about.html",
+    "contact.html",
+    "projects/l-ranch.html",
+    "projects/hhr-ranch.html",
+    "projects/mountain-laurel.html",
+    "projects/high-mountain.html",
+    "projects/bismarck-bluffs.html",
+    "projects/coach-rd.html",
+    "projects/hastings-mesa.html",
+    "projects/waters.html"
+  ];
   const githubTokenStorageKey = "portfolio-content-editor-github-token";
 
   const viewTabs = [
@@ -647,10 +661,73 @@
     };
   }
 
-  function githubContentUrl() {
-    const { owner, repo, path } = githubPublishConfig;
+  function githubContentUrl(path = githubPublishConfig.path) {
+    const { owner, repo } = githubPublishConfig;
     const encodedPath = path.split("/").map(encodeURIComponent).join("/");
     return `https://api.github.com/repos/${owner}/${repo}/contents/${encodedPath}`;
+  }
+
+  async function readGitHubFile(path, headers) {
+    const url = githubContentUrl(path);
+    const response = await fetch(`${url}?ref=${encodeURIComponent(githubPublishConfig.branch)}`, {
+      headers
+    });
+    return readJsonResponse(response, `Could not read ${path} from GitHub.`);
+  }
+
+  function decodeGitHubContent(file) {
+    const normalized = String(file.content || "").replace(/\s/g, "");
+    const binary = atob(normalized);
+    const bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
+    return new TextDecoder().decode(bytes);
+  }
+
+  async function publishGitHubFile(path, text, headers, message) {
+    const currentFile = await readGitHubFile(path, headers);
+    const updateResponse = await fetch(githubContentUrl(path), {
+      method: "PUT",
+      headers: {
+        ...headers,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        branch: githubPublishConfig.branch,
+        message,
+        content: encodeBase64(text),
+        sha: currentFile.sha
+      })
+    });
+
+    return readJsonResponse(updateResponse, `Could not publish ${path} to GitHub.`);
+  }
+
+  async function publishContentVersion(version, headers) {
+    for (const path of publicHtmlPaths) {
+      setStatus(`Updating site cache version in ${path}...`);
+      const currentFile = await readGitHubFile(path, headers);
+      const currentText = decodeGitHubContent(currentFile);
+      const nextText = currentText.replace(
+        /data-content-version="[^"]*"/g,
+        `data-content-version="${version}"`
+      );
+
+      if (nextText === currentText) continue;
+
+      const updateResponse = await fetch(githubContentUrl(path), {
+        method: "PUT",
+        headers: {
+          ...headers,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          branch: githubPublishConfig.branch,
+          message: "Bump site content cache version",
+          content: encodeBase64(nextText),
+          sha: currentFile.sha
+        })
+      });
+      await readJsonResponse(updateResponse, `Could not publish ${path} to GitHub.`);
+    }
   }
 
   async function publishContentToGitHub() {
@@ -670,35 +747,24 @@
     githubPublishButton.textContent = "Publishing...";
 
     try {
-      const url = githubContentUrl();
       const headers = githubHeaders(token);
       const fileText = serializeContent();
-
-      setStatus("Reading current GitHub content.js...");
-      const currentResponse = await fetch(`${url}?ref=${encodeURIComponent(githubPublishConfig.branch)}`, {
-        headers
-      });
-      const currentFile = await readJsonResponse(currentResponse, "Could not read content.js from GitHub.");
+      const contentVersion = `content-${new Date().toISOString().replace(/\D/g, "").slice(0, 14)}`;
 
       setStatus("Publishing content.js to GitHub...");
-      const updateResponse = await fetch(url, {
-        method: "PUT",
-        headers: {
-          ...headers,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          branch: githubPublishConfig.branch,
-          message: "Update site content from content editor",
-          content: encodeBase64(fileText),
-          sha: currentFile.sha
-        })
-      });
-      const result = await readJsonResponse(updateResponse, "Could not publish content.js to GitHub.");
+      const result = await publishGitHubFile(
+        githubPublishConfig.path,
+        fileText,
+        headers,
+        "Update site content from content editor"
+      );
       const shortSha = result?.commit?.sha ? result.commit.sha.slice(0, 7) : "created";
 
+      setStatus("Bumping live site content cache version...");
+      await publishContentVersion(contentVersion, headers);
+
       setStatus(
-        `Published content.js to GitHub (${shortSha}). GitHub Pages should update shortly; open the live site to confirm.`
+        `Published content.js to GitHub (${shortSha}) and updated the live site cache version. GitHub Pages should update shortly.`
       );
     } finally {
       githubPublishButton.disabled = false;
