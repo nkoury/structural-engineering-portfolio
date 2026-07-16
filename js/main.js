@@ -2,6 +2,7 @@
   const projects = window.PORTFOLIO_PROJECTS || [];
   const modelCollage = document.querySelector("[data-model-collage]");
   const year = document.querySelector("[data-current-year]");
+  const highlightedOrder = ["l-ranch", "hhr-ranch", "mountain-laurel"];
 
   if (year) {
     year.textContent = new Date().getFullYear();
@@ -63,8 +64,16 @@
     `;
   }
 
+  function orderedProjects() {
+    const priority = highlightedOrder
+      .map((id) => projects.find((project) => project.id === id))
+      .filter(Boolean);
+    const remaining = projects.filter((project) => !highlightedOrder.includes(project.id));
+    return [...priority, ...remaining];
+  }
+
   if (modelCollage) {
-    modelCollage.innerHTML = projects.map(renderProjectCard).join("");
+    modelCollage.innerHTML = orderedProjects().map(renderProjectCard).join("");
   }
 
 })();
